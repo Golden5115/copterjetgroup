@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* CopterJet Official Brand Colors */
+  --color-copter-blue: #164878;
+  --color-copter-red: #C40E14;
+  --color-copter-grey: #5E6871;
+  --color-copter-light: #F8F9FA;
+  
+  /* CopterJet Typography */
+  --font-sans: "Museo Sans Cyrl", "Montserrat", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Base Styles to enforce corporate look globally */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #FFFFFF;
+    color: var(--color-copter-grey);
+    -webkit-font-smoothing: antialiased;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-copter-blue);
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom utility for the red accent lines */
+@layer utilities {
+  .border-accent {
+    border-left: 4px solid var(--color-copter-red);
+    padding-left: 1rem;
+  }
 }
