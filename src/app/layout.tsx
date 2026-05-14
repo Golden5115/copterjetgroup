@@ -1,11 +1,28 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer"; // Import the new Footer
+import Footer from "@/components/layout/Footer";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "CopterJet International | Aviation Excellence",
-  description: "Leading aviation and aerospace services company in Africa. Aircraft brokerage, logistics, and consulting.",
+  title: "CopterJet International",
+  description: "Global Procurement & Supply Chain Solutions for Aircraft Parts, Components, Engines & Ground Support Equipment.",
+};
+
+// 1. Explicitly export the default viewport settings
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -15,13 +32,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased flex flex-col min-h-screen">
+      <head>
+        {/* 2. THE FIX: Detects "Request Desktop Site" (980px) 
+          and forces the viewport to 1024px so the Desktop layout triggers.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (window.innerWidth >= 980 && window.innerWidth < 1024) {
+                  var meta = document.querySelector('meta[name="viewport"]');
+                  if (meta) {
+                    meta.setAttribute('content', 'width=1024');
+                  }
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <Navbar />
-        {/* The main content area takes up the remaining space, pushing the footer to the bottom */}
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer /> {/* Add the Footer here */}
+        {children}
+        <Footer />
       </body>
     </html>
   );
