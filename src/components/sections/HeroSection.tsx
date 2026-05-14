@@ -61,10 +61,9 @@ export default function HeroSection() {
   }, [slides.length]);
 
   return (
-    // min-h increased slightly to 700px to ensure everything fits comfortably without overlapping
-    <section className="relative w-full h-[calc(100svh-115px)] min-h-[700px] overflow-hidden bg-[#060e1a] flex flex-col">
+    <section className="relative w-full h-[calc(100svh-115px)] min-h-[750px] overflow-hidden bg-[#060e1a] flex flex-col">
 
-      {/* ── Background Images ── */}
+      {/* ── Background Images (ZERO Gradient Overlays) ── */}
       <div className="absolute inset-0 z-0 bg-black">
         {slides.map((slide, index) => (
           <Image
@@ -81,7 +80,8 @@ export default function HeroSection() {
       </div>
 
       {/* ── Main Content Area ── */}
-      <div className="relative z-10 w-full max-w-[90rem] mx-auto px-6 lg:px-12 pt-8 md:pt-12">
+      {/* ADDED MASSIVE BOTTOM PADDING (pb-[180px] md:pb-[200px]) TO PREVENT OVERLAP */}
+      <div className="relative z-10 flex-grow max-w-[90rem] mx-auto w-full px-6 lg:px-12 flex flex-col pt-10 lg:pt-14 pb-[180px] md:pb-[200px]">
         
         {/* CSS GRID: Stacks the text so they crossfade without breaking the layout */}
         <div className="grid grid-cols-1 grid-rows-1 w-full max-w-3xl">
@@ -92,6 +92,7 @@ export default function HeroSection() {
                 index === currentSlide ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-6 pointer-events-none"
               }`}
             >
+              {/* Headline */}
               <h1 
                 className="text-4xl sm:text-5xl lg:text-[3.5rem] text-white font-bold leading-[1.12] tracking-tight"
                 style={{ textShadow: '0 4px 24px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.8)' }}
@@ -107,8 +108,9 @@ export default function HeroSection() {
                 </svg>
               </div>
 
+              {/* Subheadline */}
               <p 
-                className="text-base md:text-lg lg:text-xl text-white/95 max-w-xl leading-relaxed font-medium mb-6"
+                className="text-base md:text-lg lg:text-xl text-white/95 max-w-xl leading-relaxed font-medium"
                 style={{ textShadow: '0 3px 12px rgba(0,0,0,1)' }}
               >
                 {slide.subtext}
@@ -118,13 +120,14 @@ export default function HeroSection() {
         </div>
 
         {/* ── Persistent Action Bar & Dots ── */}
-        <div className="flex flex-col items-start gap-5 mt-2 md:mt-4">
+        <div className="flex flex-col items-start gap-5 mt-6 md:mt-8">
           <div className="flex flex-wrap items-center gap-3">
             <Link href="/partnership" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 py-3.5 rounded-sm font-bold tracking-widest text-[10px] uppercase hover:bg-white hover:text-copter-blue transition-colors shadow-[0_4px_15px_rgba(0,0,0,0.6)]">
               Partnership & Joint Ventures
             </Link>
           </div>
 
+          {/* Slider Navigation Dots */}
           <div className="flex items-center gap-2">
             {slides.map((_, dotIndex) => (
               <button
@@ -141,8 +144,7 @@ export default function HeroSection() {
 
       </div>
 
-      {/* ── 5 Feature Badges (ABSOLUTELY POSITIONED SO THEY NEVER DISAPPEAR) ── */}
-      {/* Positioned exactly 76px from the bottom, right above the Slogan Bar */}
+      {/* ── 5 Feature Badges (Absolutely Positioned) ── */}
       <div className="absolute bottom-[60px] md:bottom-[76px] left-0 right-0 w-full z-20 pointer-events-none">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 pointer-events-auto">
           <div className="flex flex-wrap items-start gap-4 md:gap-8 max-w-5xl">
