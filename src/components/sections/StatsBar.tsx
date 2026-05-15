@@ -54,10 +54,10 @@ const AnimatedNumber = ({ target, prefix = "" }: { target: number, prefix?: stri
 
 export default function StatsBar() {
   const stats = [
-    { target: 50, prefix: "+", label: "Investments" },
-    { target: 10, prefix: "+", label: "Years Experience" },
-    { target: 12, prefix: "", label: "Cities" },
-    { target: 340, prefix: "+", label: "Airports in the world" },
+    { target: 50, prefix: "+", label: "YEARS OF INDUSTRY EXPERIENCE" },
+    { target: 6.8, prefix: "+", label: "BILLION GLOBAL INVENTORY NETWORK" },
+    { target: 5, prefix: "", label: "CONTINENTAL STRATEGIC PRESENCE" },
+    { target: 2700, prefix: "+", label: "SUPPLY CHAIN & OEM NETWORK" },
   ];
 
   return (

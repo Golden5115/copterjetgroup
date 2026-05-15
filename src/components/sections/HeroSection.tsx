@@ -11,7 +11,7 @@ export default function HeroSection() {
   const slides = [
     {
       id: 1,
-      image: "/images/hero-bg-network2.jpg", 
+      image: "/images/hero-bg-9.jpg", 
       headline: <>Bridging Africa's<br />Aerospace Supply <br />Chain & Operations <br />Ecosystem</>,
       subtext: "Building a Connected, efficient & resilient ecosystem for sustainable growth.",
     },
@@ -56,12 +56,12 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 15000); 
+    }, 10000); 
     return () => clearInterval(timer);
   }, [slides.length]);
 
   return (
-    <section className="relative w-full h-[calc(100svh-115px)] min-h-[750px] overflow-hidden bg-[#060e1a] flex flex-col">
+    <section className="relative w-full h-[calc(100svh-120px)] min-h-[750px] overflow-hidden bg-[#060e1a] flex flex-col">
 
       {/* ── Background Images (ZERO Gradient Overlays) ── */}
       <div className="absolute inset-0 z-0 bg-black">

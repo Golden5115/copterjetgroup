@@ -55,6 +55,7 @@ const navStructure: NavItem[] = [
         items: [
           { label: 'Jets & Helicopters Charter Services', href: '/services/charter' },
           { label: 'Airline Joint Venture Operations', href: '/services/airline-jvo' },
+          { label: 'Aircraft Management', href: '/services/aircraft-Manage'}
         ],
       },
       {
@@ -131,7 +132,7 @@ export default function Navbar() {
 
         {/* Adjusted to max-w-[90rem] to perfectly align with Hero Section */}
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 flex justify-between items-center h-[76px]">
-          <Link href="/" className="relative h-10 w-40 flex-shrink-0 block">
+          <Link href="/" className="relative h-17 w-60 flex-shrink-0 block">
             <Image src="/images/logo.png" alt="CopterJet International" fill className="object-contain object-left" priority />
           </Link>
 

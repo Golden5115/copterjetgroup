@@ -46,7 +46,7 @@ export default function WhoWeAre() {
 
             {/* Floating stat card */}
             <div className="absolute -left-4 bottom-14 bg-copter-blue text-white px-6 py-5 shadow-2xl hidden lg:block">
-              <p className="text-4xl font-bold leading-none">10+</p>
+              <p className="text-4xl font-bold leading-none">15+</p>
               <p className="text-[10px] font-bold tracking-widest uppercase text-white/70 mt-1">Years of Excellence</p>
             </div>
           </div>
