@@ -29,7 +29,7 @@ const navStructure: NavItem[] = [
       { label: 'CopterJet Spares & Components', href: '/businesses/spares-components' },
       { label: 'CopterJet Ground Equipment', href: '/businesses/ground-equipment' },
       { label: 'CopterJet Logistics', href: '/businesses/logistics' },
-      { label: 'CopterJet Maintenance', href: '/businesses/maintenance' },
+      { label: 'CopterJet Asset Management', href: '/businesses/maintenance' },
       { label: 'CopterJet Services', href: '/businesses/services' },
       { label: 'CopterJet Leasing', href: '/businesses/leasing' },
       { label: 'CopterJet Flight Operations', href: '/businesses/flight-operations' },
@@ -48,6 +48,7 @@ const navStructure: NavItem[] = [
           { label: 'Aircraft & Equipment Leasing Solutions', href: '/services/leasing' },
           { label: 'Aircraft Appraisal & Valuation', href: '/services/appraisal' },
           { label: 'Focused Aviation Procurement & Ancillary', href: '/services/procurement' },
+          { label: 'Express Air Freight & Logistics', href: '/services/logistics' },
         ],
       },
       {
@@ -64,15 +65,15 @@ const navStructure: NavItem[] = [
           { label: 'Consultancy & Advisory', href: '/services/consultancy' },
           { label: 'Infrastructure Development', href: '/services/infrastructure' },
           { label: 'Business Intelligence Solutions', href: '/services/intelligence' },
-          { label: 'Aviation Risk Management & Financial Gatekeeping', href: '/services/risk' },
+          { label: 'Aviation Credit Risk Management & Financial Gatekeeping', href: '/services/risk' },
           { label: 'Independent Audit Programmes', href: '/services/audit' },
         ],
       },
     ],
   },
-  { label: 'INSIGHTS', href: '/insights' },
+  { label: 'INDUSTRY INSIGHTS', href: '/insights' },
   { label: 'PARTNERSHIP', href: '/partnership' },
-  { label: 'CONTACT', href: '/contact' },
+  { label: 'CAREER', href: '/career' },
 ];
 
 export default function Navbar() {
@@ -95,10 +96,32 @@ export default function Navbar() {
 
   return (
     <>
+      <style>{`
+        @keyframes pulse-ring {
+          0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+          70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-pulse {
+          animation: pulse-ring 2s infinite;
+        }
+        @keyframes wave {
+          0%, 60%, 100% { transform: rotate(0deg); }
+          10%, 30% { transform: rotate(14deg); }
+          20%, 40% { transform: rotate(-8deg); }
+          50% { transform: rotate(10deg); }
+        }
+        .waving-hand {
+          display: inline-block;
+          transform-origin: 70% 70%;
+          animation: wave 2.5s infinite;
+        }
+      `}</style>
+
       {/* ── STICKY HEADER WRAPPER ── */}
       <header 
         className={`w-full fixed top-0 left-0 right-0 z-[100] transition-transform duration-500 ease-in-out ${
-          scrolled ? '-translate-y-9' : 'translate-y-0'
+          scrolled ? '-translate-y-0' : 'translate-y-0'
         }`}
       >
         {/* ── Top Bar ── */}
@@ -108,7 +131,7 @@ export default function Navbar() {
               COPTERJET INTERNATIONAL GROUP
             </span>
             <div className="flex items-center gap-5 ml-auto">
-              {['News & Events', 'Gallery', 'Careers'].map(lbl => (
+              {['News & Events', 'Gallery', 'Contact Us'].map(lbl => (
                 <Link key={lbl} href={`/${lbl.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
                   className="hidden sm:block text-[10px] font-bold tracking-widest uppercase text-white hover:text-copter-red transition-colors duration-300"
                 >
@@ -139,13 +162,13 @@ export default function Navbar() {
         {/* ── Main Nav ── */}
         <nav 
           className={`w-full relative z-50 transition-all duration-300 ${
-            scrolled ? 'bg-white/95 backdrop-blur-md shadow-[0_4px_24px_rgba(22,72,120,0.12)]' : 'bg-white shadow-[0_2px_8px_rgba(22,72,120,0.06)]'
+            scrolled ? 'bg-white backdrop-blur-md shadow-[0_4px_24px_rgba(22,72,120,0.12)]' : 'bg-white shadow-[0_2px_8px_rgba(22,72,120,0.06)]'
           }`}
         >
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-copter-red" />
 
           <div className="max-w-[90rem] mx-auto px-6 lg:px-12 flex justify-between items-center h-[76px]">
-            <Link href="/" className="relative h-30 w-40 flex-shrink-0 block">
+            <Link href="/" className="relative h-37 w-47 flex-shrink-0 block">
               <Image src="/images/logo.png" alt="CopterJet International" fill className="object-contain object-left" priority />
             </Link>
 
@@ -216,10 +239,10 @@ export default function Navbar() {
 
               {/* Action Buttons */}
               <div className="ml-5 flex flex-col justify-center gap-1.5 h-[50px] border-l border-gray-100 pl-5">
-                <Link href="/rfp" className="bg-copter-red text-white text-[9px] font-bold tracking-[0.15em] uppercase px-6 py-1.5 hover:bg-red-800 hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm">
+                <Link href="/rfp" className="bg-copter-blue text-white text-[9px] font-bold tracking-[0.15em] uppercase px-6 py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm">
                   SUBMIT RFP
                 </Link>
-                <Link href="/rfq" className="bg-[#0a1e35] text-white text-[9px] font-bold tracking-[0.15em] uppercase px-6 py-1.5 hover:bg-[#164878] hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm">
+                <Link href="/rfq" className="bg-copter-blue text-white text-[9px] font-bold tracking-[0.15em] uppercase px-6 py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm">
                   SUBMIT RFQ
                 </Link>
               </div>
@@ -299,24 +322,31 @@ export default function Navbar() {
       </header>
 
       {/* ── BUFFER TO PREVENT CONTENT JUMP ── */}
-      {/* Since header is fixed, we add padding to the top of the page so content doesn't hide behind it */}
       <div className="pt-[112px]"></div>
 
       {/* ── FLOATING ACTION BUTTONS ── */}
-      <div className="fixed bottom-6 right-6 z-[90] flex flex-col items-center gap-4">
+      <div className="fixed bottom-6 right-6 z-[90] flex flex-col items-end gap-4">
         
-        {/* WhatsApp Floating Button */}
-        {/* Replace the phone number in the href with your actual WhatsApp business number */}
+        {/* NEW: Chat Widget Button */}
         <a 
           href="https://wa.me/09139347442" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-14 h-14 bg-[#25D366] hover:bg-[#1EBE55] text-white rounded-full flex items-center justify-center shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 transition-all duration-300 group"
+          className="group flex items-center gap-3 cursor-pointer"
           aria-label="Chat on WhatsApp"
         >
-          <svg className="w-8 h-8 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-          </svg>
+          {/* Chat Bubble Message (Expands slightly on hover) */}
+          <div className="bg-white text-gray-800 text-sm font-semibold px-4 py-2.5 rounded-2xl rounded-br-sm shadow-[0_4px_12px_rgba(0,0,0,0.15)] flex items-center gap-2 transform origin-right transition-all duration-300 group-hover:scale-105 border border-gray-100">
+            <span className="text-base waving-hand">👋</span> 
+            <span>Hello! Need Help? Let's Chat...</span>
+          </div>
+
+          {/* Glowing WhatsApp Icon */}
+          <div className="w-14 h-14 bg-[#25D366] hover:bg-[#1EBE55] text-white rounded-full flex items-center justify-center shadow-lg transition-colors duration-300 whatsapp-pulse">
+            <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+            </svg>
+          </div>
         </a>
 
         {/* Scroll to Top Button */}

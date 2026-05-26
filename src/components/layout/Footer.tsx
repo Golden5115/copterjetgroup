@@ -76,22 +76,11 @@ export default function Footer() {
             {/* Corporate Address Card */}
              {/* Address & Map */}
           <div className="lg:col-span-4">
-            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Corporate Office</h4>
+            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Corporate Head Office <br /> (Administrative Wing)</h4>
             <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-              Suite 202, 2nd Floor, Right Wing, Airport Business Hub, Murtala Muhammed Int'l Airport Business District, Int'l Airport Rd, Lagos.
+              Suite 202, 2nd Floor, Right Wing, Airport Business Hub, Murtala Muhammed Int'l Airport Business District, Int'l Airport Rd, Ikeja Lagos, Nigeria.
             </p>
             {/* Embedded Google Map */}
-            <div className="w-full h-40 rounded-sm overflow-hidden border border-white/20">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3986683838424!2d3.321798315331006!3d6.577242124119864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b922000000001%3A0x0!2sAirport%20Business%20Hub!5e0!3m2!1sen!2sng!4v1716380000000!5m2!1sen!2sng"
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen={false} 
-                loading="lazy"
-                title="Office Location"
-              ></iframe>
-            </div>
           </div>
 
             {/* Newsletter */}
@@ -100,7 +89,7 @@ export default function Footer() {
                 <input 
                   type="email" 
                   placeholder="Enter Email Address" 
-                  className="bg-[#0a1e35] border border-[#1a558c] text-white px-5 py-3.5 text-sm outline-none focus:border-copter-red transition-colors w-full rounded-sm"
+                  className="bg-white border border-[#1a558c] text-#0a1e35 px-5 py-3.5 text-sm outline-none focus:border-copter-red transition-colors w-full rounded-sm"
                   required
                 />
                 <button 

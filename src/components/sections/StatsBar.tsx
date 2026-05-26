@@ -57,7 +57,7 @@ export default function StatsBar() {
     { target: 50, prefix: "+", label: "YEARS OF INDUSTRY EXPERIENCE" },
     { target: 6.8, prefix: "+", label: "BILLION GLOBAL INVENTORY NETWORK" },
     { target: 5, prefix: "+", label: "CONTINENTAL STRATEGIC PRESENCE" },
-    { target: 2700, prefix: "+", label: "SUPPLY CHAIN & OEM NETWORK" },
+    { target: 270, prefix: "+", label: "SUPPLY CHAIN & OEM NETWORK" },
   ];
 
   return (

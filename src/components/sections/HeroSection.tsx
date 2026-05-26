@@ -301,9 +301,9 @@ export default function HeroSection() {
   }, []);
 
   const slides = [
-    { id: 1, image: '/images/hero-bg-9.jpg', headline: ["Bridging Africa's", "Aerospace Supply", "Chain & Operations", "Ecosystem."], subtext: 'Building a Connected, efficient & resilient ecosystem for sustainable growth.', kenFrom: 'scale(1.12) translate(-2%, 0%)', kenTo: 'scale(1.04) translate(1%, -1%)' },
-    { id: 2, image: '/images/hero-bg-2.7.jpg',      headline: ["Audacious &", "Dynamic Operational &", "Technical Solutions."],              subtext: 'Delivering unmatched technical frameworks and operational infrastructure designed specifically for the modern aviation industry.', kenFrom: 'scale(1.14) translate(0%, -2%)', kenTo: 'scale(1.04) translate(0%, 1%)' },
-    { id: 3, image: '/images/hero-bg-4.jpg',      headline: ["Built on Innovations", "& Excellence..."],                                     subtext: 'All operations are backed by specialized services built on a foundation of rigorous innovation and industry excellence.', kenFrom: 'scale(1.12) translate(2%, 0%)', kenTo: 'scale(1.04) translate(-1%, -1%)' },
+    { id: 1, image: '/images/hero-bg-9.jpg', headline: ["Bridging Africa's", "Aerospace Supply", "Chain & Operations", "Ecosystem..."], subtext: 'Building a connected, efficient & resilient ecosystem for sustainable growth.', kenFrom: 'scale(1.12) translate(-2%, 0%)', kenTo: 'scale(1.04) translate(1%, -1%)' },
+    { id: 2, image: '/images/hero-bg-2.7.jpg',      headline: ["With Confidence Across", "Aviation, Oilfield Operations,", "Humanitarian & Critical Industries..."],              subtext: 'Optimising operational assets, technical & logistics reliability.', kenFrom: 'scale(1.14) translate(0%, -2%)', kenTo: 'scale(1.04) translate(0%, 1%)' },
+    { id: 3, image: '/images/hero-bg-4.jpg',      headline: ["Built on Innovations", "& Excellence..."],                                     subtext: 'All operations are backed by specialised services built on a foundation of rigorous innovation and industry excellence.', kenFrom: 'scale(1.12) translate(2%, 0%)', kenTo: 'scale(1.04) translate(-1%, -1%)' },
   ];
 
   const textClass =
