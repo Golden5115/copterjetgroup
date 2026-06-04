@@ -14,25 +14,25 @@ const navStructure: NavItem[] = [
     label: 'ABOUT US',
     href: '/about',
     subItems: [
-      { label: 'Who We Are', href: '/about/who-we-are' },
-      { label: 'Our People', href: '/about/people' },
-      { label: 'Our History', href: '/about/history' },
-      { label: 'Management Team', href: '/about/management' },
-      { label: 'Board of Directors', href: '/about/board' },
-      { label: 'Corporate Governance', href: '/about/governance' },
+      { label: 'Who We Are', href: '/about#who-we-are' },
+      { label: 'Our History', href: '/about#history' },
+      { label: 'Our People', href: '/about#people' },
+      { label: 'Management Team', href: '/about#management' },
+      { label: 'Board of Directors', href: '/about#board' },
+      { label: 'Corporate Governance', href: '/about#governance' },
     ],
   },
   {
     label: 'OUR BUSINESSES',
     href: '/businesses',
     subItems: [
-      { label: 'CopterJet Spares & Components', href: '/businesses/spares-components' },
-      { label: 'CopterJet Ground Equipment', href: '/businesses/ground-equipment' },
-      { label: 'CopterJet Logistics', href: '/businesses/logistics' },
-      { label: 'CopterJet Maintenance', href: '/businesses/maintenance' },
-      { label: 'CopterJet Services', href: '/businesses/services' },
-      { label: 'CopterJet Leasing', href: '/businesses/leasing' },
-      { label: 'CopterJet Flight Operations', href: '/businesses/flight-operations' },
+      { label: 'CopterJet Spares & Components', href: '/businesses#spares-components' },
+      { label: 'CopterJet Ground Equipment', href: '/businesses#ground-equipment' },
+      { label: 'CopterJet Logistics', href: '/businesses#logistics' },
+      { label: 'CopterJet Asset Management', href: '/businesses#maintenance' },
+      { label: 'CopterJet Services', href: '/businesses#services' },
+      { label: 'CopterJet Leasing', href: '/businesses#leasing' },
+      { label: 'CopterJet Flight Operations', href: '/businesses#flight-operations' },
     ],
   },
   {
@@ -42,37 +42,38 @@ const navStructure: NavItem[] = [
       {
         heading: 'Aerospace Supply Chain & Technical',
         items: [
-          { label: 'Aircraft Spares, Components & Engines Sales', href: '/services/spares-engines' },
-          { label: 'Ground Equipment Procurement & Sales', href: '/services/ground-equipment' },
-          { label: 'Aircraft Acquisition & Sales', href: '/services/aircraft-sales' },
-          { label: 'Aircraft & Equipment Leasing Solutions', href: '/services/leasing' },
-          { label: 'Aircraft Appraisal & Valuation', href: '/services/appraisal' },
-          { label: 'Focused Aviation Procurement & Ancillary', href: '/services/procurement' },
+          { label: 'Aircraft Spares, Components & Engines Sales', href: '/services#spares-engines' },
+          { label: 'Ground Equipment Procurement & Sales', href: '/services#ground-equipment' },
+          { label: 'Aircraft Acquisition & Sales', href: '/services#aircraft-sales' },
+          { label: 'Aircraft & Equipment Leasing Solutions', href: '/services#leasing' },
+          { label: 'Aircraft Appraisal & Valuation', href: '/services#appraisal' },
+          { label: 'Focused Aviation Procurement & Ancillary', href: '/services#procurement' },
+          { label: 'Express Air Freight & Logistics', href: '/services#logistics' },
         ],
       },
       {
         heading: 'Airline & Helicopter Operations',
         items: [
-          { label: 'Jets & Helicopters Charter Services', href: '/services/charter' },
-          { label: 'Airline Joint Venture Operations', href: '/services/airline-jvo' },
-          { label: 'Aircraft Management', href: '/services/aircraft-mng' },
+          { label: 'Jets & Helicopters Charter Services', href: '/services#charter' },
+          { label: 'Airline Joint Venture Operations', href: '/services#airline-jvo' },
+          { label: 'Aircraft Management', href: '/services#aircraft-mng' },
         ],
       },
       {
         heading: 'Aviation Specialist Services',
         items: [
-          { label: 'Consultancy & Advisory', href: '/services/consultancy' },
-          { label: 'Infrastructure Development', href: '/services/infrastructure' },
-          { label: 'Business Intelligence Solutions', href: '/services/intelligence' },
-          { label: 'Aviation Risk Management & Financial Gatekeeping', href: '/services/risk' },
-          { label: 'Independent Audit Programmes', href: '/services/audit' },
+          { label: 'Consultancy & Advisory', href: '/services#consultancy' },
+          { label: 'Infrastructure Development', href: '/services#infrastructure' },
+          { label: 'Business Intelligence Solutions', href: '/services#intelligence' },
+          { label: 'Aviation Credit Risk Management & Financial Gatekeeping', href: '/services#risk' },
+          { label: 'Independent Audit Programmes', href: '/services#audit' },
         ],
       },
     ],
   },
-  { label: 'INSIGHTS', href: '/insights' },
+  { label: 'INDUSTRY INSIGHTS', href: '/insights' },
   { label: 'PARTNERSHIP', href: '/partnership' },
-  { label: 'CONTACT', href: '/contact' },
+  { label: 'CAREER', href: '/career' },
 ];
 
 export default function Navbar() {
@@ -80,6 +81,7 @@ export default function Navbar() {
   const [openMobileSub, setOpenMobileSub] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
+  // Update scrolled state based on window position
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -124,12 +126,12 @@ export default function Navbar() {
       >
         {/* ── Top Bar ── */}
         <div className="bg-copter-blue h-9">
-          <div className="max-w-[90rem] mx-auto px-4 sm:px-6 min-[960px]:px-12 h-full flex items-center justify-between">
+          <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 h-full flex items-center justify-between">
             <span className="hidden md:block text-[10px] font-semibold tracking-[0.2em] uppercase text-white">
               COPTERJET INTERNATIONAL GROUP
             </span>
             <div className="flex items-center gap-5 ml-auto">
-              {['News & Events', 'Gallery', 'Careers'].map(lbl => (
+              {['News & Events', 'Gallery', 'Contact Us'].map(lbl => (
                 <Link key={lbl} href={`/${lbl.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
                   className="hidden sm:block text-[10px] font-bold tracking-widest uppercase text-white hover:text-copter-red transition-colors duration-300"
                 >
@@ -158,26 +160,25 @@ export default function Navbar() {
         </div>
 
         {/* ── Main Nav ── */}
-        <nav 
+         <nav 
           className={`w-full relative z-50 transition-all duration-300 ${
             scrolled ? 'bg-white backdrop-blur-md shadow-[0_4px_24px_rgba(22,72,120,0.12)]' : 'bg-white shadow-[0_2px_8px_rgba(22,72,120,0.06)]'
           }`}
         >
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-copter-red" />
-
-          {/* Trigger point changed from lg to min-[960px] */}
-          <div className="max-w-[90rem] mx-auto px-6 min-[960px]:px-12 flex justify-between items-center h-[76px]">
-            <Link href="/" className="relative h-30 w-40 flex-shrink-0 block">
-              <Image src="/images/logo.png" alt="CopterJet International" fill className="object-contain object-left" priority />
+          <div className="max-w-[90rem] mx-auto px-4 xl:px-12 flex justify-between items-center h-[76px]">
+            {/* FIXED LOGO SIZING */}
+            <Link href="/" className="relative h-[40px] w-[180px] xl:h-[52px] xl:w-[235px] flex-shrink-0 block transition-all duration-300">
+              <Image src="/images/logo.png" alt="CopterJet International" fill sizes="(max-width: 1280px) 180px, 235px" className="object-contain object-left" priority />
             </Link>
-
-            {/* Desktop Links (Will now show safely at 980px desktop view) */}
-            <div className="hidden min-[750px]:flex items-center h-full">
+            {/* Desktop Links */}
+            <div className="hidden min-[900px]:flex items-center h-full">
               {navStructure.map(item => (
                 <div key={item.label} className="relative group h-full flex items-center">
                   <Link
                     href={item.href}
-                    className="relative flex items-center gap-1 h-full px-2.5 xl:px-4 text-[10.5px] xl:text-[11px] font-bold text-copter-blue tracking-wider hover:text-copter-red transition-colors duration-300 overflow-hidden"
+                    // FIXED SCATTERING: Dynamic padding, smaller font on lg screens, and whitespace-nowrap
+                    className="relative flex items-center gap-1 lg:gap-1.5 h-full px-2 xl:px-4 text-[9.5px] xl:text-[11px] font-bold text-copter-blue tracking-wide xl:tracking-wider hover:text-copter-red transition-colors duration-300 overflow-hidden whitespace-nowrap"
                   >
                     <span className="relative z-10">{item.label}</span>
                     {(item.subItems || item.megaMenu) && (
@@ -187,7 +188,6 @@ export default function Navbar() {
                     )}
                     <span className="absolute bottom-0 left-0 w-full h-[3px] bg-copter-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                   </Link>
-
                   {/* Standard dropdown */}
                   {item.subItems && !item.megaMenu && (
                     <div className="absolute top-full left-0 w-64 bg-white border-t-2 border-copter-red shadow-[0_12px_40px_rgba(22,72,120,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out origin-top z-50">
@@ -200,8 +200,7 @@ export default function Navbar() {
                       ))}
                     </div>
                   )}
-
-                  {/* Mega menu */}
+                  {/* Mega menu — Our Services */}
                   {item.megaMenu && (
                     <div className="absolute top-full left-1/2 -translate-x-1/2 w-[850px] bg-white border-t-2 border-copter-red shadow-[0_16px_48px_rgba(22,72,120,0.18)] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out origin-top z-50">
                       <div className="grid grid-cols-3 divide-x divide-gray-100">
@@ -235,20 +234,19 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-
-              {/* Action Buttons */}
-              <div className="ml-2 xl:ml-5 flex flex-col justify-center gap-1.5 h-[50px] border-l border-gray-100 pl-3 xl:pl-5">
-                <Link href="/rfp" className="bg-copter-blue text-white text-[9px] font-bold tracking-[0.15em] uppercase px-4 xl:px-6 py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm">
+              {/* Action Buttons: FIXED sizes to squeeze down on smaller screens */}
+              <div className="ml-2 xl:ml-5 flex flex-col justify-center gap-1 xl:gap-1.5 h-[50px] border-l border-gray-100 pl-2 xl:pl-5">
+                <Link href="/rfp" className="bg-copter-blue text-white text-[8px] xl:text-[9px] font-bold tracking-widest xl:tracking-[0.15em] uppercase px-3 xl:px-6 py-1 xl:py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm whitespace-nowrap">
                   SUBMIT RFP
                 </Link>
-                <Link href="/rfq" className="bg-copter-blue text-white text-[9px] font-bold tracking-[0.15em] uppercase px-4 xl:px-6 py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm">
+                <Link href="/rfq" className="bg-copter-blue text-white text-[8px] xl:text-[9px] font-bold tracking-widest xl:tracking-[0.15em] uppercase px-3 xl:px-6 py-1 xl:py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm whitespace-nowrap">
                   SUBMIT RFQ
                 </Link>
               </div>
             </div>
 
-            {/* Mobile hamburger (Will hide securely at 980px desktop view) */}
-            <button className="min-[960px]:hidden text-copter-blue p-2 focus:outline-none" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+            {/* Mobile hamburger */}
+            <button className="min-[900px]:hidden text-copter-blue p-2 focus:outline-none" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
               <div className="w-6 h-5 relative flex flex-col justify-between">
                 <span className={`w-full h-0.5 bg-current transform transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-[9px]' : ''}`} />
                 <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileOpen ? 'opacity-0 scale-x-0' : 'opacity-100'}`} />
@@ -258,7 +256,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu */}
-          <div className={`min-[960px]:hidden absolute w-full bg-white z-40 overflow-y-auto border-t border-gray-100 shadow-[0_12px_40px_rgba(22,72,120,0.15)] transition-all duration-500 ease-in-out origin-top ${mobileOpen ? 'max-h-[82vh] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
+          <div className={`min-[900px]:hidden absolute w-full bg-white z-40 overflow-y-auto border-t border-gray-100 shadow-[0_12px_40px_rgba(22,72,120,0.15)] transition-all duration-500 ease-in-out origin-top ${mobileOpen ? 'max-h-[82vh] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'}`}>
             <div className="flex flex-col text-copter-blue font-bold">
               {navStructure.map(item => (
                 <div key={item.label} className="flex flex-col border-b border-gray-50 last:border-0">
@@ -320,6 +318,7 @@ export default function Navbar() {
         </nav>
       </header>
 
+      {/* ── BUFFER TO PREVENT CONTENT JUMP ── */}
       <div className="pt-[112px]"></div>
 
       {/* ── FLOATING ACTION BUTTONS ── */}
@@ -333,10 +332,10 @@ export default function Navbar() {
           className="group flex items-center gap-3 cursor-pointer"
           aria-label="Chat on WhatsApp"
         >
-          {/* Chat Bubble Message */}
+          {/* Chat Bubble Message (Expands slightly on hover) */}
           <div className="bg-white text-gray-800 text-sm font-semibold px-4 py-2.5 rounded-2xl rounded-br-sm shadow-[0_4px_12px_rgba(0,0,0,0.15)] flex items-center gap-2 transform origin-right transition-all duration-300 group-hover:scale-105 border border-gray-100">
             <span className="text-base waving-hand">👋</span> 
-            <span>Hi, let's chat!</span>
+            <span>Hello! Need Help? Let's Chat...</span>
           </div>
 
           {/* Glowing WhatsApp Icon */}

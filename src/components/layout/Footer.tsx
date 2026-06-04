@@ -73,15 +73,26 @@ export default function Footer() {
           {/* Column 4: Address Card & Newsletter (Takes up 4 columns) */}
           <div className="lg:col-span-4 flex flex-col gap-10">
             
-            {/* Corporate Address Card */}
-             {/* Address & Map */}
-          <div className="lg:col-span-4">
-            <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Corporate Head Office <br /> (Administrative Wing)</h4>
-            <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-              Suite 202, 2nd Floor, Right Wing, Airport Business Hub, Murtala Muhammed Int'l Airport Business District, Int'l Airport Rd, Ikeja Lagos, Nigeria.
-            </p>
-            {/* Embedded Google Map */}
-          </div>
+            {/* Address & Contact */}
+            <div>
+              <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest">Corporate Head Office <br /> (Administrative Wing)</h4>
+              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                Suite 202, 2nd Floor, Right Wing, Airport Business Hub, Murtala Muhammed Int'l Airport Business District, Int'l Airport Rd, Ikeja Lagos, Nigeria.
+              </p>
+              
+              <div className="space-y-3 mt-6">
+                <div>
+                  <h5 className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-1">Enquiries</h5>
+                  <a href="mailto:Info@copterjetgroup.com" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">Info@copterjetgroup.com</a>
+                  <a href="mailto:info@copterjet.com.ng" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjet.com.ng</a>
+                </div>
+                <div>
+                  <h5 className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-1 mt-4">Telephone</h5>
+                  <a href="tel:+23491393447441" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">+234 913 934 47441</a>
+                  <a href="tel:+23491393447442" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">+234 913 934 47442</a>
+                </div>
+              </div>
+            </div>
 
             {/* Newsletter */}
             <div>

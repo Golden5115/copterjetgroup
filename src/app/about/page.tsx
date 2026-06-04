@@ -301,91 +301,131 @@ export default function AboutPage() {
         .wing-divider::after  { --dir: left; }
       `}</style>
 
-
-      {/* ════════════════════════════════════════════════════════
+ {/* ════════════════════════════════════════════════════════
           1. HERO — INTERTWINED MOTION GRAPHICS
       ════════════════════════════════════════════════════════ */}
       <section className="relative w-full h-[85svh] min-h-[650px] flex items-center justify-center overflow-hidden bg-[#030912]">
+        
+        {/* ── Background Image & Overlays ── */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#164878]/10 via-transparent to-[#C40E14]/10" />
+          <Image src="/images/hero-bg-2.1.jpg" alt="Aviation Backdrop" fill className="object-cover scale-105" priority />
+          {/* Heavy cinematic darkening */}
+          <div className="absolute inset-0 bg-[#030912]/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#030912] via-[#030912]/40 to-[#030912]" />
+          {/* Technical grid overlay */}
+          <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
         </div>
-        <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none overflow-hidden">
-          <h1 className={`outline-text font-bold tracking-tighter transition-all duration-1000 delay-300 ${heroVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>COPTERJET</h1>
-        </div>
+        {/* ── Motion Graphics (Planes & Copters) ── */}
         <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden"><div className="anim-plane"><PlaneIcon /></div></div>
         <div className="absolute inset-0 z-[3] pointer-events-none overflow-hidden"><div className="anim-copter"><HelicopterIcon /></div></div>
+        
+        {/* Decorative Floating Geometry */}
         <div className="absolute inset-0 z-[4] pointer-events-none" aria-hidden="true">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="absolute bg-white/10" style={{ left: `${10 + (i * 12)}%`, top: `${20 + (i * 15) % 60}%`, width: i % 2 === 0 ? '4px' : '2px', height: i % 2 === 0 ? '4px' : '15px', animation: `floatGeo ${6 + i}s ease-in-out ${i}s infinite` }} />
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div key={i} className="absolute bg-white/20 blur-[1px]" style={{ left: `${5 + (i * 8)}%`, top: `${10 + (i * 23) % 80}%`, width: i % 3 === 0 ? '6px' : '2px', height: i % 3 === 0 ? '6px' : '20px', animation: `floatGeo ${8 + i}s ease-in-out ${i * 0.5}s infinite` }} />
           ))}
         </div>
-        <div className="relative z-[10] w-full max-w-[90rem] mx-auto px-6 lg:px-12 flex flex-col items-center text-center mt-10">
-          <div className={`flex items-center gap-4 mb-8 transition-all duration-700 delay-500 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <div className="w-12 h-[2px] bg-copter-red" />
-            <span className="text-white font-bold tracking-[0.3em] text-[11px] uppercase drop-shadow-md">Discover Our Identity</span>
-            <div className="w-12 h-[2px] bg-copter-red" />
+        {/* ── Main Typography Content ── */}
+        <div className="relative z-[10] w-full max-w-[90rem] mx-auto px-6 lg:px-12 flex flex-col items-center text-center mt-12">
+          
+          {/* Top Label */}
+          <div className={`inline-flex items-center gap-3 mb-8 px-6 py-2.5 border border-white/10 bg-white/5 backdrop-blur-md rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-700 delay-300 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
+            <span className="text-white font-bold tracking-[0.25em] text-[10px] uppercase pt-px">Discover Our Identity</span>
           </div>
-          <h1 className="mb-8" style={{ perspective: '1000px' }}>
-            {heroLines.map((line, i) => (
-              <span key={i} className="block overflow-hidden pb-2">
-                <span className={`block text-4xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.1] tracking-tight drop-shadow-xl ${heroVisible ? 'hero-line-visible' : 'hero-line-hidden'}`} style={{ animationDelay: `${700 + i * 200}ms`, color: i === 1 ? '#C40E14' : 'white' }}>
-                  {line}
-                </span>
-              </span>
-            ))}
+          {/* Headline */}
+          <h1 className="mb-6 relative">
+            <span className={`block text-4xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-white mb-2 ${heroVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
+              Shaping the Future
+            </span>
+            <span className={`block text-4xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d4d] to-[#990b0f] italic pr-4 ${heroVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '700ms' }}>
+              of African Aviation.
+            </span>
           </h1>
-          <p className={`text-white/80 text-base md:text-lg max-w-2xl leading-relaxed font-medium drop-shadow-md transition-all duration-1000 delay-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          {/* Description */}
+          <p className={`text-white/60 text-base md:text-lg max-w-2xl leading-[1.8] font-medium transition-all duration-1000 delay-1000 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
             A fully integrated aviation specialist services firm committed to advancing Africa&apos;s aerospace supply chain and operational ecosystem.
           </p>
+          {/* Glowing Line Separator */}
+          <div className={`mt-16 w-px h-24 bg-gradient-to-b from-copter-red via-copter-red/50 to-transparent transition-all duration-1000 delay-[1200ms] ${heroVisible ? 'scale-y-100' : 'scale-y-0'} origin-top`} />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-[5]" />
-        <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-[15] flex flex-col items-center gap-1.5 transition-all duration-700 delay-[2000ms] ${heroVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <span className="text-copter-blue font-bold tracking-[0.3em] uppercase text-[8px]">Scroll</span>
-          <div className="scroll-indicator text-copter-red"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg></div>
-        </div>
+        {/* ── Bottom Gradient Fade ── */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#030912] to-transparent z-[5]" />
       </section>
 
-      {/* ════════════════════════════════════════════════════════
-          2. WHO WE ARE
+    {/* ════════════════════════════════════════════════════════
+          2. WHO WE ARE — Floating Cinematic Glass
       ════════════════════════════════════════════════════════ */}
-      <section ref={whoWeAre.ref} className="py-24 lg:py-36 max-w-[90rem] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          <div className="lg:col-span-5">
-            <div className={`${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '100ms' }}>
-              <div className="wing-divider mb-8 max-w-[200px]">
-                <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-2">Who We Are</span>
-              </div>
-              <h2 className="text-3xl lg:text-[2.8rem] text-copter-blue font-bold leading-[1.15] mb-8 tracking-tight">
-                A fully integrated aviation specialist services firm.
-              </h2>
+      <section id="who-we-are" ref={whoWeAre.ref} className="relative py-16 lg:py-24 bg-[#030912] overflow-hidden group">
+        
+        {/* ── Background Image Layer ── */}
+        <div className={`absolute right-0 top-0 w-full lg:w-[85%] h-full transition-all duration-[2s] cubic-bezier(0.22, 1, 0.36, 1) ${whoWeAre.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
+          <div className="relative w-full h-full overflow-hidden">
+            <Image 
+              src="/images/hero-bg-2.1.jpg" 
+              alt="CopterJet Operations" 
+              fill 
+              sizes="100vw"
+              className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[4s] ease-out" 
+            />
+            {/* Blend gradients */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#030912] via-[#030912]/80 to-transparent lg:via-[#030912]/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030912] via-transparent to-[#030912]" />
+            <div className="absolute inset-0 bg-copter-blue/20 mix-blend-multiply" />
+            
+            {/* Animated High-Tech Grid */}
+            <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '120px 120px' }} />
+          </div>
+        </div>
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          
+          {/* ── Frosted Glass Text Panel ── */}
+          <div 
+            className={`relative max-w-xl bg-[white]/85 backdrop-blur-xl border border-white/5 p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-all duration-[1.5s] cubic-bezier(0.22, 1, 0.36, 1) ${
+              whoWeAre.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-24'
+            }`}
+          >
+            {/* Premium Decorative Corners */}
+            <div className="absolute -top-[1px] -left-[1px] w-12 h-12 border-t-[3px] border-l-[3px] border-copter-red" />
+            <div className="absolute -bottom-[1px] -right-[1px] w-12 h-12 border-b-[3px] border-r-[3px] border-white/20 group-hover:border-copter-blue transition-colors duration-700" />
+            
+            {/* Label */}
+            <div className={`flex items-center gap-4 mb-8 ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '300ms' }}>
+              <div className="w-10 h-[2px] bg-copter-red" />
+              <span className="text-copter-red font-bold tracking-[0.25em] text-[10px] uppercase">Who We Are</span>
             </div>
-            <div className={`${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '300ms' }}>
-              <p className="text-[15px] text-copter-grey leading-[1.8] mb-6 font-medium text-justify">
-                Copterjet International is a fully integrated aviation specialist services firm committed to advancing Africa&apos;s aerospace supply chain and operational ecosystem. With expertise spanning aviation supply chain, aviation logistics, aircraft operations, maintenance coordination, aircraft acquisition &amp; sales, consultancy, infrastructure development, project management, and asset management, we deliver innovative and reliable solutions.
+            {/* Headline */}
+            <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-copter-blue leading-[1.1] mb-8 tracking-tight ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '450ms' }}>
+              Integrated Aviation <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d] italic pr-2">Excellence.</span>
+            </h2>
+            
+            {/* Body Text */}
+            <div className={`space-y-6 mb-12 ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '600ms' }}>
+              <p className="text-copter-blue text-[15px] md:text-base leading-[1.85] font-medium text-justify">
+                Copterjet International is a fully integrated aviation specialist services firm committed to advancing Africa&apos;s aerospace supply chain and operational ecosystem. With expertise spanning aviation supply chain, logistics, aircraft operations, maintenance coordination, aircraft acquisition &amp; sales, consultancy, infrastructure development, project management, and asset management, we deliver innovative and reliable solutions.
               </p>
-              <p className="text-[15px] text-copter-grey leading-[1.8] text-justify">
+              <p className="text-copter-blue text-[15px] md:text-base leading-[1.85] text-justify">
                 Through excellence, strategic partnerships, and adaptive operational frameworks, we are shaping the future of aviation across Africa.
               </p>
             </div>
-            <div className={`mt-10 flex items-center gap-6 ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
-              <div className="w-[3px] h-16 bg-copter-red rounded-full" />
-              <div>
-                <span className="text-3xl font-bold text-copter-blue">15+</span>
-                <p className="text-[11px] text-copter-grey font-medium tracking-wide uppercase mt-1">Years of Aviation Excellence</p>
-              </div>
-            </div>
-          </div>
-          <div className="lg:col-span-7 relative">
-            <div className="relative h-[500px] lg:h-[650px] w-full">
-              {whoWeAre.isVisible && (
-                <div className="absolute inset-0 reveal-right overflow-hidden shadow-2xl">
-                  <Image src="/images/who-we-are4.jpg" alt="CopterJet Operations" fill quality={90} className="object-cover object-center transform transition-transform duration-[12s] hover:scale-105" />
-                  <div className="absolute inset-0 bg-copter-blue/10 mix-blend-multiply" />
+            {/* Metrics Footer */}
+            <div className={`flex items-center justify-between pt-8 border-t border-white/10 ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '750ms' }}>
+              <div className="flex gap-8 md:gap-12">
+                <div>
+                  <div className="text-2xl font-bold text-copter-blue">15<span className="text-copter-red">+</span></div>
+                  <div className="text-[9px] text-copter-blue font-bold tracking-[0.2em] uppercase mt-1">Years</div>
                 </div>
-              )}
-              <div className={`absolute -top-4 -right-4 w-full h-full border-2 border-copter-red/15 transition-all duration-1000 delay-700 ${whoWeAre.isVisible ? 'opacity-100' : 'opacity-0'}`} />
-              <div className={`absolute -bottom-6 -left-6 w-28 h-28 bg-copter-red z-10 transition-all duration-1000 delay-700 ${whoWeAre.isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} style={{ clipPath: 'polygon(0 0, 100% 100%, 0 100%)' }} />
+                <div>
+                  <div className="text-2xl font-bold text-copter-blue">200<span className="text-copter-red">+</span></div>
+                  <div className="text-[9px] text-copter-blue font-bold tracking-[0.2em] uppercase mt-1">Operations</div>
+                </div>
+              </div>
+              
+              <div className="hidden md:flex items-center gap-3 opacity-50">
+                <div className="w-1.5 h-1.5 bg-copter-blue rounded-full animate-pulse" />
+                <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-copter-blue">Global Reach</span>
+              </div>
             </div>
           </div>
         </div>
@@ -394,20 +434,37 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════════════════
           3. STATS BAR
       ════════════════════════════════════════════════════════ */}
-      <section ref={stats.ref} className="relative py-20 bg-copter-blue overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
-            {statItems.map((stat, idx) => (
-              <div key={idx} className={`text-center relative group ${stats.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: `${idx * 150}ms` }}>
-                {idx > 0 && <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-12 bg-white/10" />}
-                <div className="counter-glow">
-                  <span className="text-4xl lg:text-5xl font-bold text-white tracking-tight"><AnimatedCounter target={stat.value} suffix={stat.suffix} /></span>
+      <section ref={stats.ref} className="relative py-10 lg:py-12 bg-[#030912] z-20">
+        <div className="max-w-[80rem] mx-auto px-6 lg:px-12">
+          
+          <div className={`relative bg-gradient-to-r from-[#0a1220] via-[#0c1628] to-[#0a1220] border border-white/5 p-6 lg:p-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] ${stats.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
+            
+            {/* Premium Corner Accents */}
+            <div className="absolute -top-[1px] -left-[1px] w-12 h-12 border-t-[3px] border-l-[3px] border-copter-red" />
+            <div className="absolute -bottom-[1px] -right-[1px] w-12 h-12 border-b-[3px] border-r-[3px] border-white/20" />
+            
+            {/* Subtle glow behind the card */}
+            <div className="absolute inset-0 bg-copter-blue/5 blur-[50px] -z-10" />
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 divide-x-0 lg:divide-x divide-white/10">
+              {statItems.map((stat, idx) => (
+                <div key={idx} className="text-center group relative">
+                  {/* Glowing Counter */}
+                  <div className="counter-glow inline-block mb-3">
+                    <span className="text-3xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 tracking-tight leading-none drop-shadow-md">
+                      <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                    </span>
+                  </div>
+                  
+                  {/* Label */}
+                  <p className="text-[10px] text-white/50 font-bold tracking-[0.25em] uppercase">
+                    {stat.label}
+                  </p>
+                  
+                  {/* Expanding Hover Line */}
+                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-copter-red/40 group-hover:bg-copter-red group-hover:w-16 transition-all duration-700 ease-out" />
                 </div>
-                <p className="text-[10px] text-white/50 font-bold tracking-[0.2em] uppercase mt-3">{stat.label}</p>
-                <div className="w-6 h-[2px] bg-copter-red mx-auto mt-4 group-hover:w-12 transition-all duration-500" />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -415,7 +472,7 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════════════════
           4. OUR HISTORY (Sticky Layout + Flight Path)
       ════════════════════════════════════════════════════════ */}
-      <section ref={history.ref} className="relative py-32 lg:py-44 bg-[#030912] overflow-hidden">
+      <section id="history" ref={history.ref} className="relative py-20 lg:py-28 bg-[#030912] overflow-hidden">
         <div className={`absolute inset-0 transition-opacity duration-[2000ms] ${history.isVisible ? 'opacity-25' : 'opacity-0'}`}>
           <Image src="/images/hero-bg-2.7.jpg" alt="" fill className="object-cover object-center grayscale" />
           <div className="absolute inset-0 bg-[#030912]/85" />
@@ -434,7 +491,7 @@ export default function AboutPage() {
                     <div className="w-12 h-[2px] bg-copter-red" />
                     <span className="text-copter-red font-bold tracking-[0.2em] text-[10px] uppercase">Our History</span>
                   </div>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-8">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-8">
                     Rooted in <br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d]">Purpose.</span>
                   </h2>
@@ -450,23 +507,23 @@ export default function AboutPage() {
               {/* Animated Flight Path Line */}
               <div className={`absolute left-4 md:left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-copter-red via-copter-red/20 to-transparent origin-top ${history.isVisible ? 'history-line-draw' : 'opacity-0'}`} />
 
-              <div className="space-y-24 pl-14 md:pl-24">
+              <div className="space-y-16 pl-10 md:pl-16">
                 <div className={`relative ${history.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '300ms' }}>
-                  <div className="absolute -left-[45px] md:-left-[69px] top-2 w-3.5 h-3.5 rounded-full bg-[#030912] border-[2px] border-copter-red shadow-[0_0_15px_rgba(196,14,20,0.8)]" />
+                  <div className="absolute -left-[30px] md:-left-[38px] top-2 w-3.5 h-3.5 rounded-full bg-[#030912] border-[2px] border-copter-red shadow-[0_0_15px_rgba(196,14,20,0.8)]" />
                   <p className="text-xl lg:text-2xl text-white/90 leading-[1.7] font-medium italic">
                     &ldquo;Copterjet&apos;s foundation is rooted in divine purpose and a shared vision for transforming Africa&apos;s aviation landscape with God as the centre of our existence and everything we do.&rdquo;
                   </p>
                 </div>
 
                 <div className={`relative ${history.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
-                  <div className="absolute -left-[45px] md:-left-[69px] top-2 w-3.5 h-3.5 rounded-full bg-[#030912] border-[2px] border-white/40" />
+                  <div className="absolute -left-[30px] md:-left-[38px] top-2 w-3.5 h-3.5 rounded-full bg-[#030912] border-[2px] border-white/40" />
                   <p className="text-[16px] text-white/60 leading-[1.9] text-justify">
                     We believe that coming together marked the beginning, staying together has strengthened our progress, and working together continues to drive our success. Founded to bridge operational and infrastructure gaps within the aviation industry, Copterjet International has evolved into a trusted aviation services and solutions provider.
                   </p>
                 </div>
 
                 <div className={`relative ${history.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '700ms' }}>
-                   <div className="absolute -left-[45px] md:-left-[69px] top-2 w-3.5 h-3.5 rounded-full bg-[#030912] border-[2px] border-white/40" />
+                   <div className="absolute -left-[30px] md:-left-[38px] top-2 w-3.5 h-3.5 rounded-full bg-[#030912] border-[2px] border-white/40" />
                   <p className="text-[16px] text-white/60 leading-[1.9] text-justify">
                     Through strategic partnerships, industry expertise, and an unwavering commitment to innovation and sustainable growth, we continue to expand our global footprint across aviation supply chain management, flight operations, technical services, and infrastructure development across Africa and beyond.
                   </p>
@@ -482,14 +539,14 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════════════════
           6. OUR PEOPLE INTRO
       ════════════════════════════════════════════════════════ */}
-      <section ref={people.ref} className="pt-28 lg:pt-36 pb-12 bg-[#f8fafc] relative overflow-hidden">
+      <section id="people" ref={people.ref} className="pt-20 lg:pt-24 pb-8 bg-[#f8fafc] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #164878 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
           <div className={`${people.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
             <div className="wing-divider mb-6 max-w-[220px] mx-auto">
               <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-2">Our People</span>
             </div>
-            <h2 className="text-3xl lg:text-[2.8rem] text-copter-blue font-bold leading-[1.15] mb-8 tracking-tight">
+            <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold leading-[1.15] mb-8 tracking-tight">
               The strength behind<br />our operations.
             </h2>
             <p className="text-[15px] text-copter-grey leading-[1.9] font-medium max-w-2xl mx-auto">
@@ -502,7 +559,7 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════════════════
           7. MANAGEMENT TEAM
       ════════════════════════════════════════════════════════ */}
-      <section ref={management.ref} className="py-20 bg-[#f8fafc]">
+      <section id="management" ref={management.ref} className="py-12 lg:py-16 bg-[#f8fafc]">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className={`${management.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'} mb-16 max-w-3xl`}>
             <div className="flex items-center gap-4 mb-6">
@@ -524,7 +581,7 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════════════════
           8. BOARD OF DIRECTORS
       ════════════════════════════════════════════════════════ */}
-      <section ref={board.ref} className="py-20 pb-28 bg-[#f8fafc]">
+      <section id="board" ref={board.ref} className="py-12 pb-20 lg:py-16 lg:pb-24 bg-[#f8fafc]">
         <div className="absolute left-6 right-6 lg:left-12 lg:right-12 h-[1px] bg-gradient-to-r from-transparent via-copter-blue/10 to-transparent" />
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
           <div className={`${board.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'} mb-16 max-w-3xl`}>
@@ -547,12 +604,12 @@ export default function AboutPage() {
         {/* ════════════════════════════════════════════════════════
           5. OUR VALUES (Bento Grid)
       ════════════════════════════════════════════════════════ */}
-      <section ref={values.ref} className="relative py-32 bg-[#060e1a] overflow-hidden">
+      <section ref={values.ref} className="relative py-20 lg:py-24 bg-[#060e1a] overflow-hidden">
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className={`text-center mb-20 ${values.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">The Principles That <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d]">Drive Us</span></h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">The Principles That <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d]">Drive Us</span></h2>
             <p className="text-white/50 text-[16px] max-w-2xl mx-auto leading-relaxed font-medium">
               Our values form the foundation upon which we build lasting partnerships and deliver operational excellence.
             </p>
@@ -561,7 +618,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Integrity (Span 2) */}
-            <div className={`md:col-span-2 group relative bg-[#0a1220] border border-white/5 p-10 lg:p-14 overflow-hidden hover:border-copter-red/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '100ms' }}>
+            <div className={`md:col-span-2 group relative bg-[#0a1220] border border-white/5 p-8 lg:p-10 overflow-hidden hover:border-copter-red/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '100ms' }}>
               <div className="absolute -right-10 -bottom-10 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:rotate-12 transition-all duration-1000">
                 <svg className="w-96 h-96 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={valuesData.integrity.icon} /></svg>
               </div>
@@ -575,7 +632,7 @@ export default function AboutPage() {
             </div>
 
             {/* Innovation (Span 1) */}
-            <div className={`md:col-span-1 group relative bg-[#0a1220] border border-white/5 p-10 overflow-hidden hover:border-copter-blue/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '250ms' }}>
+            <div className={`md:col-span-1 group relative bg-[#0a1220] border border-white/5 p-8 overflow-hidden hover:border-copter-blue/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '250ms' }}>
               <div className="absolute -right-6 -top-6 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-1000">
                 <svg className="w-64 h-64 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={valuesData.innovation.icon} /></svg>
               </div>
@@ -591,7 +648,7 @@ export default function AboutPage() {
             </div>
 
             {/* Excellence (Span 1) */}
-            <div className={`md:col-span-1 group relative bg-[#0a1220] border border-white/5 p-10 overflow-hidden hover:border-copter-blue/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '400ms' }}>
+            <div className={`md:col-span-1 group relative bg-[#0a1220] border border-white/5 p-8 overflow-hidden hover:border-copter-blue/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '400ms' }}>
               <div className="absolute -left-6 -bottom-6 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:rotate-12 transition-all duration-1000">
                 <svg className="w-64 h-64 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={valuesData.excellence.icon} /></svg>
               </div>
@@ -607,7 +664,7 @@ export default function AboutPage() {
             </div>
 
             {/* Partnership (Span 2) */}
-            <div className={`md:col-span-2 group relative bg-[#0a1220] border border-white/5 p-10 lg:p-12 overflow-hidden hover:border-copter-red/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '550ms' }}>
+            <div className={`md:col-span-2 group relative bg-[#0a1220] border border-white/5 p-8 lg:p-10 overflow-hidden hover:border-copter-red/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '550ms' }}>
                <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 transition-all duration-1000">
                 <svg className="w-80 h-80 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={valuesData.partnership.icon} /></svg>
               </div>
@@ -629,26 +686,26 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════════════════
           9. CORPORATE GOVERNANCE
       ════════════════════════════════════════════════════════ */}
-      <section ref={governance.ref} className="py-28 bg-white relative overflow-hidden">
+      <section id="governance" ref={governance.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className={`relative overflow-hidden rounded-sm ${governance.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
             <div className="absolute inset-0 bg-gradient-to-br from-copter-blue via-[#1a5080] to-[#0c2d4d]" />
             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
-            <div className="relative z-10 p-10 lg:p-20 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+            <div className="relative z-10 p-8 lg:p-14 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
               <div className={`flex-shrink-0 ${governance.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '200ms' }}>
                 <div className="relative">
-                  <div className="w-36 h-36 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center border border-white/10 shadow-[0_0_20px_rgba(196,14,20,0.2)]">
-                    <div className="w-28 h-28 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                      <svg className="w-12 h-12 text-copter-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                  <div className="w-28 h-28 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center border border-white/10 shadow-[0_0_20px_rgba(196,14,20,0.2)]">
+                    <div className="w-20 h-20 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                      <svg className="w-10 h-10 text-copter-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className={`${governance.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '400ms' }}>
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">Corporate Governance<br />Framework</h2>
+                <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 tracking-tight">Corporate Governance<br />Framework</h2>
                 <p className="text-white/60 text-[15px] leading-[1.9] text-justify">
                   At Copterjet, strong corporate governance forms the foundation of our operations and stakeholder relationships. Our governance framework is built on transparency, accountability, regulatory compliance, ethical business practices, and risk management. Through disciplined oversight and operational integrity, we maintain the highest standards of professionalism while fostering sustainable growth and long-term value creation.
                 </p>

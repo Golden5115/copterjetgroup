@@ -28,13 +28,8 @@ const PARTICLES = Array.from({ length: 22 }, (_, i) => {
 });
 
 // ─────────────────────────────────────────────────────────────
-// Per-slide HUD data (African aviation hubs)
+// Weather HUD Data (Live from Open-Meteo)
 // ─────────────────────────────────────────────────────────────
-const SLIDE_HUD = [
-  { city: 'LAGOS, NG',   lat: '06.5244°N', lng: '03.3792°E', hdg: '090' },
-  { city: 'NAIROBI, KE', lat: '01.2921°S', lng: '36.8219°E', hdg: '185' },
-  { city: 'ACCRA, GH',   lat: '05.6037°N', lng: '00.1870°W', hdg: '270' },
-];
 
 // ─────────────────────────────────────────────────────────────
 // Feature data — each icon gets a semantically meaningful color
@@ -185,10 +180,36 @@ function HelicopterIcon() {
 // ─────────────────────────────────────────────────────────────
 // HUD Panel
 // ─────────────────────────────────────────────────────────────
-function HudPanel({ slideIndex, total }: { slideIndex: number; total: number }) {
-  const hud = SLIDE_HUD[slideIndex] ?? SLIDE_HUD[0];
-  const num = String(slideIndex + 1).padStart(2, '0');
-  const tot = String(total).padStart(2, '0');
+function HudPanel() {
+  const [weather, setWeather] = useState<{ temp: number; wind: number; hdg: number; desc: string } | null>(null);
+
+  useEffect(() => {
+    // Fetch live weather for Lagos
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=6.5244&longitude=3.3792&current_weather=true')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.current_weather) {
+          const w = data.current_weather;
+          const codes: Record<number, string> = {
+            0: 'CLEAR SKY', 1: 'MAINLY CLEAR', 2: 'PARTLY CLOUDY', 3: 'OVERCAST',
+            45: 'FOG', 48: 'DEPOSITING RIME FOG', 51: 'LIGHT DRIZZLE', 53: 'MODERATE DRIZZLE', 
+            55: 'DENSE DRIZZLE', 61: 'SLIGHT RAIN', 63: 'MODERATE RAIN', 65: 'HEAVY RAIN',
+            71: 'SLIGHT SNOW', 80: 'SLIGHT SHOWERS', 81: 'MODERATE SHOWERS', 82: 'VIOLENT SHOWERS',
+            95: 'THUNDERSTORM'
+          };
+          setWeather({
+            temp: w.temperature,
+            wind: w.windspeed,
+            hdg: w.winddirection,
+            desc: codes[w.weathercode] || 'CLEAR SKY'
+          });
+        }
+      })
+      .catch(() => {
+        // Fallback
+        setWeather({ temp: 30, wind: 12, hdg: 90, desc: 'PARTLY CLOUDY' });
+      });
+  }, []);
 
   return (
     <div className="hud-panel" aria-hidden="true">
@@ -196,22 +217,19 @@ function HudPanel({ slideIndex, total }: { slideIndex: number; total: number }) 
         {[1,2,3,4,5].map(b => (
           <div key={b} className="hud-bar" style={{ height: `${b * 3 + 2}px`, animationDelay: `${b * 0.15}s` }} />
         ))}
-        <span className="hud-label-sm ml-1.5">SIG</span>
+        <span className="hud-label-sm ml-1.5">LIVE</span>
       </div>
       <div className="hud-row">
-        <span className="hud-label-sm">HDG</span>
-        <span className="hud-value" key={`hdg-${slideIndex}`}>{hud.hdg}°</span>
+        <span className="hud-label-sm">WIND</span>
+        <span className="hud-value">{weather ? `${weather.wind} KM/H` : '--'}</span>
       </div>
       <div className="hud-divider" />
-      <div className="hud-city" key={`city-${slideIndex}`}>{hud.city}</div>
-      <div className="hud-coords" key={`coords-${slideIndex}`}>{hud.lat} &nbsp;·&nbsp; {hud.lng}</div>
+      <div className="hud-city">LAGOS, NG</div>
+      <div className="hud-coords">{weather ? `${weather.temp}°C · ${weather.desc}` : 'FETCHING...'}</div>
       <div className="hud-divider" />
-      <div className="hud-counter">
-        <div className="hud-flip" style={{ perspective: '120px' }}>
-          <span className="hud-flip-num" key={`num-${slideIndex}`}>{num}</span>
-        </div>
-        <span className="hud-label-sm mx-1">/</span>
-        <span className="hud-label-sm">{tot}</span>
+      <div className="hud-row">
+         <span className="hud-label-sm">WND DIR</span>
+         <span className="hud-value">{weather ? `${weather.hdg}°` : '---'}</span>
       </div>
     </div>
   );
@@ -501,7 +519,7 @@ export default function HeroSection() {
 
         {/* HUD */}
         <div className="absolute top-6 right-6 lg:top-8 lg:right-10 pointer-events-none" style={{ zIndex: 25 }} aria-hidden="true">
-          <HudPanel slideIndex={currentSlide} total={slides.length} />
+          <HudPanel />
         </div>
 
         {/* Text content */}
