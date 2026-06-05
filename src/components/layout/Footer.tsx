@@ -24,8 +24,8 @@ export default function Footer() {
             <Link href="/" className="text-2xl font-bold text-white tracking-widest mb-6 block uppercase">
               CopterJet International Group
             </Link>
-            <p className="text-gray-300 text-sm leading-relaxed mb-8 pr-4">
-              A fully integrated aviation specialist service firm designed to bridge structural and financial gaps in the regional and global aviation industry.
+            <p className="text-gray-300 text-sm leading-relaxed mb-8 pr-4"> 
+              A fully integrated aviation and aerospace enterprise established to transform Africa's aviation landscape by bridging critical supply chain and operational gaps, enabling safer, more efficient, and sustainable air transport across the continent..
             </p>
             
             {/* Social Icons - Brand Colors */}
@@ -83,7 +83,7 @@ export default function Footer() {
               <div className="space-y-3 mt-6">
                 <div>
                   <h5 className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-1">Enquiries</h5>
-                  <a href="mailto:Info@copterjetgroup.com" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">Info@copterjetgroup.com</a>
+                  <a href="mailto:info@copterjetgroup.com" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjetgroup.com</a>
                   <a href="mailto:info@copterjet.com.ng" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjet.com.ng</a>
                 </div>
                 <div>
