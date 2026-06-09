@@ -155,6 +155,8 @@ function TeamCard({ member, index, isVisible }: { member: { name: string; role: 
 
 export default function AboutPage() {
   const [heroVisible, setHeroVisible] = useState(false);
+  const [ceoBioExpanded, setCeoBioExpanded] = useState(false);
+  const [cfoBioExpanded, setCfoBioExpanded] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 150);
@@ -167,15 +169,15 @@ export default function AboutPage() {
   const history = useInView({ threshold: 0.2 });
   const values = useInView({ threshold: 0.15 });
   const people = useInView({ threshold: 0.1 });
+  const ceo = useInView({ threshold: 0.05 });
+  const cfo = useInView({ threshold: 0.05 });
   const management = useInView({ threshold: 0.05 });
   const board = useInView({ threshold: 0.05 });
   const governance = useInView({ threshold: 0.15 });
 
   // Data
   const managementTeam = [
-    { name: "Pending Name", role: "Chief Executive Officer", image: "" },
     { name: "Pending Name", role: "Chief Operating Officer", image: "" },
-    { name: "Pending Name", role: "Chief Financial Officer", image: "" },
     { name: "Pending Name", role: "Director of Aviation", image: "" },
   ];
   const boardMembers = [
@@ -190,12 +192,44 @@ export default function AboutPage() {
     { value: 200, suffix: '+', label: 'Successful Operations' },
   ];
   
-  const valuesData = {
-    integrity: { icon: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z', title: 'Integrity', desc: 'Our operations are anchored in transparency, ethical conduct, and unwavering trust across every engagement.' },
-    innovation: { icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z', title: 'Innovation', desc: 'We continuously pursue advanced solutions that redefine operational efficiency and industry standards.' },
-    excellence: { icon: 'M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z', title: 'Excellence', desc: 'Every service, solution, and partnership is delivered with the highest standards of quality and precision.' },
-    partnership: { icon: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z', title: 'Partnership', desc: 'We build enduring alliances that multiply value across Africa\'s aviation ecosystem and beyond.' }
-  };
+  const coreValues = [
+    {
+      title: 'Commitment',
+      desc: 'We are focused and proactive in styles….',
+      icon: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+      color: 'red'
+    },
+    {
+      title: 'Safety',
+      desc: 'We are firm on compliance to safety standards, therefore, we maintain strong commitments to safety initiatives at all times.',
+      icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z',
+      color: 'blue'
+    },
+    {
+      title: 'Quality',
+      desc: 'We pride our brand in its efficient delivery of quality services through a clever blend of our unique business processes.',
+      icon: 'M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z',
+      color: 'blue'
+    },
+    {
+      title: 'Excellence',
+      desc: 'Always doing what we say we will, and striving for excellence in everything we do.',
+      icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
+      color: 'red'
+    },
+    {
+      title: 'Honesty',
+      desc: 'At all times we act with full integrity in providing quality services, being reliable and responsible in all our dealings.',
+      icon: 'M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z',
+      color: 'blue'
+    },
+    {
+      title: 'Team Spirit',
+      desc: 'We continually provide supports to one another within the group, working cooperatively, respecting one another’s views and making our work environment fun, enjoyable and inspiring.',
+      icon: 'M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z',
+      color: 'red'
+    }
+  ];
 
   const heroLines = ['Shaping the Future', 'of African Aviation.'];
 
@@ -557,6 +591,197 @@ export default function AboutPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
+          6.5. FOUNDER & CEO
+      ════════════════════════════════════════════════════════ */}
+      <section id="ceo" ref={ceo.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
+            {/* Left Column: Image & Sticky Title */}
+            <div className="lg:w-4/12">
+              <div className="sticky top-32">
+                <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${ceo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
+                  <Image 
+                    src="/images/ceo.jpg" 
+                    alt="Capt. Toluwa V. Olorunyomi" 
+                    fill 
+                    className="object-cover object-[center_top]"
+                  />
+                  {/* Subtle brand overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+                </div>
+                
+                <div className={`${ceo.isVisible ? 'smooth-right-visible' : 'smooth-right-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
+                    Capt. Toluwa V.<br />Olorunyomi
+                  </h3>
+                  <p className="text-copter-red font-bold uppercase tracking-[0.2em] text-[11px] mb-8">
+                    Founder & Group Chief Executive
+                  </p>
+
+                  <div className="bg-[#f8fafc] border-l-[3px] border-copter-red p-6 lg:p-8 rounded-r-xl shadow-sm relative">
+                    <svg className="absolute top-4 left-4 w-8 h-8 text-copter-blue/10 transform -scale-x-100" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p className="text-copter-blue/90 italic font-semibold leading-[1.8] text-[15px] relative z-10 pl-4">
+                      "Knowledge acquisition through continuous personal development is non-negotiable."
+                    </p>
+                    <p className="text-[9px] text-copter-red font-bold uppercase tracking-[0.15em] mt-4 pl-4">
+                      — Personal Mantra
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Bio Details */}
+            <div className="lg:w-8/12 lg:pt-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-[2px] bg-copter-red" />
+                <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
+              </div>
+              
+              <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${ceo.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
+                <p>
+                  <strong className="text-copter-blue">Capt. Toluwa V. Olorunyomi</strong> is the Founder and Group Chief Executive Officer of Copterjet International Group, a diversified aviation and specialist services organisation focused on advancing Africa&apos;s aerospace, aviation, supply chain & logistics, and infrastructure ecosystem. He is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
+                </p>
+                <p>
+                  Widely regarded as a visionary entrepreneur, Capt. Olorunyomi has distinguished himself through the development of innovative business models and strategic initiatives that promote transparency, efficiency, and sustainability across the aviation sector. Through his leadership at Copterjet International Group, he has been instrumental in driving solutions across aviation leasing, aircraft acquisitions and sales, airline and helicopter joint venture operations, public-private partnerships, aviation and aerospace infrastructure development, project financing, and specialist aviation advisory services.
+                </p>
+                <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${ceoBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    <div className="space-y-6 pt-6">
+                      <p>
+                        A professionally trained commercial pilot and Airline Transport Pilot, Capt. Olorunyomi obtained his commercial pilot licence and completed his aviation education at the prestigious 43 Air School, Port Alfred, and advanced flight training from globally recognised institutions in Louisiana, New Iberia, United States; the United Arab Emirates and the United Kingdom. His aviation career progressed through successive operational leadership positions, culminating in his appointment as a Captain and Line Training Captain. In these capacities, he was responsible not only for flight operations but also for pilot development, operational standards, safety compliance, and mission execution across diverse operational environments within West Africa and beyond.
+                      </p>
+                      <p>
+                        Beyond his flying career, Capt. Olorunyomi has devoted significant effort to researching, developing, and advancing transformative ideas aimed at strengthening the business of aviation in Africa. His passion for industry development has led to continuous engagement in aviation strategy, policy formulation, infrastructure development, investment frameworks, and sustainable growth initiatives designed to enhance the continent&apos;s aviation competitiveness.
+                      </p>
+                      <p>
+                        His executive education and professional development portfolio encompasses aviation management, professional services leadership, operations management, performance management, project and risk management, bid and tender consultancy, leadership development, and organisational transformation. He has participated in executive programmes and leadership masterclasses at internationally respected institutions, including Harvard Business School, Wharton School of Business, London Graduate School, and London Bridge Business School, among others.
+                      </p>
+                      <p>
+                        Throughout his career, Capt. Olorunyomi has played a significant role in driving strategic transformation across multiple organisations through the deployment of innovative business concepts, growth strategies, and operational excellence frameworks. His contributions to leadership, organisational development, and strategic innovation have earned him distinguished professional recognitions, honorary doctoral distinctions in Strategic Leadership and Public Administration, and several prestigious fellowships.
+                      </p>
+                      <p>
+                        He is affiliated with numerous international professional organisations and institutes across aviation, management consulting, corporate governance, valuation, public administration, project management, information management, and credit administration. He is a Certified Management Consultant (CMC), Fellow of the Institute of Management Consultants, Fellow of the Institute of Management Specialists, Fellow of the National Institute of Credit Administration, and a member of several respected aviation and leadership associations, including the Harvard Business School Alumni Network, the Flight Crew Association of Nigeria, the Aircraft Owners and Pilots Association, and the Chartered Institute of Directors.
+                      </p>
+                      <p>
+                        Capt. Olorunyomi remains a passionate advocate for aviation development, local capacity building, infrastructure growth, employment generation, and economic advancement. His work is driven by a commitment to creating innovative pathways for aircraft acquisition, asset optimization, operational efficiency, and sustainable aviation development while promoting safety, comfort, and cost-effectiveness in line with global best practices.
+                      </p>
+                      <p>
+                        A passionate business enthusiast, change manager, strategist, and advocate of good corporate governance, he is recognised for his attention to detail, relentless pursuit of excellence, and unwavering commitment to leadership development and service to humanity.
+                      </p>
+                      <p className="pb-4 border-b border-gray-100">
+                        A devoted father and man of faith, Capt. Olorunyomi is guided by strong values and an enduring commitment to personal growth and lifelong learning.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="pt-2">
+                  <button 
+                    onClick={() => setCeoBioExpanded(!ceoBioExpanded)}
+                    className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{ceoBioExpanded ? 'See Less' : 'See More'}</span>
+                    <svg className={`w-4 h-4 transition-transform duration-300 ${ceoBioExpanded ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
+          6.6. GROUP HEAD, FINANCE & STRATEGY
+      ════════════════════════════════════════════════════════ */}
+      <section id="cfo" ref={cfo.ref} className="py-16 lg:py-24 bg-[#f8fafc] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-copter-red/[0.02] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
+        
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row-reverse gap-16 lg:gap-20">
+            {/* Right Column (Visuals): Image & Sticky Title */}
+            <div className="lg:w-4/12">
+              <div className="sticky top-32">
+                <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${cfo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
+                  <Image 
+                    src="/images/michael-uzor.jpg" 
+                    alt="Michael A. Uzor" 
+                    fill 
+                    className="object-cover object-[center_top]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+                </div>
+                
+                <div className={`${cfo.isVisible ? 'smooth-left-visible' : 'smooth-left-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
+                    Michael A.<br />Uzor
+                  </h3>
+                  <p className="text-copter-red font-bold uppercase tracking-[0.2em] text-[11px]">
+                    Group Head, Finance & Strategy
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Left Column (Content): Bio Details */}
+            <div className="lg:w-8/12 lg:pt-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-[2px] bg-copter-red" />
+                <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
+              </div>
+              
+              <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${cfo.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
+                <p>
+                  <strong className="text-copter-blue">Michael A. Uzor</strong> is a highly accomplished financial strategist, corporate finance expert, and business consultant with over three decades of multidisciplinary experience spanning banking, capital markets, financial media, investment management, economic intelligence, and strategic business development.
+                </p>
+                <p>
+                  Throughout his distinguished career, he has been a key member of executive leadership teams responsible for formulating and implementing corporate strategies that drive enterprise value, sustainable growth, and long-term profitability. His expertise lies in corporate finance, business restructuring, strategic planning, financial management, investment analysis, capital market operations, and organisational transformation.
+                </p>
+                <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${cfoBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    <div className="space-y-6 pt-6">
+                      <p>
+                        Renowned for his ability to design innovative business models and develop sustainable growth frameworks, Mr. Uzor has consistently helped organisations strengthen their competitive positioning, optimize financial performance, improve operational efficiency, and create enduring shareholder value. His strategic philosophy centers on identifying and maximizing core business strengths while deploying financial and operational structures that support long-term success.
+                      </p>
+                      <p>
+                        Mr. Uzor's professional journey spans leadership roles across some of Nigeria's most respected institutions within the banking, investment, consulting, media, and marketing communications sectors. His contributions have included corporate restructuring, product innovation, economic intelligence reporting, investment banking development, portfolio management enhancement, shareholder engagement strategies, and capital raising initiatives. He has also played significant roles in developing industry position papers on monetary, fiscal, and regulatory policies through strategic engagements within the financial services sector.
+                      </p>
+                      <p>
+                        A graduate of Finance from the University of Nigeria, he holds a Master of Business Administration (MBA) and has undertaken advanced executive and strategic management programmes at internationally recognized institutions, including Cranfield School of Management and several leadership development centres across Europe and Africa. His continuous pursuit of professional excellence has reinforced his reputation as a respected authority in corporate finance, business strategy, and investment management.
+                      </p>
+                      <p>
+                        As a registered Capital Market Practitioner with the Securities and Exchange Commission (SEC), Mr. Uzor maintains active affiliations with several professional bodies, including the Chartered Institute of Bankers of Nigeria and other leading industry associations. His extensive experience in financial analysis, strategic planning, corporate governance, and business intelligence continues to provide organisations with valuable insights for informed decision-making and sustainable growth.
+                      </p>
+                      <p>
+                        At Copterjet International Group, Mr. Uzor provides strategic financial leadership, guiding the Group's financial management framework, investment strategy, capital structure optimisation and risk management initiatives. His wealth of experience, analytical depth, and commitment to excellence remain invaluable to the Group's vision of building a world-class aviation and infrastructure enterprise.
+                      </p>
+                      <p className="pb-4 border-b border-gray-200">
+                        A respected strategist, mentor, and business leader, Michael A. Uzor is recognized for his disciplined approach to leadership, passion for innovation, and unwavering commitment to creating value for stakeholders.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="pt-2">
+                  <button 
+                    onClick={() => setCfoBioExpanded(!cfoBioExpanded)}
+                    className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{cfoBioExpanded ? 'See Less' : 'See More'}</span>
+                    <svg className={`w-4 h-4 transition-transform duration-300 ${cfoBioExpanded ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
           7. MANAGEMENT TEAM
       ════════════════════════════════════════════════════════ */}
       <section id="management" ref={management.ref} className="py-12 lg:py-16 bg-[#f8fafc]">
@@ -570,7 +795,7 @@ export default function AboutPage() {
               Copterjet&apos;s Management Team comprises experienced aviation and business professionals dedicated to operational excellence, strategic growth, and organizational leadership.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-3xl">
             {managementTeam.map((member, idx) => (
               <TeamCard key={idx} member={member} index={idx} isVisible={management.isVisible} />
             ))}
@@ -601,85 +826,56 @@ export default function AboutPage() {
         </div>
       </section>
 
-        {/* ════════════════════════════════════════════════════════
-          5. OUR VALUES (Bento Grid)
+      {/* ════════════════════════════════════════════════════════
+          5. OUR VALUES (Core Value Triangle)
       ════════════════════════════════════════════════════════ */}
       <section ref={values.ref} className="relative py-20 lg:py-24 bg-[#060e1a] overflow-hidden">
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className={`text-center mb-20 ${values.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">The Principles That <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d]">Drive Us</span></h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">Copterjet Core Value <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d]">Triangle</span></h2>
             <p className="text-white/50 text-[16px] max-w-2xl mx-auto leading-relaxed font-medium">
               Our values form the foundation upon which we build lasting partnerships and deliver operational excellence.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* Integrity (Span 2) */}
-            <div className={`md:col-span-2 group relative bg-[#0a1220] border border-white/5 p-8 lg:p-10 overflow-hidden hover:border-copter-red/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '100ms' }}>
-              <div className="absolute -right-10 -bottom-10 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:rotate-12 transition-all duration-1000">
-                <svg className="w-96 h-96 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={valuesData.integrity.icon} /></svg>
-              </div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 rounded-xl bg-copter-red/10 border border-copter-red/20 flex items-center justify-center mb-8">
-                  <svg className="w-8 h-8 text-copter-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={valuesData.integrity.icon} /></svg>
+          {(() => {
+            const renderCard = (val: typeof coreValues[0], idx: number) => (
+              <div 
+                key={idx} 
+                className={`w-full group relative bg-[#0a1220] border border-white/5 p-8 overflow-hidden transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'} ${val.color === 'red' ? 'hover:border-copter-red/40' : 'hover:border-copter-blue/40'}`} 
+                style={{ animationDelay: `${100 + (idx * 150)}ms` }}
+              >
+                <div className="absolute -right-6 -top-6 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-1000">
+                  <svg className="w-64 h-64 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={val.icon} /></svg>
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-4">{valuesData.integrity.title}</h3>
-                <p className="text-white/50 text-lg leading-relaxed max-w-lg">{valuesData.integrity.desc}</p>
+                <div className="relative z-10 h-full flex flex-col">
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-auto pb-4 ${val.color === 'red' ? 'bg-copter-red/10 border border-copter-red/20' : 'bg-copter-blue/10 border border-copter-blue/20'}`}>
+                    <svg className={`w-7 h-7 ${val.color === 'red' ? 'text-copter-red' : 'text-copter-blue'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={val.icon} /></svg>
+                  </div>
+                  <div className="mt-12">
+                    <h3 className="text-2xl font-bold text-white mb-3 uppercase tracking-wider">{val.title}</h3>
+                    <p className="text-white/50 text-[15px] leading-relaxed">{val.desc}</p>
+                  </div>
+                </div>
               </div>
-            </div>
+            );
 
-            {/* Innovation (Span 1) */}
-            <div className={`md:col-span-1 group relative bg-[#0a1220] border border-white/5 p-8 overflow-hidden hover:border-copter-blue/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '250ms' }}>
-              <div className="absolute -right-6 -top-6 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-1000">
-                <svg className="w-64 h-64 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={valuesData.innovation.icon} /></svg>
-              </div>
-              <div className="relative z-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-xl bg-copter-blue/10 border border-copter-blue/20 flex items-center justify-center mb-auto pb-4">
-                  <svg className="w-7 h-7 text-copter-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={valuesData.innovation.icon} /></svg>
+            return (
+              <div className="flex flex-col items-center gap-6 max-w-6xl mx-auto">
+                <div className="flex justify-center w-full lg:w-1/3">
+                  {renderCard(coreValues[0], 0)}
                 </div>
-                <div className="mt-12">
-                  <h3 className="text-2xl font-bold text-white mb-3">{valuesData.innovation.title}</h3>
-                  <p className="text-white/50 text-[15px] leading-relaxed">{valuesData.innovation.desc}</p>
+                <div className="flex flex-col lg:flex-row justify-center gap-6 w-full lg:w-2/3">
+                  {coreValues.slice(1, 3).map((val, i) => renderCard(val, i + 1))}
+                </div>
+                <div className="flex flex-col lg:flex-row justify-center gap-6 w-full">
+                  {coreValues.slice(3, 6).map((val, i) => renderCard(val, i + 3))}
                 </div>
               </div>
-            </div>
-
-            {/* Excellence (Span 1) */}
-            <div className={`md:col-span-1 group relative bg-[#0a1220] border border-white/5 p-8 overflow-hidden hover:border-copter-blue/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '400ms' }}>
-              <div className="absolute -left-6 -bottom-6 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:rotate-12 transition-all duration-1000">
-                <svg className="w-64 h-64 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={valuesData.excellence.icon} /></svg>
-              </div>
-              <div className="relative z-10 h-full flex flex-col">
-                <div className="w-14 h-14 rounded-xl bg-copter-blue/10 border border-copter-blue/20 flex items-center justify-center mb-auto pb-4">
-                  <svg className="w-7 h-7 text-copter-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={valuesData.excellence.icon} /></svg>
-                </div>
-                <div className="mt-12">
-                  <h3 className="text-2xl font-bold text-white mb-3">{valuesData.excellence.title}</h3>
-                  <p className="text-white/50 text-[15px] leading-relaxed">{valuesData.excellence.desc}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Partnership (Span 2) */}
-            <div className={`md:col-span-2 group relative bg-[#0a1220] border border-white/5 p-8 lg:p-10 overflow-hidden hover:border-copter-red/40 transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '550ms' }}>
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 transition-all duration-1000">
-                <svg className="w-80 h-80 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d={valuesData.partnership.icon} /></svg>
-              </div>
-              <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-                <div className="w-20 h-20 shrink-0 rounded-xl bg-copter-red/10 border border-copter-red/20 flex items-center justify-center">
-                   <svg className="w-10 h-10 text-copter-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={valuesData.partnership.icon} /></svg>
-                </div>
-                <div className="md:pt-2">
-                  <h3 className="text-3xl font-bold text-white mb-4">{valuesData.partnership.title}</h3>
-                  <p className="text-white/50 text-lg leading-relaxed">{valuesData.partnership.desc}</p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
+            );
+          })()}
         </div>
       </section>
 

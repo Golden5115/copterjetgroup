@@ -73,12 +73,13 @@ const navStructure: NavItem[] = [
   },
   { label: 'INDUSTRY INSIGHTS', href: '/insights' },
   { label: 'PARTNERSHIP', href: '/partnership' },
-  { label: 'CAREER', href: '/career' },
+  { label: 'CAREERS', href: '/careers' },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileSub, setOpenMobileSub] = useState<string | null>(null);
+  const [desktopOpenDropdown, setDesktopOpenDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   // Update scrolled state based on window position
@@ -174,25 +175,33 @@ export default function Navbar() {
             {/* Desktop Links */}
             <div className="hidden min-[900px]:flex items-center h-full">
               {navStructure.map(item => (
-                <div key={item.label} className="relative group h-full flex items-center">
-                  <Link
-                    href={item.href}
-                    // FIXED SCATTERING: Dynamic padding, smaller font on lg screens, and whitespace-nowrap
-                    className="relative flex items-center gap-1 lg:gap-1.5 h-full px-2 xl:px-4 text-[9.5px] xl:text-[11px] font-bold text-copter-blue tracking-wide xl:tracking-wider hover:text-copter-red transition-colors duration-300 overflow-hidden whitespace-nowrap"
-                  >
-                    <span className="relative z-10">{item.label}</span>
+                <div key={item.label} className="relative group h-full flex items-center" onMouseLeave={() => setDesktopOpenDropdown(null)}>
+                  <div className="relative flex items-center gap-1 lg:gap-1.5 h-full px-2 xl:px-4 text-[9.5px] xl:text-[11px] font-bold text-copter-blue tracking-wide xl:tracking-wider hover:text-copter-red transition-colors duration-300 overflow-visible whitespace-nowrap cursor-pointer">
+                    <Link href={item.href} className="relative z-10 flex items-center h-full">
+                      {item.label}
+                    </Link>
                     {(item.subItems || item.megaMenu) && (
-                      <svg className="w-3 h-3 mt-0.5 opacity-50 group-hover:rotate-180 transition-transform duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <button 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setDesktopOpenDropdown(desktopOpenDropdown === item.label ? null : item.label);
+                        }}
+                        className="p-2 -mr-2 relative z-10 focus:outline-none flex items-center justify-center h-full"
+                        aria-label={`Toggle ${item.label} dropdown`}
+                      >
+                        <svg className={`w-3 h-3 transition-transform duration-300 ${desktopOpenDropdown === item.label ? 'rotate-180 opacity-100' : 'opacity-50 group-hover:rotate-180 group-hover:opacity-100'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
                     )}
                     <span className="absolute bottom-0 left-0 w-full h-[3px] bg-copter-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </Link>
+                  </div>
                   {/* Standard dropdown */}
                   {item.subItems && !item.megaMenu && (
-                    <div className="absolute top-full left-0 w-64 bg-white border-t-2 border-copter-red shadow-[0_12px_40px_rgba(22,72,120,0.15)] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out origin-top z-50">
+                    <div className={`absolute top-full left-0 w-64 bg-white border-t-2 border-copter-red shadow-[0_12px_40px_rgba(22,72,120,0.15)] transition-all duration-300 ease-out origin-top z-50 ${desktopOpenDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0'}`}>
                       {item.subItems.map(sub => (
-                        <Link key={sub.href} href={sub.href}
+                        <Link key={sub.href} href={sub.href} onClick={() => setDesktopOpenDropdown(null)}
                           className="flex items-center gap-3 px-6 py-4 text-[11.5px] font-semibold text-copter-grey border-b border-gray-50 last:border-0 hover:bg-copter-light hover:text-copter-red transition-all duration-300 group/sub">
                           <span className="w-1.5 h-1.5 rounded-full bg-copter-red opacity-0 -translate-x-2 group-hover/sub:opacity-100 group-hover/sub:translate-x-0 transition-all duration-300 flex-shrink-0" />
                           <span className="transform group-hover/sub:translate-x-1 transition-transform duration-300">{sub.label}</span>
@@ -202,7 +211,7 @@ export default function Navbar() {
                   )}
                   {/* Mega menu — Our Services */}
                   {item.megaMenu && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[850px] bg-white border-t-2 border-copter-red shadow-[0_16px_48px_rgba(22,72,120,0.18)] opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out origin-top z-50">
+                    <div className={`absolute top-full left-1/2 -translate-x-1/2 w-[850px] bg-white border-t-2 border-copter-red shadow-[0_16px_48px_rgba(22,72,120,0.18)] transition-all duration-300 ease-out origin-top z-50 ${desktopOpenDropdown === item.label ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0'}`}>
                       <div className="grid grid-cols-3 divide-x divide-gray-100">
                         {item.megaMenu.map(group => (
                           <div key={group.heading} className="p-8">
