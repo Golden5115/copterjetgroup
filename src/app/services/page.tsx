@@ -215,16 +215,16 @@ export default function ServicesPage() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
             
             {/* Left Sidebar: Tabs */}
-            <div className="lg:w-4/12 shrink-0 flex flex-col gap-4">
+            <div className="lg:w-4/12 shrink-0 flex flex-row lg:flex-col gap-4 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 lg:mx-0 lg:px-0">
               {SERVICES_DATA.map((category) => {
                 const isActive = activeTabId === category.id;
                 return (
                   <button
                     key={category.id}
                     onClick={() => setActiveTabId(category.id)}
-                    className={`text-left p-6 md:p-8 rounded-2xl transition-all duration-300 flex items-center justify-between group cursor-pointer border-l-4 ${
+                    className={`text-left p-6 md:p-8 rounded-2xl transition-all duration-300 flex flex-col lg:flex-row items-start lg:items-center justify-between group cursor-pointer lg:border-t-0 lg:border-l-4 border-t-4 min-w-[280px] lg:min-w-0 snap-center shrink-0 ${
                       isActive 
-                        ? 'bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border-copter-red text-copter-blue transform scale-[1.02]' 
+                        ? 'bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] border-copter-red text-copter-blue transform lg:scale-[1.02]' 
                         : 'bg-white/50 border-gray-200 text-gray-500 hover:bg-white/80 hover:text-gray-900 hover:border-copter-red/50 hover:shadow-sm'
                     }`}
                   >
@@ -236,7 +236,7 @@ export default function ServicesPage() {
                         {category.title}
                       </span>
                     </div>
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ml-4 transition-all duration-300 ${
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 lg:ml-4 mt-6 lg:mt-0 transition-all duration-300 ${
                       isActive 
                         ? 'bg-copter-red text-white shadow-md' 
                         : 'bg-gray-200/50 text-gray-400 group-hover:bg-copter-red/10 group-hover:text-copter-red'

@@ -20,7 +20,7 @@ export default function WhoWeAre() {
         }
       `}</style>
 
-      <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
+      <section className="py-16 lg:py-32 bg-white relative overflow-hidden">
         {/* Background decorative element */}
         <div className="absolute top-0 right-0 w-[45%] h-full pointer-events-none opacity-[0.03] hidden lg:block">
           <svg viewBox="0 0 500 600" fill="none" className="w-full h-full">

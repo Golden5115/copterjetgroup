@@ -63,7 +63,7 @@ export default function ServicesOverview() {
         }
       `}</style>
 
-      <section ref={sectionRef} className={`py-24 lg:py-32 bg-[#f8fafc] relative overflow-hidden transition-opacity duration-1000 ${isVisible ? 'is-visible' : ''}`}>
+      <section ref={sectionRef} className={`py-16 lg:py-32 bg-[#f8fafc] relative overflow-hidden transition-opacity duration-1000 ${isVisible ? 'is-visible' : ''}`}>
         
         {/* Subtle Background Elements */}
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />

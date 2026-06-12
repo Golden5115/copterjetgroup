@@ -132,11 +132,15 @@ export default function Navbar() {
               COPTERJET INTERNATIONAL GROUP
             </span>
             <div className="flex items-center gap-5 ml-auto">
-              {['News & Events', 'Gallery', 'Contact Us'].map(lbl => (
-                <Link key={lbl} href={`/${lbl.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
+              {[
+                { label: 'News & Events', href: '/news-events' },
+                { label: 'Gallery', href: '/gallery' },
+                { label: 'Contact Us', href: '/contact' }
+              ].map(item => (
+                <Link key={item.label} href={item.href}
                   className="hidden sm:block text-[10px] font-bold tracking-widest uppercase text-white hover:text-copter-red transition-colors duration-300"
                 >
-                  {lbl}
+                  {item.label}
                 </Link>
               ))}
               <span className="hidden md:block w-px h-4 bg-white/15" />
@@ -169,8 +173,8 @@ export default function Navbar() {
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-copter-red" />
           <div className="max-w-[90rem] mx-auto px-4 xl:px-12 flex justify-between items-center h-[76px]">
             {/* FIXED LOGO SIZING */}
-            <Link href="/" className="relative h-[50px] w-[225px] xl:h-[65px] xl:w-[290px] flex-shrink-0 block transition-all duration-300">
-              <Image src="/images/logo.png" alt="CopterJet International" fill sizes="(max-width: 1280px) 225px, 290px" className="object-contain object-left" priority />
+            <Link href="/" className="relative h-[45px] w-[190px] md:h-[50px] md:w-[225px] xl:h-[65px] xl:w-[290px] flex-shrink-0 block transition-all duration-300">
+              <Image src="/images/logo.png" alt="CopterJet International" fill sizes="(max-width: 768px) 190px, (max-width: 1280px) 225px, 290px" className="object-contain object-left" priority />
             </Link>
             {/* Desktop Links */}
             <div className="hidden min-[900px]:flex items-center h-full">
