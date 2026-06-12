@@ -106,15 +106,16 @@ export default function WhoWeAre() {
               <div className="label-pill mb-6">Who We Are</div>
 
               <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] text-copter-blue font-bold leading-[1.15] mb-6">
-                A Cross-Border Aviation Service & Consulting Entity.
+                An Aerospace Solutions Entity Redefining and Strengthening Africa's Aviation & Aerospace Future. 
               </h2>
 
               <p className="text-[15.5px] text-copter-grey leading-relaxed mb-6 font-medium">
-                We are a fully integrated specialist service structure built around aviation advisory, aviation asset management, and industry-focused logistics solutions — all designed around a broad delivery mission.
+                Leveraging strategic footprints across six continents, we bridge critical supply chain, operational, asset management and financing gaps that impact aviation performance across the continent.
+
               </p>
 
               <p className="text-[14.5px] text-copter-grey/80 leading-relaxed mb-10">
-                Our solutions bridge the structural and financial gaps in the regional and global aviation industry, delivered by a dedicated team of aviation specialists committed to the highest international standards.
+                By connecting global capabilities with local opportunities, we deliver innovative, reliable, and sustainable solutions that keep aircraft flying, businesses moving, infrastructure growing and Africa connected to global possibilities.
               </p>
 
               {/* Pillars */}
@@ -132,7 +133,7 @@ export default function WhoWeAre() {
               </div>
 
               <Link
-                href="/about/who-we-are"
+                href="/about#who-we-are"
                 className="inline-flex items-center gap-3 bg-copter-blue text-white px-8 py-3.5 text-[11.5px] font-bold tracking-[0.14em] uppercase
                   hover:bg-copter-blue-dark transition-colors shadow-sm hover:shadow-md hover:-translate-y-0.5"
               >

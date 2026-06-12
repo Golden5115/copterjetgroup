@@ -169,8 +169,8 @@ export default function Navbar() {
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-copter-red" />
           <div className="max-w-[90rem] mx-auto px-4 xl:px-12 flex justify-between items-center h-[76px]">
             {/* FIXED LOGO SIZING */}
-            <Link href="/" className="relative h-[40px] w-[180px] xl:h-[52px] xl:w-[235px] flex-shrink-0 block transition-all duration-300">
-              <Image src="/images/logo.png" alt="CopterJet International" fill sizes="(max-width: 1280px) 180px, 235px" className="object-contain object-left" priority />
+            <Link href="/" className="relative h-[50px] w-[225px] xl:h-[65px] xl:w-[290px] flex-shrink-0 block transition-all duration-300">
+              <Image src="/images/logo.png" alt="CopterJet International" fill sizes="(max-width: 1280px) 225px, 290px" className="object-contain object-left" priority />
             </Link>
             {/* Desktop Links */}
             <div className="hidden min-[900px]:flex items-center h-full">

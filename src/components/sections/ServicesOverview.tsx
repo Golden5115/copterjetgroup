@@ -77,8 +77,8 @@ export default function ServicesOverview() {
             <h2 className="text-3xl md:text-4xl text-copter-blue font-bold text-center mb-6">
               Aviation Excellence, <span className="text-copter-red">Delivered.</span>
             </h2>
-            <p className="text-base md:text-lg text-copter-grey text-center max-w-3xl mx-auto mb-16 leading-relaxed font-medium">
-              We field a dedicated team of aviation specialists capable of executing complex missions anchored on the highest international industry standards.
+            <p className="text-[15px] md:text-base text-copter-grey text-center max-w-4xl mx-auto mb-16 leading-[1.8] font-medium">
+              Copterjet International combines aviation expertise, strategic partnerships, and innovative service delivery to provide end-to-end solutions across the aerospace value chain. From supply chain management and flight operations to asset management, infrastructure development, and advisory services, we deliver sustainable, efficient, and value-driven solutions that advance aviation across Africa and beyond.
             </p>
           </div>
 

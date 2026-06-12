@@ -157,6 +157,7 @@ export default function AboutPage() {
   const [heroVisible, setHeroVisible] = useState(false);
   const [ceoBioExpanded, setCeoBioExpanded] = useState(false);
   const [cfoBioExpanded, setCfoBioExpanded] = useState(false);
+  const [govAffairsBioExpanded, setGovAffairsBioExpanded] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 150);
@@ -171,6 +172,7 @@ export default function AboutPage() {
   const people = useInView({ threshold: 0.1 });
   const ceo = useInView({ threshold: 0.05 });
   const cfo = useInView({ threshold: 0.05 });
+  const govAffairs = useInView({ threshold: 0.05 });
   const management = useInView({ threshold: 0.05 });
   const board = useInView({ threshold: 0.05 });
   const governance = useInView({ threshold: 0.15 });
@@ -773,6 +775,89 @@ export default function AboutPage() {
                   >
                     <span>{cfoBioExpanded ? 'See Less' : 'See More'}</span>
                     <svg className={`w-4 h-4 transition-transform duration-300 ${cfoBioExpanded ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
+          6.7. GROUP HEAD, GOVERNMENT & PUBLIC AFFAIRS
+      ════════════════════════════════════════════════════════ */}
+      <section id="gov-affairs" ref={govAffairs.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
+            {/* Left Column (Visuals): Image & Sticky Title */}
+            <div className="lg:w-4/12">
+              <div className="sticky top-32">
+                <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${govAffairs.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
+                  {/* Using PortraitPlaceholder since we don't have an image yet */}
+                  <Image 
+                    src="/images/babajide-Oluwafemi.jpg" 
+                    alt="Michael A. Uzor" 
+                    fill 
+                    className="object-cover object-[center_top]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+                </div>
+                
+                <div className={`${govAffairs.isVisible ? 'smooth-right-visible' : 'smooth-right-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
+                    Babajide O.<br />Jinadu
+                  </h3>
+                  <p className="text-copter-red font-bold uppercase tracking-[0.2em] text-[11px]">
+                    Group Head, Government & Public Affairs
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column (Content): Bio Details */}
+            <div className="lg:w-8/12 lg:pt-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-[2px] bg-copter-red" />
+                <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
+              </div>
+              
+              <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${govAffairs.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
+                <p>
+                  <strong className="text-copter-blue">Jinadu Babajide Oluwafemi</strong> is a seasoned government and institutional relations and strategic communications professional with over fifteen years of experience driving high-impact initiatives across the public, private, faith-based, and non-profit sectors. He possesses a unique blend of expertise in stakeholder engagement, public affairs, sports administration, enterprise development, and strategic planning, enabling him to successfully navigate complex environments and deliver sustainable results.
+                </p>
+                <p>
+                  Throughout his career, Babajide has established himself as a trusted adviser and relationship builder, recognised for his ability to cultivate strategic partnerships, facilitate high-level engagements, and coordinate large-scale operations involving government institutions, community leaders, development partners, and private-sector stakeholders. His experience spans public affairs management, governance engagement, strategic communications, protocol administration, and multi-stakeholder project execution.
+                </p>
+                <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${govAffairsBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    <div className="space-y-6 pt-6">
+                      <p>
+                        He has led and coordinated numerous nationwide initiatives focused on youth engagement, civic participation, leadership development, and community mobilisation, successfully managing operations across multiple states and working closely with senior government officials, policymakers, development institutions, and influential stakeholders. His expertise in stakeholder management, strategic messaging, and relationship-building has consistently contributed to the successful execution of complex programmes and national engagements.
+                      </p>
+                      <p>
+                        As a business executive, he has managed successful ventures in construction, logistics, facilities management, sports retail, property management, and production services. Through these enterprises, he has demonstrated exceptional capabilities in business development, project management, operational leadership, stakeholder relations, and organizational growth while contributing to job creation and economic empowerment initiatives.
+                      </p>
+                      <p>
+                        His leadership style is characterised by diplomacy, innovation, strategic thinking, and a strong commitment to excellence.
+                      </p>
+                      <p>
+                        A participant in international leadership and diplomatic exchange programmes, including a government-nominated delegation to the People's Republic of China under the Belt and Road Initiative, he brings a global outlook to governance, development, and cross-sector collaboration. His academic and professional background in engineering, business administration, theology, media communications, and leadership development further reinforces his multidisciplinary approach to solving complex challenges.
+                      </p>
+                      <p className="pb-4 border-b border-gray-100">
+                        Driven by a passion for transformational leadership, youth empowerment, institutional development, and nation-building, Jinadu Babajide Oluwafemi continues to leverage his extensive experience, strategic network, and leadership capacity to create meaningful impact across sectors while advancing initiatives that promote sustainable growth and societal progress.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="pt-2">
+                  <button 
+                    onClick={() => setGovAffairsBioExpanded(!govAffairsBioExpanded)}
+                    className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{govAffairsBioExpanded ? 'See Less' : 'See More'}</span>
+                    <svg className={`w-4 h-4 transition-transform duration-300 ${govAffairsBioExpanded ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                   </button>
                 </div>
               </div>
