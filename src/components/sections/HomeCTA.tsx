@@ -28,7 +28,7 @@ export default function HomeCTA() {
           </h2>
           
           <p className="text-base md:text-lg text-white/70 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
-            Contact us today for reliable support across your global supply chain needs — spares, components & engines, logistics, asset management, and more....
+            Contact us today for reliable support across your global supply chain needs — spares, components & engines, logistics, aircraft management/operations, asset management, and more....
           </p>
           
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">

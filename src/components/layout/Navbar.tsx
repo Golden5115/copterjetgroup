@@ -52,7 +52,7 @@ const navStructure: NavItem[] = [
         ],
       },
       {
-        heading: 'Airline & Helicopter Operations',
+        heading: 'Aircraft Management & Operations',
         items: [
           { label: 'Jets & Helicopters Charter Services', href: '/services#charter' },
           { label: 'Airline Joint Venture Operations', href: '/services#airline-jvo' },
@@ -133,7 +133,7 @@ export default function Navbar() {
             </span>
             <div className="flex items-center gap-5 ml-auto">
               {[
-                { label: 'News & Events', href: '/news-events' },
+                { label: 'Company News & Events', href: '/news-events' },
                 { label: 'Gallery', href: '/gallery' },
                 { label: 'Contact Us', href: '/contact' }
               ].map(item => (

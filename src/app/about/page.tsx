@@ -191,7 +191,7 @@ export default function AboutPage() {
     { value: 15, suffix: '+', label: 'Years of Expertise' },
     { value: 30, suffix: '+', label: 'Strategic Partners' },
     { value: 12, suffix: '+', label: 'African Nations Served' },
-    { value: 200, suffix: '+', label: 'Successful Operations' },
+    { value: 200, suffix: '+', label: 'Successful Deliverables' },
   ];
   
   const coreValues = [
@@ -375,7 +375,7 @@ export default function AboutPage() {
               Shaping the Future
             </span>
             <span className={`block text-4xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d4d] to-[#990b0f] italic pr-4 ${heroVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '700ms' }}>
-              of African Aviation.
+              of African Aviation & Aerospace.
             </span>
           </h1>
           {/* Description */}
@@ -432,14 +432,14 @@ export default function AboutPage() {
             </div>
             {/* Headline */}
             <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-copter-blue leading-[1.1] mb-8 tracking-tight ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '450ms' }}>
-              Integrated Aviation <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d] italic pr-2">Excellence.</span>
+              Integrated Aviation & Aerospace<br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d] italic pr-2">Specialist.</span>
             </h2>
             
             {/* Body Text */}
             <div className={`space-y-6 mb-12 ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '600ms' }}>
               <p className="text-copter-blue text-[15px] md:text-base leading-[1.85] font-medium text-justify">
-                Copterjet International is a fully integrated aviation specialist services firm committed to advancing Africa&apos;s aerospace supply chain and operational ecosystem. With expertise spanning aviation supply chain, logistics, aircraft operations, maintenance coordination, aircraft acquisition &amp; sales, consultancy, infrastructure development, project management, and asset management, we deliver innovative and reliable solutions.
+                Copterjet International is a fully integrated aviation specialist services firm committed to advancing Africa&apos;s aerospace supply chain and operational ecosystem. With expertise spanning aviation supply chain, logistics, aircraft management & operations, maintenance coordination, aircraft acquisition &amp; sales, consultancy, infrastructure development, project management, and asset management, we deliver innovative and reliable solutions.
               </p>
               <p className="text-copter-blue text-[15px] md:text-base leading-[1.85] text-justify">
                 Through excellence, strategic partnerships, and adaptive operational frameworks, we are shaping the future of aviation across Africa.
@@ -603,6 +603,28 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/40 via-transparent to-transparent mix-blend-multiply" />
             <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-copter-red" />
           </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
+          7. MANAGEMENT TEAM
+      ════════════════════════════════════════════════════════ */}
+      <section id="management" ref={management.ref} className="py-12 lg:py-16 bg-[#f8fafc]">
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+          <div className={`${management.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'} mb-16 max-w-3xl`}>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-10 h-[2px] bg-copter-red" />
+              <h3 className="text-2xl font-bold text-copter-blue tracking-tight">Management Team</h3>
+            </div>
+            <p className="text-[14px] text-copter-grey leading-[1.8] font-medium pl-14">
+              Copterjet&apos;s Management Team comprises experienced aviation and business professionals dedicated to operational excellence, strategic growth, and organizational leadership.
+            </p>
+          </div>
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-3xl">
+            {managementTeam.map((member, idx) => (
+              <TeamCard key={idx} member={member} index={idx} isVisible={management.isVisible} />
+            ))}
+          </div> */}
         </div>
       </section>
 
@@ -880,27 +902,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════
-          7. MANAGEMENT TEAM
-      ════════════════════════════════════════════════════════ */}
-      <section id="management" ref={management.ref} className="py-12 lg:py-16 bg-[#f8fafc]">
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <div className={`${management.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'} mb-16 max-w-3xl`}>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-[2px] bg-copter-red" />
-              <h3 className="text-2xl font-bold text-copter-blue tracking-tight">Management Team</h3>
-            </div>
-            <p className="text-[14px] text-copter-grey leading-[1.8] font-medium pl-14">
-              Copterjet&apos;s Management Team comprises experienced aviation and business professionals dedicated to operational excellence, strategic growth, and organizational leadership.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-3xl">
-            {managementTeam.map((member, idx) => (
-              <TeamCard key={idx} member={member} index={idx} isVisible={management.isVisible} />
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* ════════════════════════════════════════════════════════
           8. BOARD OF DIRECTORS

@@ -165,7 +165,7 @@ export default function PartnershipPage() {
           {/* Right copy */}
           <div className="lg:w-8/12 space-y-6">
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              At <strong className="text-copter-blue font-semibold">CopterJet International Group</strong>, we believe that strategic partnerships are the cornerstone of sustainable growth and aviation excellence. Through carefully structured partnerships and joint ventures, we collaborate with airlines, aircraft owners, investors, governments, aviation service providers, and infrastructure developers to create innovative and mutually beneficial opportunities across the aviation value chain.
+              At <strong className="text-copter-blue font-semibold">CopterJet International Group</strong>, we believe that strategic partnerships are the cornerstone of sustainable growth and aviation excellence. Through carefully structured partnerships and joint ventures, we collaborate with airlines, aircraft owners, energy, oil & gas, investors, governments, aviation service providers, and infrastructure developers to create innovative and mutually beneficial opportunities across the aviation value chain.
             </p>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
               Our partnership model is built on trust, expertise, shared vision, and operational excellence. We leverage our industry knowledge, global network, and technical capabilities to develop solutions that enhance operational efficiency, expand market access, optimize asset utilization, and unlock new revenue streams.
