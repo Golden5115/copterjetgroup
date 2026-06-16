@@ -517,10 +517,10 @@ export default function AboutPage() {
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-copter-red to-transparent" />
         
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 min-[900px]:grid-cols-12 gap-16 min-[900px]:gap-24">
             
             {/* Left: Sticky Title */}
-            <div className="lg:col-span-5">
+            <div className="min-[900px]:col-span-5">
               <div className="sticky top-32">
                 <div className={`mb-6 ${history.isVisible ? 'smooth-right-visible' : 'smooth-right-hidden'}`}>
                   <div className="flex items-center gap-4 mb-6">
@@ -539,7 +539,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right: Scrolling Narrative */}
-            <div className="lg:col-span-7 relative pt-8 lg:pt-0">
+            <div className="min-[900px]:col-span-7 relative pt-8 min-[900px]:pt-0">
               {/* Animated Flight Path Line */}
               <div className={`absolute left-4 md:left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-copter-red via-copter-red/20 to-transparent origin-top ${history.isVisible ? 'history-line-draw' : 'opacity-0'}`} />
 
@@ -575,19 +575,33 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════════════════
           6. OUR PEOPLE INTRO
       ════════════════════════════════════════════════════════ */}
-      <section id="people" ref={people.ref} className="pt-20 lg:pt-24 pb-8 bg-[#f8fafc] relative overflow-hidden">
+      <section id="people" ref={people.ref} className="pt-20 lg:pt-24 pb-16 lg:pb-24 bg-[#f8fafc] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #164878 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">
-          <div className={`${people.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
+        
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          <div className={`text-center max-w-3xl mx-auto mb-16 ${people.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
             <div className="wing-divider mb-6 max-w-[220px] mx-auto">
               <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-2">Our People</span>
             </div>
             <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold leading-[1.15] mb-8 tracking-tight">
               The strength behind<br />our operations.
             </h2>
-            <p className="text-[15px] text-copter-grey leading-[1.9] font-medium max-w-2xl mx-auto">
+            <p className="text-[15px] text-copter-grey leading-[1.9] font-medium">
               Our strength lies in our people — a multidisciplinary team of aviation professionals, technical specialists, operational experts, legal, and strategic advisors with deep industry knowledge and global experience. United by a shared commitment to excellence, innovation, integrity, and service delivery, our people drive the operational efficiency and client-focused solutions that define Copterjet&apos;s success.
             </p>
+          </div>
+
+          {/* Group Picture Integration */}
+          <div className={`relative w-full aspect-[4/3] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(22,72,120,0.15)] ${people.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '500ms' }}>
+            <Image 
+              src="/images/who_we_are2.jpg" 
+              alt="CopterJet International Group Team" 
+              fill 
+              className="object-cover object-[center_10%]"
+            />
+            {/* Cinematic overlay for premium feel */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/40 via-transparent to-transparent mix-blend-multiply" />
+            <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-copter-red" />
           </div>
         </div>
       </section>
@@ -599,9 +613,9 @@ export default function AboutPage() {
         <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
         
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
+          <div className="flex flex-col min-[900px]:flex-row gap-16 min-[900px]:gap-20">
             {/* Left Column: Image & Sticky Title */}
-            <div className="lg:w-4/12">
+            <div className="min-[900px]:w-4/12">
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${ceo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
                   <Image 
@@ -637,7 +651,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Column: Bio Details */}
-            <div className="lg:w-8/12 lg:pt-4">
+            <div className="min-[900px]:w-8/12 min-[900px]:pt-4">
               <div className="flex items-center gap-4 mb-10">
                 <div className="w-10 h-[2px] bg-copter-red" />
                 <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
@@ -703,9 +717,9 @@ export default function AboutPage() {
         <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-copter-red/[0.02] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
         
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col lg:flex-row-reverse gap-16 lg:gap-20">
+          <div className="flex flex-col min-[900px]:flex-row-reverse gap-16 min-[900px]:gap-20">
             {/* Right Column (Visuals): Image & Sticky Title */}
-            <div className="lg:w-4/12">
+            <div className="min-[900px]:w-4/12">
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${cfo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
                   <Image 
@@ -730,7 +744,7 @@ export default function AboutPage() {
             </div>
 
             {/* Left Column (Content): Bio Details */}
-            <div className="lg:w-8/12 lg:pt-4">
+            <div className="min-[900px]:w-8/12 min-[900px]:pt-4">
               <div className="flex items-center gap-4 mb-10">
                 <div className="w-10 h-[2px] bg-copter-red" />
                 <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
@@ -788,9 +802,9 @@ export default function AboutPage() {
       ════════════════════════════════════════════════════════ */}
       <section id="gov-affairs" ref={govAffairs.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
+          <div className="flex flex-col min-[900px]:flex-row gap-16 min-[900px]:gap-20">
             {/* Left Column (Visuals): Image & Sticky Title */}
-            <div className="lg:w-4/12">
+            <div className="min-[900px]:w-4/12">
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${govAffairs.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
                   {/* Using PortraitPlaceholder since we don't have an image yet */}
@@ -816,7 +830,7 @@ export default function AboutPage() {
             </div>
 
             {/* Right Column (Content): Bio Details */}
-            <div className="lg:w-8/12 lg:pt-4">
+            <div className="min-[900px]:w-8/12 min-[900px]:pt-4">
               <div className="flex items-center gap-4 mb-10">
                 <div className="w-10 h-[2px] bg-copter-red" />
                 <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
