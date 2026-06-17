@@ -156,8 +156,10 @@ function TeamCard({ member, index, isVisible }: { member: { name: string; role: 
 export default function AboutPage() {
   const [heroVisible, setHeroVisible] = useState(false);
   const [ceoBioExpanded, setCeoBioExpanded] = useState(false);
+  const [cooBioExpanded, setCooBioExpanded] = useState(false);
   const [cfoBioExpanded, setCfoBioExpanded] = useState(false);
   const [govAffairsBioExpanded, setGovAffairsBioExpanded] = useState(false);
+  const [hbdBioExpanded, setHbdBioExpanded] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 150);
@@ -171,8 +173,10 @@ export default function AboutPage() {
   const values = useInView({ threshold: 0.15 });
   const people = useInView({ threshold: 0.1 });
   const ceo = useInView({ threshold: 0.05 });
+  const coo = useInView({ threshold: 0.05 });
   const cfo = useInView({ threshold: 0.05 });
   const govAffairs = useInView({ threshold: 0.05 });
+  const hbd = useInView({ threshold: 0.05 });
   const management = useInView({ threshold: 0.05 });
   const board = useInView({ threshold: 0.05 });
   const governance = useInView({ threshold: 0.15 });
@@ -733,14 +737,101 @@ export default function AboutPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          6.6. GROUP HEAD, FINANCE & STRATEGY
+          6.6. GROUP CHIEF OPERATING OFFICER
       ════════════════════════════════════════════════════════ */}
-      <section id="cfo" ref={cfo.ref} className="py-16 lg:py-24 bg-[#f8fafc] relative overflow-hidden">
+      <section id="coo" ref={coo.ref} className="py-16 lg:py-24 bg-[#f8fafc] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-copter-red/[0.02] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
         
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col min-[900px]:flex-row-reverse gap-16 min-[900px]:gap-20">
             {/* Right Column (Visuals): Image & Sticky Title */}
+            <div className="min-[900px]:w-4/12">
+              <div className="sticky top-32">
+                <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${coo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
+                  <Image 
+                    src="/images/coo.jpg" 
+                    alt="Capt. Oludolapo Ogundele" 
+                    fill 
+                    className="object-cover object-[center_top]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+                </div>
+                
+                <div className={`${coo.isVisible ? 'smooth-left-visible' : 'smooth-left-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
+                    Capt. Oludolapo<br />Ogundele
+                  </h3>
+                  <p className="text-copter-red font-bold uppercase tracking-[0.2em] text-[11px]">
+                    Group Chief Operating Officer & Director of Operations
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Left Column (Content): Bio Details */}
+            <div className="min-[900px]:w-8/12 min-[900px]:pt-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-[2px] bg-copter-red" />
+                <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
+              </div>
+              
+              <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${coo.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
+                <p>
+                  <strong className="text-copter-blue">Captain Oludolapo Ogundele</strong> is a seasoned aviation executive, operations strategist, and business leader with a distinguished career spanning aviation, engineering, energy trading, logistics, project finance, and infrastructure development. With over fourteen years of progressive leadership experience across multiple sectors, he has built a reputation for driving operational excellence, optimising business performance, and delivering innovative solutions to complex commercial and logistical challenges.
+                </p>
+                <p>
+                  As Group Chief Operating Officer and Director of Operations, Captain Ogundele provides strategic leadership for organisational operations, aviation management, and business growth. His multidisciplinary expertise enables him to effectively align operational efficiency with commercial objectives, ensuring sustainable growth, regulatory compliance, and exceptional service delivery across diverse business environments.
+                </p>
+                <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${cooBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    <div className="space-y-6 pt-6">
+                      <p>
+                        A trained Mechanical Engineer and accomplished aviation professional, Captain Ogundele advanced his career within the aviation industry through the Bristow Group, one of the world's leading providers of aviation services. During his distinguished nine-year tenure, he served as a Commercial Pilot and rose through the ranks to become a Captain, accumulating extensive experience in flight operations, aviation safety management, crew resource management, regulatory compliance, and operational leadership. His aviation career equipped him with a deep understanding of risk management, precision execution, decision-making under pressure, and the highest standards of safety and operational integrity.
+                      </p>
+                      <p>
+                        Beyond aviation, Captain Ogundele has successfully led operations within the energy and logistics sectors. As Director of Operations at Reinking Energy Trading, he spearheaded the implementation of strategic operational frameworks that enhanced organisational efficiency, strengthened stakeholder engagement, and improved collaboration across business units. His leadership contributed significantly to the optimisation of trading, logistics, and supply chain operations while supporting sustainable business growth.
+                      </p>
+                      <p>
+                        Recognised for his strategic insight into Nigeria's transportation and logistics ecosystem, he was appointed Executive Director of Structured Trade and Investment Company (STIC), the concessionaire responsible for the landmark NPA/Lagos State Government Trailer Park Project. In this role, he played a critical part in developing and implementing technology-driven logistics solutions designed to address one of Nigeria's most significant transportation challenges—traffic congestion caused by port-bound truck movements. His contributions supported improved traffic management, operational coordination, and infrastructure utilisation within the nation's commercial capital.
+                      </p>
+                      <p>
+                        Captain Ogundele's leadership philosophy is anchored on operational excellence, corporate accountability, innovation, safety culture, and continuous process improvement. His unique ability to bridge technical expertise, aviation discipline, commercial strategy, and infrastructure management positions him as a highly effective executive capable of leading complex organisations through growth, transformation, and operational optimisation.
+                      </p>
+                      <p>
+                        With extensive experience working across aviation, energy, logistics, and infrastructure sectors, he brings to every assignment a rare combination of strategic vision, execution capability, and stakeholder management expertise. His commitment to excellence, organisational resilience, and sustainable value creation continues to make him a respected leader within Nigeria's aviation and business communities.
+                      </p>
+                      <p className="pb-4 border-b border-gray-100">
+                        Captain Oludolapo Ogundele holds a Bachelor of Science (Honours) degree in Mechanical Engineering from the University of Lagos, Nigeria.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="pt-2">
+                  <button 
+                    onClick={() => setCooBioExpanded(!cooBioExpanded)}
+                    className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{cooBioExpanded ? 'See Less' : 'See More'}</span>
+                    <svg className={`w-4 h-4 transition-transform duration-300 ${cooBioExpanded ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
+          6.7. GROUP HEAD, FINANCE & STRATEGY
+      ════════════════════════════════════════════════════════ */}
+      <section id="cfo" ref={cfo.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col min-[900px]:flex-row gap-16 min-[900px]:gap-20">
+            {/* Left Column (Visuals): Image & Sticky Title */}
             <div className="min-[900px]:w-4/12">
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${cfo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
@@ -754,7 +845,7 @@ export default function AboutPage() {
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
                 </div>
                 
-                <div className={`${cfo.isVisible ? 'smooth-left-visible' : 'smooth-left-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
+                <div className={`${cfo.isVisible ? 'smooth-right-visible' : 'smooth-right-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
                   <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
                     Michael A.<br />Uzor
                   </h3>
@@ -765,7 +856,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Left Column (Content): Bio Details */}
+            {/* Right Column (Content): Bio Details */}
             <div className="min-[900px]:w-8/12 min-[900px]:pt-4">
               <div className="flex items-center gap-4 mb-10">
                 <div className="w-10 h-[2px] bg-copter-red" />
@@ -820,9 +911,101 @@ export default function AboutPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
+          6.8. GROUP HEAD, BUSINESS DEVELOPMENT & CORPORATE COMMUNICATIONS
+      ════════════════════════════════════════════════════════ */}
+      <section id="hbd" ref={hbd.ref} className="py-16 lg:py-24 bg-[#f8fafc] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-copter-red/[0.02] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
+        
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col min-[900px]:flex-row-reverse gap-16 min-[900px]:gap-20">
+            {/* Right Column (Visuals): Image & Sticky Title */}
+            <div className="min-[900px]:w-4/12">
+              <div className="sticky top-32">
+                <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${hbd.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
+                  <Image 
+                    src="/images/HBD.jpg" 
+                    alt="Engr. Ruth Okoh" 
+                    fill 
+                    className="object-cover object-[center_top]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+                </div>
+                
+                <div className={`${hbd.isVisible ? 'smooth-left-visible' : 'smooth-left-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
+                    Engr. Ruth<br />Okoh
+                  </h3>
+                  <p className="text-copter-red font-bold uppercase tracking-[0.2em] text-[11px]">
+                    Group Head, Business Development & Corporate Communications
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Left Column (Content): Bio Details */}
+            <div className="min-[900px]:w-8/12 min-[900px]:pt-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-[2px] bg-copter-red" />
+                <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
+              </div>
+              
+              <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${hbd.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
+                <p>
+                  <strong className="text-copter-blue">Ruth Okoh</strong> is an accomplished Aerospace Engineer, technology executive, and multidisciplinary innovator with extensive experience spanning aerospace engineering, space and satellite technology, aviation operations, research and development, strategic partnerships, and enterprise leadership. Recognised for her ability to bridge technical excellence with business innovation, she has built a distinguished career advancing technological solutions, fostering strategic collaborations, and driving impactful initiatives across the aerospace and technology sectors.
+                </p>
+                <p>
+                  With a strong foundation in aircraft and aerospace systems design, Ruth possesses deep expertise in aircraft engineering, propulsion systems, aerospace research, aviation operations, and advanced engineering simulations. Her professional journey includes critical contributions to aircraft maintenance operations, aerospace design projects, satellite technology initiatives, and research-driven innovations that support the growth of Africa's aerospace ecosystem.
+                </p>
+                <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${hbdBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    <div className="space-y-6 pt-6">
+                      <p>
+                        As an Aerospace Engineer, she plays a key role in advancing initiatives across space and satellite technology, private aviation, aerospace education, and research and development. Her work focuses on developing innovative solutions, expanding technical knowledge, business development and contributing to the advancement of indigenous aerospace capabilities. Ruth has served as Chief Technology Officer at Sigicomms Limited, where she provided strategic leadership in technology development, portfolio management, business growth, and the cultivation of strategic partnerships within the technology and communications sectors.
+                      </p>
+                      <p>
+                        Ruth's engineering expertise was shaped through her work with the National Space Research and Development Agency (NASRDA), where she participated in advanced aerospace projects involving mission analysis, propulsion systems, robotic systems design, unmanned aerial vehicle development, and engineering simulations. Her contributions to spacecraft and aviation-related projects demonstrate a strong command of systems engineering, design optimisation, materials analysis, and innovation management.
+                      </p>
+                      <p>
+                        Earlier in her career, she gained valuable industry experience in aircraft maintenance engineering with leading aviation organisations, supporting rotary and fixed-wing aircraft operations, maintenance procedures, overhaul programmes, inventory management, and aviation safety standards. These experiences provided her with a comprehensive understanding of both the technical and operational dimensions of the aviation industry.
+                      </p>
+                      <p>
+                        Beyond engineering, Ruth is a dynamic professional, researcher, and business strategist with interests spanning technology commercialisation, wellness innovation, and creative enterprise development. She has successfully led ventures focused on retail innovation, indigenous phytotherapy research, product development, and business management. Her professional journey reflects a passion for creating sustainable solutions, nurturing innovation, and transforming ideas into impactful ventures.
+                      </p>
+                      <p>
+                        A strong advocate for knowledge development and industry advancement, Ruth combines analytical thinking, technical expertise, strategic communication, and leadership capability to deliver results in highly specialised and multidisciplinary environments. Her ability to integrate engineering principles with business strategy enables her to identify opportunities, build partnerships, and drive transformational growth across diverse sectors.
+                      </p>
+                      <p>
+                        Educated in Aerospace Engineering at the National Aerospace University, Kharkov, Ukraine, she developed advanced competencies in aircraft design, aerospace systems, propulsion engineering, aviation materials science, simulation technologies, and aircraft construction. Her academic achievements, combined with extensive practical experience, position her as a respected professional within the aerospace and technology communities.
+                      </p>
+                      <p className="pb-4 border-b border-gray-100">
+                        Driven by a commitment to innovation, excellence, and sustainable development, Ruth Okoh continues to champion initiatives that advance aerospace technology, strengthen indigenous technical capacity, and inspire the next generation of innovators, engineers, and industry leaders across Africa and beyond.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="pt-2">
+                  <button 
+                    onClick={() => setHbdBioExpanded(!hbdBioExpanded)}
+                    className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{hbdBioExpanded ? 'See Less' : 'See More'}</span>
+                    <svg className={`w-4 h-4 transition-transform duration-300 ${hbdBioExpanded ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════════
           6.7. GROUP HEAD, GOVERNMENT & PUBLIC AFFAIRS
       ════════════════════════════════════════════════════════ */}
       <section id="gov-affairs" ref={govAffairs.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col min-[900px]:flex-row gap-16 min-[900px]:gap-20">
             {/* Left Column (Visuals): Image & Sticky Title */}
@@ -832,7 +1015,7 @@ export default function AboutPage() {
                   {/* Using PortraitPlaceholder since we don't have an image yet */}
                   <Image 
                     src="/images/babajide-Oluwafemi.jpg" 
-                    alt="Michael A. Uzor" 
+                    alt="Babajide O. Jinadu" 
                     fill 
                     className="object-cover object-[center_top]"
                   />
@@ -901,8 +1084,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      
 
       {/* ════════════════════════════════════════════════════════
           8. BOARD OF DIRECTORS

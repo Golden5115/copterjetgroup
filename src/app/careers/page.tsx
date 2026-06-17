@@ -18,10 +18,10 @@ export default function CareersPage() {
       <section className="relative h-[65vh] min-h-[500px] max-h-[700px] w-full flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full bg-[#164878]">
-          <Image 
-            src="/images/careers-hero.jpg" 
-            alt="CopterJet Careers" 
-            fill 
+          <Image
+            src="/images/careers-hero2.jpg"
+            alt="CopterJet Careers"
+            fill
             className="object-cover object-[center_40%] opacity-70"
             priority
           />
@@ -70,15 +70,15 @@ export default function CareersPage() {
               <p>
                 Whether you are an experienced aviation professional, engineer, pilot, operations specialist, business executive, or an emerging talent seeking to build a rewarding career, CopterJet offers a dynamic environment where expertise is valued, growth is encouraged, and excellence is rewarded.
               </p>
-              
+
               <div className="p-8 md:p-10 bg-[#f8fafc] border-l-[4px] border-copter-red rounded-r-2xl shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow duration-500">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-copter-red/[0.03] rounded-full blur-2xl group-hover:bg-copter-red/[0.08] transition-colors duration-500" />
-                <svg className="absolute -top-4 -left-4 w-24 h-24 text-copter-blue/5 transform -scale-x-100" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                <svg className="absolute -top-4 -left-4 w-24 h-24 text-copter-blue/5 transform -scale-x-100" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
                 <p className="relative z-10 text-copter-blue/90 italic text-lg leading-relaxed">
                   "Our culture is founded on collaboration, continuous learning, professionalism, and a commitment to delivering world-class solutions to our clients and partners."
                 </p>
               </div>
-              
+
               <p>
                 Join us and become part of a virtuoso team dedicated to advancing aviation and aerospace, creating opportunities, and making a lasting impact in the industry.
               </p>
@@ -93,7 +93,7 @@ export default function CareersPage() {
       <section className="py-20 lg:py-32 bg-[#0a1220] relative overflow-hidden">
         {/* Subtle grid pattern background */}
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="text-center mb-16 lg:mb-24 max-w-3xl mx-auto">
             <h3 className="text-3xl lg:text-5xl font-bold text-white mb-6 tracking-tight">Impactful Projects Across Our Domains</h3>
@@ -138,12 +138,12 @@ export default function CareersPage() {
             <rect width="404" height="404" fill="url(#dot-pattern)" />
           </svg>
         </div>
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10 w-full flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-12 tracking-tight drop-shadow-md leading-[1.1]">
-            Explore opportunities.<br/>Build your future.<br/><span className="text-[#0a1220]">Rise higher with CopterJet.</span>
+            Explore opportunities.<br />Build your future.<br /><span className="text-[#0a1220]">Rise higher with CopterJet.</span>
           </h2>
-          
+
           <a href="mailto:careers@copterjet.com" className="inline-flex items-center justify-center px-10 py-5 bg-[#0a1220] text-white font-bold text-lg tracking-[0.15em] uppercase rounded-full shadow-2xl hover:bg-white hover:text-copter-red transition-all duration-500 group overflow-hidden relative">
             <span className="relative z-10 flex items-center">
               Vacancies & Opportunities

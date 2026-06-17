@@ -83,20 +83,20 @@ export default function WhoWeAre() {
               </div>
 
               {/* ── UPDATED: Airplane Swoosh (Bottom Right) ── */}
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 overflow-hidden pointer-events-none hidden lg:block">
+              <div className="absolute -bottom-2 -right-2 lg:-bottom-4 lg:-right-4 w-24 h-24 lg:w-32 lg:h-32 overflow-hidden pointer-events-none z-10">
                 <div className="w-full h-full bg-copter-red opacity-90" style={{clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }} />
-                <div className="absolute inset-0 flex items-end justify-end p-6">
+                <div className="absolute inset-0 flex items-end justify-end p-4 lg:p-6">
                   {/* Airplane Icon */}
-                  <svg className="w-9 h-9 text-white mb-1 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 lg:w-9 lg:h-9 text-white lg:mb-1 lg:mr-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
                   </svg>
                 </div>
               </div>
 
               {/* Floating stat card (Bottom Left) */}
-              <div className="absolute -left-4 bottom-14 bg-copter-blue text-white px-6 py-5 shadow-[0_12px_24px_rgba(22,72,120,0.3)] hidden lg:block">
-                <p className="text-4xl font-bold leading-none">10+</p>
-                <p className="text-[10px] font-bold tracking-widest uppercase text-white/70 mt-1">Years of Excellence</p>
+              <div className="absolute -left-2 bottom-8 lg:-left-4 lg:bottom-14 bg-copter-blue text-white px-4 py-3 lg:px-6 lg:py-5 shadow-[0_12px_24px_rgba(22,72,120,0.3)] z-10">
+                <p className="text-2xl lg:text-4xl font-bold leading-none">10+</p>
+                <p className="text-[8px] lg:text-[10px] font-bold tracking-widest uppercase text-white/70 mt-1">Years of Excellence</p>
               </div>
             </div>
 

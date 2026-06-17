@@ -2,6 +2,7 @@
 
 import HomeCTA from '@/components/sections/HomeCTA';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 function useInView(options = {}) {
@@ -30,9 +31,21 @@ const PARTNER_TYPES = [
   { label: 'Governments', icon: 'M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z' },
   { label: 'Service Providers', icon: 'M11.42 15.17l-5.1-2.55a.75.75 0 010-1.24l5.1-2.55a1.5 1.5 0 011.16 0l5.1 2.55a.75.75 0 010 1.24l-5.1 2.55a1.5 1.5 0 01-1.16 0zM4.5 12.75l6.47 3.24a1.5 1.5 0 001.06 0l6.47-3.24' },
   { label: 'Infrastructure Developers', icon: 'M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z' },
+  { label: 'Energy', icon: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z' },
+  { label: 'Oil & Gas', icon: 'M12 2.25c-3.15 3.15-8.25 7.125-8.25 11.25a8.25 8.25 0 1016.5 0c0-4.125-5.1-8.1-8.25-11.25z' },
 ];
 
 const COLLAB_AREAS = [
+  {
+    title: 'Supply Chain',
+    desc: 'Optimizing procurement, distribution networks, and vendor relations for enhanced operational efficiency.',
+    icon: 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244',
+  },
+  {
+    title: 'Logistics',
+    desc: 'Seamless coordination and management of complex transport, cargo, and delivery networks globally.',
+    icon: 'M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12',
+  },
   {
     title: 'Airline Development',
     desc: 'Strategic airline partnerships and joint venture operations that drive growth and expand market reach.',
@@ -63,6 +76,7 @@ const COLLAB_AREAS = [
     desc: 'Structured investment opportunities across the aviation and aerospace value chain.',
     icon: 'M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
   },
+
 ];
 
 const PILLARS = [
@@ -86,7 +100,7 @@ export default function PartnershipPage() {
       {/* HERO — Clean White Center Layout with Abstract Ribbons      */}
       {/* ═══════════════════════════════════════════════════════════ */}
       <section className="relative bg-white overflow-hidden min-h-[600px] lg:min-h-[700px] flex items-center justify-center pt-32 pb-20">
-        
+
         {/* Abstract Flowing Ribbons Background */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {/* Main sweeping path */}
@@ -114,7 +128,7 @@ export default function PartnershipPage() {
         </div>
 
         <div className="max-w-[60rem] mx-auto px-6 relative z-10 text-center flex flex-col items-center">
-          
+
           {/* Pill Badge */}
           <div className="inline-flex items-center justify-center px-5 py-2 border border-gray-300 rounded-full mb-8 bg-white/50 backdrop-blur-sm">
             <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase text-[#0a1e35]">
@@ -171,6 +185,17 @@ export default function PartnershipPage() {
               Our partnership model is built on trust, expertise, shared vision, and operational excellence. We leverage our industry knowledge, global network, and technical capabilities to develop solutions that enhance operational efficiency, expand market access, optimize asset utilization, and unlock new revenue streams.
             </p>
           </div>
+        </div>
+
+        {/* Feature Image */}
+        <div className={`max-w-[72rem] mx-auto mt-16 md:mt-24 w-full h-[400px] lg:h-[550px] rounded-[2rem] overflow-hidden relative shadow-2xl transition-all duration-1000 delay-300 ${introInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <Image
+            src="/images/businesses/leasing.jpg"
+            alt="Partnerships and Collaboration"
+            fill
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e35]/60 via-transparent to-transparent mix-blend-multiply" />
         </div>
       </section>
 
@@ -263,7 +288,7 @@ export default function PartnershipPage() {
                 <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
                   Areas of Collaboration
                 </h2>
-                <p className="text-white/70 text-lg leading-relaxed">
+                <p className="text-white/80 text-xl lg:text-2xl leading-relaxed">
                   Whether supporting airline development, aircraft operations, MRO services, aviation infrastructure projects, charter services, or aerospace investments, CopterJet provides the strategic leadership and operational expertise required to transform opportunities into lasting success.
                 </p>
               </div>
@@ -276,13 +301,13 @@ export default function PartnershipPage() {
                     className="bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-2xl p-7 hover:bg-white/[0.12] transition-all duration-300 group"
                     style={{ transitionDelay: `${idx * 80}ms` }}
                   >
-                    <div className="w-11 h-11 rounded-xl bg-copter-red/10 flex items-center justify-center text-copter-red mb-5 group-hover:bg-copter-red group-hover:text-white transition-all duration-300">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 rounded-xl bg-copter-red/10 flex items-center justify-center text-copter-red mb-5 group-hover:bg-copter-red group-hover:text-white transition-all duration-300">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={area.icon} />
                       </svg>
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-2">{area.title}</h4>
-                    <p className="text-sm text-white/60 leading-relaxed">{area.desc}</p>
+                    <h4 className="text-xl font-bold text-white mb-3">{area.title}</h4>
+                    <p className="text-base text-white/70 leading-relaxed">{area.desc}</p>
                   </div>
                 ))}
               </div>
