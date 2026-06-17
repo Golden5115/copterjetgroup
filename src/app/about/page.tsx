@@ -16,7 +16,7 @@ function useInView(options: { threshold?: number } = { threshold: 0.15 }) {
     }, { threshold: options.threshold });
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return { ref, isVisible };
 }
@@ -107,7 +107,7 @@ function AnimatedCounter({ target, suffix = '', duration = 2000 }: { target: num
     }, { threshold: 0.5 });
     if (el) observer.observe(el);
     return () => observer.disconnect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     if (!started) return;
@@ -197,7 +197,7 @@ export default function AboutPage() {
     { value: 12, suffix: '+', label: 'African Nations Served' },
     { value: 200, suffix: '+', label: 'Successful Deliverables' },
   ];
-  
+
   const coreValues = [
     {
       title: 'Commitment',
@@ -341,11 +341,11 @@ export default function AboutPage() {
         .wing-divider::after  { --dir: left; }
       `}</style>
 
- {/* ════════════════════════════════════════════════════════
+      {/* ════════════════════════════════════════════════════════
           1. HERO — INTERTWINED MOTION GRAPHICS
       ════════════════════════════════════════════════════════ */}
       <section className="relative w-full h-[85svh] min-h-[650px] flex items-center justify-center overflow-hidden bg-[#030912]">
-        
+
         {/* ── Background Image & Overlays ── */}
         <div className="absolute inset-0 z-0">
           <Image src="/images/hero-bg-2.1.jpg" alt="Aviation Backdrop" fill className="object-cover scale-105" priority />
@@ -358,7 +358,7 @@ export default function AboutPage() {
         {/* ── Motion Graphics (Planes & Copters) ── */}
         <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden"><div className="anim-plane"><PlaneIcon /></div></div>
         <div className="absolute inset-0 z-[3] pointer-events-none overflow-hidden"><div className="anim-copter"><HelicopterIcon /></div></div>
-        
+
         {/* Decorative Floating Geometry */}
         <div className="absolute inset-0 z-[4] pointer-events-none" aria-hidden="true">
           {Array.from({ length: 12 }).map((_, i) => (
@@ -367,7 +367,7 @@ export default function AboutPage() {
         </div>
         {/* ── Main Typography Content ── */}
         <div className="relative z-[10] w-full max-w-[90rem] mx-auto px-6 lg:px-12 flex flex-col items-center text-center mt-12">
-          
+
           {/* Top Label */}
           <div className={`inline-flex items-center gap-3 mb-8 px-6 py-2.5 border border-white/10 bg-white/5 backdrop-blur-md rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-700 delay-300 ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <span className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
@@ -393,42 +393,41 @@ export default function AboutPage() {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#030912] to-transparent z-[5]" />
       </section>
 
-    {/* ════════════════════════════════════════════════════════
+      {/* ════════════════════════════════════════════════════════
           2. WHO WE ARE — Floating Cinematic Glass
       ════════════════════════════════════════════════════════ */}
       <section id="who-we-are" ref={whoWeAre.ref} className="relative py-16 lg:py-24 bg-[#030912] overflow-hidden group">
-        
+
         {/* ── Background Image Layer ── */}
         <div className={`absolute right-0 top-0 w-full lg:w-[85%] h-full transition-all duration-[2s] cubic-bezier(0.22, 1, 0.36, 1) ${whoWeAre.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
           <div className="relative w-full h-full overflow-hidden">
-            <Image 
-              src="/images/hero-bg-2.1.jpg" 
-              alt="CopterJet Operations" 
-              fill 
+            <Image
+              src="/images/hero-bg-2.1.jpg"
+              alt="CopterJet Operations"
+              fill
               sizes="100vw"
-              className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[4s] ease-out" 
+              className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[4s] ease-out"
             />
             {/* Blend gradients */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#030912] via-[#030912]/80 to-transparent lg:via-[#030912]/50" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#030912] via-transparent to-[#030912]" />
             <div className="absolute inset-0 bg-copter-blue/20 mix-blend-multiply" />
-            
+
             {/* Animated High-Tech Grid */}
             <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '120px 120px' }} />
           </div>
         </div>
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
-          
+
           {/* ── Frosted Glass Text Panel ── */}
-          <div 
-            className={`relative max-w-xl bg-[white]/85 backdrop-blur-xl border border-white/5 p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-all duration-[1.5s] cubic-bezier(0.22, 1, 0.36, 1) ${
-              whoWeAre.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-24'
-            }`}
+          <div
+            className={`relative max-w-xl bg-[white]/85 backdrop-blur-xl border border-white/5 p-6 md:p-10 lg:p-12 shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-all duration-[1.5s] cubic-bezier(0.22, 1, 0.36, 1) ${whoWeAre.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-24'
+              }`}
           >
             {/* Premium Decorative Corners */}
             <div className="absolute -top-[1px] -left-[1px] w-12 h-12 border-t-[3px] border-l-[3px] border-copter-red" />
             <div className="absolute -bottom-[1px] -right-[1px] w-12 h-12 border-b-[3px] border-r-[3px] border-white/20 group-hover:border-copter-blue transition-colors duration-700" />
-            
+
             {/* Label */}
             <div className={`flex items-center gap-4 mb-8 ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '300ms' }}>
               <div className="w-10 h-[2px] bg-copter-red" />
@@ -436,10 +435,10 @@ export default function AboutPage() {
             </div>
             {/* Headline */}
             <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-copter-blue leading-[1.1] mb-8 tracking-tight ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '450ms' }}>
-              Integrated Aviation & Aerospace<br/>
+              Integrated Aviation & Aerospace<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d] italic pr-2">Specialist.</span>
             </h2>
-            
+
             {/* Body Text */}
             <div className={`space-y-6 mb-12 ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '600ms' }}>
               <p className="text-copter-blue text-[15px] md:text-base leading-[1.85] font-medium text-justify">
@@ -461,7 +460,7 @@ export default function AboutPage() {
                   <div className="text-[9px] text-copter-blue font-bold tracking-[0.2em] uppercase mt-1">Operations</div>
                 </div>
               </div>
-              
+
               <div className="hidden md:flex items-center gap-3 opacity-50">
                 <div className="w-1.5 h-1.5 bg-copter-blue rounded-full animate-pulse" />
                 <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-copter-blue">Global Reach</span>
@@ -476,13 +475,13 @@ export default function AboutPage() {
       ════════════════════════════════════════════════════════ */}
       <section ref={stats.ref} className="relative py-10 lg:py-12 bg-[#030912] z-20">
         <div className="max-w-[80rem] mx-auto px-6 lg:px-12">
-          
+
           <div className={`relative bg-gradient-to-r from-[#0a1220] via-[#0c1628] to-[#0a1220] border border-white/5 p-6 lg:p-10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] ${stats.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
-            
+
             {/* Premium Corner Accents */}
             <div className="absolute -top-[1px] -left-[1px] w-12 h-12 border-t-[3px] border-l-[3px] border-copter-red" />
             <div className="absolute -bottom-[1px] -right-[1px] w-12 h-12 border-b-[3px] border-r-[3px] border-white/20" />
-            
+
             {/* Subtle glow behind the card */}
             <div className="absolute inset-0 bg-copter-blue/5 blur-[50px] -z-10" />
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 divide-x-0 lg:divide-x divide-white/10">
@@ -494,12 +493,12 @@ export default function AboutPage() {
                       <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                     </span>
                   </div>
-                  
+
                   {/* Label */}
                   <p className="text-[10px] text-white/50 font-bold tracking-[0.25em] uppercase">
                     {stat.label}
                   </p>
-                  
+
                   {/* Expanding Hover Line */}
                   <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-6 h-[2px] bg-copter-red/40 group-hover:bg-copter-red group-hover:w-16 transition-all duration-700 ease-out" />
                 </div>
@@ -519,10 +518,10 @@ export default function AboutPage() {
         </div>
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-copter-red to-transparent" />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 min-[900px]:grid-cols-12 gap-16 min-[900px]:gap-24">
-            
+
             {/* Left: Sticky Title */}
             <div className="min-[900px]:col-span-5">
               <div className="sticky top-32">
@@ -532,7 +531,7 @@ export default function AboutPage() {
                     <span className="text-copter-red font-bold tracking-[0.2em] text-[10px] uppercase">Our History</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-8">
-                    Rooted in <br/>
+                    Rooted in <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d]">Purpose.</span>
                   </h2>
                   <p className="text-white/50 text-[15px] leading-relaxed font-medium max-w-sm">
@@ -563,7 +562,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className={`relative ${history.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '700ms' }}>
-                   <div className="absolute -left-[30px] md:-left-[38px] top-2 w-3.5 h-3.5 rounded-full bg-[#030912] border-[2px] border-white/40" />
+                  <div className="absolute -left-[30px] md:-left-[38px] top-2 w-3.5 h-3.5 rounded-full bg-[#030912] border-[2px] border-white/40" />
                   <p className="text-[16px] text-white/60 leading-[1.9] text-justify">
                     Through strategic partnerships, industry expertise, and an unwavering commitment to innovation and sustainable growth, we continue to expand our global footprint across aviation supply chain management, flight operations, technical services, and infrastructure development across Africa and beyond.
                   </p>
@@ -574,14 +573,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-    
+
 
       {/* ════════════════════════════════════════════════════════
           6. OUR PEOPLE INTRO
       ════════════════════════════════════════════════════════ */}
       <section id="people" ref={people.ref} className="pt-20 lg:pt-24 pb-16 lg:pb-24 bg-[#f8fafc] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #164878 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className={`text-center max-w-3xl mx-auto mb-16 ${people.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
             <div className="wing-divider mb-6 max-w-[220px] mx-auto">
@@ -597,10 +596,10 @@ export default function AboutPage() {
 
           {/* Group Picture Integration */}
           <div className={`relative w-full aspect-[4/3] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(22,72,120,0.15)] ${people.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '500ms' }}>
-            <Image 
-              src="/images/who_we_are2.jpg" 
-              alt="CopterJet International Group Team" 
-              fill 
+            <Image
+              src="/images/who_we_are2.jpg"
+              alt="CopterJet International Group Team"
+              fill
               className="object-cover object-[center_10%]"
             />
             {/* Cinematic overlay for premium feel */}
@@ -637,24 +636,24 @@ export default function AboutPage() {
       ════════════════════════════════════════════════════════ */}
       <section id="ceo" ref={ceo.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col min-[900px]:flex-row gap-16 min-[900px]:gap-20">
             {/* Left Column: Image & Sticky Title */}
             <div className="min-[900px]:w-4/12">
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${ceo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
-                  <Image 
-                    src="/images/ceo.jpg" 
-                    alt="Capt. Toluwa V. Olorunyomi" 
-                    fill 
+                  <Image
+                    src="/images/ceo.jpg"
+                    alt="Capt. Toluwa V. Olorunyomi"
+                    fill
                     className="object-cover object-[center_top]"
                   />
                   {/* Subtle brand overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
                 </div>
-                
+
                 <div className={`${ceo.isVisible ? 'smooth-right-visible' : 'smooth-right-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
                   <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
                     Capt. Toluwa V.<br />Olorunyomi
@@ -664,7 +663,7 @@ export default function AboutPage() {
                   </p>
 
                   <div className="bg-[#f8fafc] border-l-[3px] border-copter-red p-6 lg:p-8 rounded-r-xl shadow-sm relative">
-                    <svg className="absolute top-4 left-4 w-8 h-8 text-copter-blue/10 transform -scale-x-100" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <svg className="absolute top-4 left-4 w-8 h-8 text-copter-blue/10 transform -scale-x-100" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
                     <p className="text-copter-blue/90 italic font-semibold leading-[1.8] text-[15px] relative z-10 pl-4">
                       "Knowledge acquisition through continuous personal development is non-negotiable."
                     </p>
@@ -682,7 +681,7 @@ export default function AboutPage() {
                 <div className="w-10 h-[2px] bg-copter-red" />
                 <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
               </div>
-              
+
               <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${ceo.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
                 <p>
                   <strong className="text-copter-blue">Capt. Toluwa V. Olorunyomi</strong> is the Founder and Group Chief Executive Officer of Copterjet International Group, a diversified aviation and specialist services organisation focused on advancing Africa&apos;s aerospace, aviation, supply chain & logistics, and infrastructure ecosystem. He is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
@@ -720,9 +719,9 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="pt-2">
-                  <button 
+                  <button
                     onClick={() => setCeoBioExpanded(!ceoBioExpanded)}
                     className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
                   >
@@ -741,23 +740,23 @@ export default function AboutPage() {
       ════════════════════════════════════════════════════════ */}
       <section id="coo" ref={coo.ref} className="py-16 lg:py-24 bg-[#f8fafc] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-copter-red/[0.02] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col min-[900px]:flex-row-reverse gap-16 min-[900px]:gap-20">
             {/* Right Column (Visuals): Image & Sticky Title */}
             <div className="min-[900px]:w-4/12">
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${coo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
-                  <Image 
-                    src="/images/coo.jpg" 
-                    alt="Capt. Oludolapo Ogundele" 
-                    fill 
+                  <Image
+                    src="/images/coo2.jpg"
+                    alt="Capt. Oludolapo Ogundele"
+                    fill
                     className="object-cover object-[center_top]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
                 </div>
-                
+
                 <div className={`${coo.isVisible ? 'smooth-left-visible' : 'smooth-left-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
                   <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
                     Capt. Oludolapo<br />Ogundele
@@ -775,7 +774,7 @@ export default function AboutPage() {
                 <div className="w-10 h-[2px] bg-copter-red" />
                 <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
               </div>
-              
+
               <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${coo.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
                 <p>
                   <strong className="text-copter-blue">Captain Oludolapo Ogundele</strong> is a seasoned aviation executive, operations strategist, and business leader with a distinguished career spanning aviation, engineering, energy trading, logistics, project finance, and infrastructure development. With over fourteen years of progressive leadership experience across multiple sectors, he has built a reputation for driving operational excellence, optimising business performance, and delivering innovative solutions to complex commercial and logistical challenges.
@@ -807,9 +806,9 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="pt-2">
-                  <button 
+                  <button
                     onClick={() => setCooBioExpanded(!cooBioExpanded)}
                     className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
                   >
@@ -828,23 +827,23 @@ export default function AboutPage() {
       ════════════════════════════════════════════════════════ */}
       <section id="cfo" ref={cfo.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col min-[900px]:flex-row gap-16 min-[900px]:gap-20">
             {/* Left Column (Visuals): Image & Sticky Title */}
             <div className="min-[900px]:w-4/12">
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${cfo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
-                  <Image 
-                    src="/images/michael-uzor.jpg" 
-                    alt="Michael A. Uzor" 
-                    fill 
+                  <Image
+                    src="/images/michael-uzor.jpg"
+                    alt="Michael A. Uzor"
+                    fill
                     className="object-cover object-[center_top]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
                 </div>
-                
+
                 <div className={`${cfo.isVisible ? 'smooth-right-visible' : 'smooth-right-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
                   <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
                     Michael A.<br />Uzor
@@ -862,7 +861,7 @@ export default function AboutPage() {
                 <div className="w-10 h-[2px] bg-copter-red" />
                 <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
               </div>
-              
+
               <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${cfo.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
                 <p>
                   <strong className="text-copter-blue">Michael A. Uzor</strong> is a highly accomplished financial strategist, corporate finance expert, and business consultant with over three decades of multidisciplinary experience spanning banking, capital markets, financial media, investment management, economic intelligence, and strategic business development.
@@ -894,9 +893,9 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="pt-2">
-                  <button 
+                  <button
                     onClick={() => setCfoBioExpanded(!cfoBioExpanded)}
                     className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
                   >
@@ -915,23 +914,23 @@ export default function AboutPage() {
       ════════════════════════════════════════════════════════ */}
       <section id="hbd" ref={hbd.ref} className="py-16 lg:py-24 bg-[#f8fafc] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-copter-red/[0.02] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col min-[900px]:flex-row-reverse gap-16 min-[900px]:gap-20">
             {/* Right Column (Visuals): Image & Sticky Title */}
             <div className="min-[900px]:w-4/12">
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${hbd.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
-                  <Image 
-                    src="/images/HBD.jpg" 
-                    alt="Engr. Ruth Okoh" 
-                    fill 
+                  <Image
+                    src="/images/HBD.jpg"
+                    alt="Engr. Ruth Okoh"
+                    fill
                     className="object-cover object-[center_top]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
                 </div>
-                
+
                 <div className={`${hbd.isVisible ? 'smooth-left-visible' : 'smooth-left-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
                   <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
                     Engr. Ruth<br />Okoh
@@ -949,7 +948,7 @@ export default function AboutPage() {
                 <div className="w-10 h-[2px] bg-copter-red" />
                 <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
               </div>
-              
+
               <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${hbd.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
                 <p>
                   <strong className="text-copter-blue">Ruth Okoh</strong> is an accomplished Aerospace Engineer, technology executive, and multidisciplinary innovator with extensive experience spanning aerospace engineering, space and satellite technology, aviation operations, research and development, strategic partnerships, and enterprise leadership. Recognised for her ability to bridge technical excellence with business innovation, she has built a distinguished career advancing technological solutions, fostering strategic collaborations, and driving impactful initiatives across the aerospace and technology sectors.
@@ -984,9 +983,9 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="pt-2">
-                  <button 
+                  <button
                     onClick={() => setHbdBioExpanded(!hbdBioExpanded)}
                     className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
                   >
@@ -1005,7 +1004,7 @@ export default function AboutPage() {
       ════════════════════════════════════════════════════════ */}
       <section id="gov-affairs" ref={govAffairs.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className="flex flex-col min-[900px]:flex-row gap-16 min-[900px]:gap-20">
             {/* Left Column (Visuals): Image & Sticky Title */}
@@ -1013,16 +1012,16 @@ export default function AboutPage() {
               <div className="sticky top-32">
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${govAffairs.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
                   {/* Using PortraitPlaceholder since we don't have an image yet */}
-                  <Image 
-                    src="/images/babajide-Oluwafemi.jpg" 
-                    alt="Babajide O. Jinadu" 
-                    fill 
+                  <Image
+                    src="/images/babajide-Oluwafemi.jpg"
+                    alt="Babajide O. Jinadu"
+                    fill
                     className="object-cover object-[center_top]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
                 </div>
-                
+
                 <div className={`${govAffairs.isVisible ? 'smooth-right-visible' : 'smooth-right-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
                   <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
                     Babajide O.<br />Jinadu
@@ -1040,7 +1039,7 @@ export default function AboutPage() {
                 <div className="w-10 h-[2px] bg-copter-red" />
                 <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
               </div>
-              
+
               <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${govAffairs.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
                 <p>
                   <strong className="text-copter-blue">Jinadu Babajide Oluwafemi</strong> is a seasoned government and institutional relations and strategic communications professional with over fifteen years of experience driving high-impact initiatives across the public, private, faith-based, and non-profit sectors. He possesses a unique blend of expertise in stakeholder engagement, public affairs, sports administration, enterprise development, and strategic planning, enabling him to successfully navigate complex environments and deliver sustainable results.
@@ -1069,9 +1068,9 @@ export default function AboutPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="pt-2">
-                  <button 
+                  <button
                     onClick={() => setGovAffairsBioExpanded(!govAffairsBioExpanded)}
                     className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
                   >
@@ -1113,7 +1112,7 @@ export default function AboutPage() {
       ════════════════════════════════════════════════════════ */}
       <section ref={values.ref} className="relative py-20 lg:py-24 bg-[#060e1a] overflow-hidden">
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-        
+
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className={`text-center mb-20 ${values.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">Copterjet Core Value <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d]">Triangle</span></h2>
@@ -1124,9 +1123,9 @@ export default function AboutPage() {
 
           {(() => {
             const renderCard = (val: typeof coreValues[0], idx: number) => (
-              <div 
-                key={idx} 
-                className={`w-full group relative bg-[#0a1220] border border-white/5 p-8 overflow-hidden transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'} ${val.color === 'red' ? 'hover:border-copter-red/40' : 'hover:border-copter-blue/40'}`} 
+              <div
+                key={idx}
+                className={`w-full group relative bg-[#0a1220] border border-white/5 p-8 overflow-hidden transition-colors duration-700 ${values.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'} ${val.color === 'red' ? 'hover:border-copter-red/40' : 'hover:border-copter-blue/40'}`}
                 style={{ animationDelay: `${100 + (idx * 150)}ms` }}
               >
                 <div className="absolute -right-6 -top-6 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-1000">
