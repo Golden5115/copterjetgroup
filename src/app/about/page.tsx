@@ -159,7 +159,17 @@ export default function AboutPage() {
   const [cooBioExpanded, setCooBioExpanded] = useState(false);
   const [cfoBioExpanded, setCfoBioExpanded] = useState(false);
   const [govAffairsBioExpanded, setGovAffairsBioExpanded] = useState(false);
+  const [serviceDeliveryBioExpanded, setServiceDeliveryBioExpanded] = useState(false);
   const [hbdBioExpanded, setHbdBioExpanded] = useState(false);
+  const [omameBioExpanded, setOmameBioExpanded] = useState(false);
+  const [bakareBioExpanded, setBakareBioExpanded] = useState(false);
+  const [alabiBioExpanded, setAlabiBioExpanded] = useState(false);
+  const [afolabiBioExpanded, setAfolabiBioExpanded] = useState(false);
+  const [chairmanBioExpanded, setChairmanBioExpanded] = useState(false);
+  const boardChairman = useInView({ threshold: 0.05 });
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const scrollLeft = () => { if (carouselRef.current) carouselRef.current.scrollBy({ left: -350, behavior: 'smooth' }); };
+  const scrollRight = () => { if (carouselRef.current) carouselRef.current.scrollBy({ left: 350, behavior: 'smooth' }); };
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 150);
@@ -176,10 +186,17 @@ export default function AboutPage() {
   const coo = useInView({ threshold: 0.05 });
   const cfo = useInView({ threshold: 0.05 });
   const govAffairs = useInView({ threshold: 0.05 });
+  const serviceDelivery = useInView({ threshold: 0.05 });
   const hbd = useInView({ threshold: 0.05 });
   const management = useInView({ threshold: 0.05 });
   const board = useInView({ threshold: 0.05 });
+  const boardOmame = useInView({ threshold: 0.05 });
+  const boardCeo = useInView({ threshold: 0.05 });
+  const boardBakare = useInView({ threshold: 0.05 });
+  const boardAlabi = useInView({ threshold: 0.05 });
+  const boardAfolabi = useInView({ threshold: 0.05 });
   const governance = useInView({ threshold: 0.15 });
+  const esg = useInView({ threshold: 0.15 });
 
   // Data
   const managementTeam = [
@@ -187,9 +204,11 @@ export default function AboutPage() {
     { name: "Pending Name", role: "Director of Aviation", image: "" },
   ];
   const boardMembers = [
-    { name: "Pending Name", role: "Chairman of the Board", image: "" },
-    { name: "Pending Name", role: "Board Member", image: "" },
-    { name: "Pending Name", role: "Board Member", image: "" },
+    { name: "Capt. Austin Omame", role: "Independent Non-Executive Director", image: "/images/Capt. Omame - Headshot.jpg" },
+    { name: "Capt. Toluwa V. Olorunyomi", role: "Group Chief Executive (GCE)", image: "/images/Toluwa - Headshot.jpg" },
+    { name: "Mrs. Olajumoke Patricia Bakare", role: "Independent Non-Executive Director", image: "/images/Mrs. Bakare - Headshot.jpg" },
+    { name: "Mr. David Adebayo Alabi", role: "Independent Non-Executive Director", image: "/images/Mr. Alabi - Headshot.jpg" },
+    { name: "Engr. Sunday Felix Afolabi", role: "Independent Non-Executive Director", image: "/images/Engr. Afolabi - Headshot.jpg" },
   ];
   const statItems = [
     { value: 15, suffix: '+', label: 'Years of Expertise' },
@@ -1085,29 +1104,472 @@ export default function AboutPage() {
       </section>
 
       {/* ════════════════════════════════════════════════════════
-          8. BOARD OF DIRECTORS
+          6.9. HEAD, SERVICE DELIVERY – SUPPLY CHAIN BUSINESS DIVISION
       ════════════════════════════════════════════════════════ */}
-      <section id="board" ref={board.ref} className="py-12 pb-20 lg:py-16 lg:pb-24 bg-[#f8fafc]">
-        <div className="absolute left-6 right-6 lg:left-12 lg:right-12 h-[1px] bg-gradient-to-r from-transparent via-copter-blue/10 to-transparent" />
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <div className={`${board.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'} mb-16 max-w-3xl`}>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-[2px] bg-copter-red" />
-              <h3 className="text-2xl font-bold text-copter-blue tracking-tight">Board of Directors</h3>
+      <section id="service-delivery" ref={serviceDelivery.ref} className="py-16 lg:py-24 bg-[#f8fafc] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col min-[900px]:flex-row-reverse gap-16 min-[900px]:gap-20">
+            {/* Right Column (Visuals): Image & Sticky Title */}
+            <div className="min-[900px]:w-4/12">
+              <div className="sticky top-32">
+                <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${serviceDelivery.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
+                  <Image
+                    src="/images/Rober - Headshot.jpg"
+                    alt="Robert Mgbolu"
+                    fill
+                    className="object-cover object-[center_top]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+                </div>
+
+                <div className={`${serviceDelivery.isVisible ? 'smooth-left-visible' : 'smooth-left-hidden'} max-w-[340px] mx-auto`} style={{ animationDelay: '300ms' }}>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">
+                    Robert<br />Mgbolu
+                  </h3>
+                  <p className="text-copter-red font-bold uppercase tracking-[0.2em] text-[11px]">
+                    Head, Service Delivery – Supply Chain Business Division
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="text-[14px] text-copter-grey leading-[1.8] font-medium pl-14">
-              Our Board of Directors provides strategic oversight, governance, and leadership guidance that supports Copterjet&apos;s long-term vision and sustainable growth objectives.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl">
-            {boardMembers.map((member, idx) => (
-              <TeamCard key={idx} member={member} index={idx} isVisible={board.isVisible} />
-            ))}
+
+            {/* Left Column (Content): Bio Details */}
+            <div className="min-[900px]:w-8/12 min-[900px]:pt-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-10 h-[2px] bg-copter-red" />
+                <h3 className="text-[11px] font-bold text-copter-blue tracking-[0.25em] uppercase">Leadership Profile</h3>
+              </div>
+
+              <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${serviceDelivery.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
+                <p>
+                  <strong className="text-copter-blue">Robert Mgbolu</strong> is a highly accomplished service delivery executive, customer experience strategist, and quality management professional with over fourteen years of progressive experience spanning telecommunications, FMCG, logistics, and service-oriented enterprises. Renowned for his passion for customer excellence and operational efficiency, he has built a distinguished career leading customer service transformation, service quality assurance, customer retention initiatives, workforce optimization, and performance management across some of Nigeria's leading organisations.
+                </p>
+                <p>
+                  As Head of Service Delivery for the Supply Chain Business Division, Robert provides strategic leadership for customer experience management, service quality assurance, stakeholder engagement, and operational excellence initiatives. His expertise lies in designing and implementing customer-centric service frameworks that improve business performance, strengthen client relationships, and drive sustainable organisational growth.
+                </p>
+                <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${serviceDeliveryBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                  <div className="overflow-hidden">
+                    <div className="space-y-6 pt-6">
+                      <p>
+                        Robert's professional journey began in the Fast-Moving Consumer Goods (FMCG) sector, where he developed foundational expertise in sales management, market development, product promotion, and distribution strategy. Through key roles within Cadbury Nigeria and Samol Limited, he demonstrated exceptional capabilities in sales leadership, channel development, customer engagement, and team management, contributing significantly to market expansion and revenue growth initiatives.
+                      </p>
+                      <p>
+                        His transition into the telecommunications industry marked a defining phase in his career. During his extensive tenure with MTN Nigeria, Robert held multiple strategic roles across customer service, quality assurance, workforce management, customer retention, and business analytics. His consistent record of excellence saw him progress from Customer Service Representative to Quality Assurance Officer, Business Analyst, Team Lead for Data Sales, and ultimately Supervisor within the Contact Centre and Customer Service Division. These roles enabled him to develop deep expertise in customer intelligence, operational analytics, workforce optimization, service performance measurement, and customer relationship management.
+                      </p>
+                      <p>
+                        A recognized authority in service quality management and organisational development, Robert further expanded his influence as Customer Service Specialist and Corporate Trainer at Dreams Network Limited. In this capacity, he designed and implemented service quality programmes, customer satisfaction frameworks, training interventions, and performance improvement strategies for organisations across diverse sectors. He successfully developed and facilitated executive and operational training programmes in Total Quality Management (TQM), Customer Relationship Management (CRM), Emotional Intelligence, Customer Retention Strategies, Service Level Agreement (SLA) Management, Project Management, and Customer Experience Excellence.
+                      </p>
+                      <p>
+                        Prior to rejoining Copterjet, Robert served as Service Quality Assurance Manager at GIG Logistics, where he was responsible for strengthening service standards, improving customer experience delivery, and driving quality assurance initiatives across the organisation's logistics operations. His contributions further reinforced his reputation as a results-oriented leader capable of enhancing service performance while aligning operational processes with customer expectations and business objectives.
+                      </p>
+                      <p>
+                        With extensive experience in customer intelligence, analytics reporting, service delivery optimization, performance management, and quality assurance systems, Robert combines strategic thinking with strong execution capabilities. His leadership approach is centered on continuous improvement, operational discipline, employee development, and customer-centric innovation, enabling organisations to consistently exceed service expectations and maintain competitive advantage.
+                      </p>
+                      <p>
+                        A graduate of Mathematics from Delta State University, Abraka, Robert is also a member of the Association of Business Practitioners through the Customer Service Professionals UK/MTN Partnership Programme. His analytical background, combined with his practical experience in customer service leadership, provides him with a unique ability to transform data into actionable business insights and measurable service improvements.
+                      </p>
+                      <p className="pb-4 border-b border-gray-100">
+                        Fluent in both Igbo and Yoruba, Robert is recognized for his exceptional interpersonal skills, strong leadership capabilities, and unwavering commitment to service excellence. His passion for delivering outstanding customer experiences continues to position him as a respected leader and trusted professional within Nigeria's customer service, logistics, and business operations landscape.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <button
+                    onClick={() => setServiceDeliveryBioExpanded(!serviceDeliveryBioExpanded)}
+                    className="group inline-flex items-center gap-2 text-[12px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{serviceDeliveryBioExpanded ? 'See Less' : 'See More'}</span>
+                    <svg className={`w-4 h-4 transition-transform duration-300 ${serviceDeliveryBioExpanded ? 'rotate-180' : 'group-hover:translate-y-1'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════════════════════════
+          8. BOARD OF DIRECTORS — Integrated Profiles
+      ════════════════════════════════════════════════════════ */}
+      <section id="board" ref={board.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden group/section">
+        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          {/* Section Header with Navigation */}
+          <div className={`flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 ${board.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
+            <div className="max-w-2xl">
+              <div className="wing-divider mb-6 max-w-[280px]">
+                <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap pr-2">Board of Directors</span>
+              </div>
+              <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold leading-[1.15] mb-4 tracking-tight">
+                Strategic Oversight &<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d] italic pr-2">Governance Leadership.</span>
+              </h2>
+              <p className="text-[15px] text-[#4a5568] leading-[1.9] font-medium">
+                Our Board of Directors provides strategic oversight, governance, and leadership guidance that supports Copterjet&apos;s long-term vision and sustainable growth objectives.
+              </p>
+            </div>
+            
+
+          </div>
+        </div>
+
+        {/* Carousel Container */}
+        <div className="w-full relative max-w-[100vw] group/carousel">
+          {/* Floating Scroll Controls */}
+          <button 
+            onClick={scrollLeft} 
+            className="absolute left-2 lg:left-6 top-[200px] md:top-[240px] -translate-y-1/2 w-14 h-14 rounded-full bg-white/95 backdrop-blur shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 flex items-center justify-center text-copter-blue hover:bg-copter-red hover:text-white hover:border-copter-red transition-all duration-300 focus:outline-none z-30 opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100"
+            aria-label="Scroll left"
+          >
+            <svg className="w-6 h-6 pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
+          </button>
+          <button 
+            onClick={scrollRight} 
+            className="absolute right-2 lg:right-6 top-[200px] md:top-[240px] -translate-y-1/2 w-14 h-14 rounded-full bg-white/95 backdrop-blur shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 flex items-center justify-center text-copter-blue hover:bg-copter-red hover:text-white hover:border-copter-red transition-all duration-300 focus:outline-none z-30 opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100"
+            aria-label="Scroll right"
+          >
+            <svg className="w-6 h-6 pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+          </button>
+
+          <div 
+            ref={carouselRef}
+            className="flex overflow-x-auto snap-x snap-mandatory pb-12 px-6 lg:px-12 gap-6 lg:gap-8 custom-scrollbar"
+            style={{ msOverflowStyle: 'none' }}
+          >
+            <style jsx>{`
+              /* Thin custom scrollbar for better UX */
+              .custom-scrollbar::-webkit-scrollbar {
+                height: 6px;
+              }
+              .custom-scrollbar::-webkit-scrollbar-track {
+                background: #f1f5f9;
+                border-radius: 4px;
+                margin: 0 48px;
+              }
+              .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #cbd5e1;
+                border-radius: 4px;
+              }
+              .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #94a3b8;
+              }
+            `}</style>
+
+            {/* Card 1: The Chairman (Placeholder) */}
+            <div ref={boardChairman.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardChairman.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '100ms' }}>
+              <div className="relative w-full pt-[100%] bg-gray-50 flex items-center justify-center">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-300">
+                  <svg className="w-24 h-24 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  <span className="text-sm tracking-widest uppercase font-bold">Image Pending</span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/40 via-transparent to-transparent mix-blend-multiply" />
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+              </div>
+              <div className="p-6 lg:p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
+                  <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Chairman</h3>
+                <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Chairman, Board of Directors</p>
+
+                <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
+                  <p>
+                    The Chairman provides overall leadership and strategic direction to the Board, ensuring effective corporate governance and driving Copterjet&apos;s vision for industry excellence.
+                  </p>
+                  <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${chairmanBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                    <div className="overflow-hidden">
+                      <div className="space-y-4 pt-4 border-t border-gray-100">
+                        <p>
+                          (Full biographical profile pending update)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-auto pt-6">
+                  <button
+                    onClick={() => setChairmanBioExpanded(!chairmanBioExpanded)}
+                    className="group/btn inline-flex items-center gap-2 text-[11px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{chairmanBioExpanded ? 'See Less' : 'Read Full Profile'}</span>
+                    <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${chairmanBioExpanded ? 'rotate-180' : 'group-hover/btn:translate-y-0.5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            {/* Card 2: Capt. Austin Omame */}
+            <div ref={boardOmame.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardOmame.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '200ms' }}>
+              <div className="relative w-full pt-[100%]">
+                <Image src="/images/Capt. Omame - Headshot.jpg" alt="Capt. Austin Omame" fill className="object-cover object-[center_top]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/80 via-transparent to-transparent mix-blend-multiply" />
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+              </div>
+              <div className="p-6 lg:p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
+                  <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Capt. Austin Omame</h3>
+                <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Independent Non-Executive Director | Senior Vice President, GAC</p>
+
+                <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
+                  <p>
+                    Captain Austin Omame is a highly respected aviation veteran, airline executive, corporate strategist, and aviation management consultant with nearly five decades of distinguished service in the global aviation industry. With over forty-eight years of continuous professional experience spanning flight operations, airline management, aviation training, executive leadership, and aviation consultancy, he is widely regarded as one of Nigeria&apos;s most accomplished aviation professionals.
+                  </p>
+                  <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${omameBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                    <div className="overflow-hidden">
+                      <div className="space-y-4 pt-4 border-t border-gray-100">
+                        <p>
+                          As an Independent Non-Executive Director and Senior Vice President, GAC, Captain Omame brings unparalleled industry knowledge, strategic insight, and governance expertise developed through a career that has traversed aviation training, commercial airline operations, international aviation services, airline executive management, and aviation consultancy.
+                        </p>
+                        <p>
+                          Captain Omame&apos;s aviation journey began at the Nigerian Civil Aviation Training Centre, Zaria—now the Nigerian College of Aviation Technology (NCAT)—where he graduated in 1976. Recognized early for his exceptional aptitude and professionalism, he proceeded immediately to the prestigious Oxford Air Training School in Oxford, England, to obtain his Flight Instructor Rating. Upon his return to Nigeria, he commenced his professional career as a Flight Instructor at NCAT.
+                        </p>
+                        <p>
+                          Following his tenure in aviation training, Captain Omame transitioned into commercial aviation with Nigeria Airways, the nation&apos;s flagship carrier, where he rapidly distinguished himself through technical competence, leadership, and operational excellence. He attained the rank of Captain on the Boeing 737 aircraft in 1984.
+                        </p>
+                        <p>
+                          His international aviation career expanded significantly through assignments across Africa and Europe. He joined ADC Airlines and was deployed to the Republic of Guinea as a contract pilot with Air Guinea. He later proceeded to Belgium, where he engaged in commercial cargo flight operations, further broadening his expertise in international aviation logistics.
+                        </p>
+                        <p>
+                          Captain Omame&apos;s exceptional leadership capabilities culminated in his appointment as Managing Director and Chief Executive Officer of Aviation Development Company (ADC) Plc. Under his stewardship, he provided strategic direction and executive leadership for one of Nigeria&apos;s leading airline operators.
+                        </p>
+                        <p>
+                          Following his retirement from mainstream airline management in 2005, Captain Omame founded Alom Aviation Services Limited. He completed the prestigious Chief Executive Programme (CEP 12) at the Lagos Business School, one of Africa&apos;s foremost executive education institutions.
+                        </p>
+                        <p className="pb-2">
+                          Today, Captain Austin Omame remains a distinguished statesman of the aviation industry whose contributions have shaped generations of aviation professionals and strengthened the development of commercial aviation in Nigeria and beyond. His legacy is defined by excellence, professionalism, leadership, and an enduring commitment to advancing the aviation sector through innovation, mentorship, and strategic governance.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-auto pt-6">
+                  <button
+                    onClick={() => setOmameBioExpanded(!omameBioExpanded)}
+                    className="group/btn inline-flex items-center gap-2 text-[11px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{omameBioExpanded ? 'See Less' : 'Read Full Profile'}</span>
+                    <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${omameBioExpanded ? 'rotate-180' : 'group-hover/btn:translate-y-0.5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Capt. Toluwa V. Olorunyomi (GCE) */}
+            <div ref={boardCeo.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardCeo.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '300ms' }}>
+              <div className="relative w-full pt-[100%]">
+                <Image src="/images/Toluwa - Headshot.jpg" alt="Capt. Toluwa V. Olorunyomi" fill className="object-cover object-[center_top]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+              </div>
+              <div className="p-6 lg:p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
+                  <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Capt. Toluwa V.<br/>Olorunyomi</h3>
+                <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Group Chief Executive (GCE)</p>
+
+                <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
+                  <p>
+                    Capt. Toluwa V. Olorunyomi is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
+                  </p>
+                  <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${ceoBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                    <div className="overflow-hidden">
+                      <div className="space-y-4 pt-4 border-t border-gray-100">
+                        <p>
+                          Widely regarded as a visionary entrepreneur, Capt. Olorunyomi has distinguished himself through the development of innovative business models and strategic initiatives that promote transparency, efficiency, and sustainability across the aviation sector. Through his leadership at Copterjet International Group, he has been instrumental in driving solutions across aviation leasing, aircraft acquisitions and sales, airline and helicopter joint venture operations, public-private partnerships, aviation and aerospace infrastructure development, project financing, and specialist aviation advisory services.
+                        </p>
+                        <p className="text-copter-blue/60 text-[13px] italic mt-2">
+                          Full biography available in the Leadership section above.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-auto pt-6">
+                  <button
+                    onClick={() => setCeoBioExpanded(!ceoBioExpanded)}
+                    className="group/btn inline-flex items-center gap-2 text-[11px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{ceoBioExpanded ? 'See Less' : 'Read Full Profile'}</span>
+                    <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${ceoBioExpanded ? 'rotate-180' : 'group-hover/btn:translate-y-0.5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 4: Mrs. Olajumoke Patricia Bakare */}
+            <div ref={boardBakare.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardBakare.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '400ms' }}>
+              <div className="relative w-full pt-[100%]">
+                <Image src="/images/Mrs. Bakare - Headshot.jpg" alt="Mrs. Olajumoke Patricia Bakare" fill className="object-cover object-[center_top]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+              </div>
+              <div className="p-6 lg:p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
+                  <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Mrs. Olajumoke<br/>Patricia Bakare</h3>
+                <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Independent Non-Executive Director</p>
+
+                <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
+                  <p>
+                    Mrs. Olajumoke Patricia Bakare is a distinguished legal practitioner, corporate governance expert, boardroom strategist, and accomplished business leader with over thirty-five years of extensive experience spanning legal practice, banking, corporate governance, financial services, regulatory compliance, dispute resolution, company secretarial practice, and strategic administration.
+                  </p>
+                  <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${bakareBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                    <div className="overflow-hidden">
+                      <div className="space-y-4 pt-4 border-t border-gray-100">
+                        <p>
+                          A graduate of Law from the prestigious Obafemi Awolowo University, where she graduated with distinction, Mrs. Bakare further honed her legal expertise at the Nigerian Law School before obtaining a Master of Laws (LL.M.) degree from the University of Lagos. She is a member of the Nigerian Bar Association, the Institute of Directors, the Society for Corporate Governance Nigeria, and the Chartered Institute of Arbitrators.
+                        </p>
+                        <p>
+                          Mrs. Bakare&apos;s professional journey began in public service during her National Youth Service at the Nigerian Air Force Base, Ikeja, after which she commenced legal practice with A. Adedeji &amp; Co. She subsequently transitioned into academia as a Lecturer with the Council of Legal Education at the Nigerian Law School.
+                        </p>
+                        <p>
+                          Her transition into the financial services sector marked the beginning of a highly impactful corporate career. During her more than two-decade tenure with FCMB Group, she held several strategic leadership positions, culminating in her appointment as Group General Counsel and Group Company Secretary, advising executive management and boards on corporate strategy, regulatory compliance, mergers and acquisitions, risk management, and governance frameworks.
+                        </p>
+                        <p>
+                          Her boardroom experience extends across several sectors, where she has served with distinction as a Non-Executive Director and Independent Non-Executive Director on the boards of notable organisations, including CSL Registrars Limited, Credit Direct Limited, and Sunu Assurances Nigeria Plc.
+                        </p>
+                        <p>
+                          Since 2014, she has served as the Managing Partner of First Almond Attorneys, where she leads a thriving legal and advisory practice focused on delivering innovative legal solutions, governance advisory services, dispute resolution, regulatory compliance support, and strategic counsel to corporate and institutional clients.
+                        </p>
+                        <p className="pb-2">
+                          A passionate advocate for ethical leadership, corporate accountability, and institutional excellence, Mrs. Bakare continues to leverage her wealth of experience to support organisations in strengthening governance frameworks, managing risk effectively, and achieving sustainable growth.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-auto pt-6">
+                  <button
+                    onClick={() => setBakareBioExpanded(!bakareBioExpanded)}
+                    className="group/btn inline-flex items-center gap-2 text-[11px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{bakareBioExpanded ? 'See Less' : 'Read Full Profile'}</span>
+                    <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${bakareBioExpanded ? 'rotate-180' : 'group-hover/btn:translate-y-0.5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 5: Mr. David Adebayo Alabi */}
+            <div ref={boardAlabi.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardAlabi.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '500ms' }}>
+              <div className="relative w-full pt-[100%]">
+                <Image src="/images/Mr. Alabi - Headshot.jpg" alt="Mr. David Adebayo Alabi" fill className="object-cover object-[center_top]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+              </div>
+              <div className="p-6 lg:p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
+                  <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Mr. David Adebayo<br/>Alabi</h3>
+                <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Independent Non-Executive Director</p>
+
+                <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
+                  <p>
+                    Mr. David Adebayo Alabi is a distinguished financial services professional, corporate strategist, and governance leader with over three decades of experience spanning stockbroking, capital markets, financial services, trade finance, business administration, and corporate governance.
+                  </p>
+                  <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${alabiBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                    <div className="overflow-hidden">
+                      <div className="space-y-4 pt-4 border-t border-gray-100">
+                        <p>
+                          A graduate of Microbiology from Ahmadu Bello University, Zaria, and a Certified Stockbroker, Mr. Alabi is an Associate of the Chartered Institute of Stockbrokers (ACIS). His broad-based experience has enabled him to successfully navigate evolving market dynamics while delivering value-driven solutions to institutional and individual clients alike.
+                        </p>
+                        <p>
+                          Mr. Alabi&apos;s distinguished career in the financial services industry includes a long and impactful tenure with Reward Investment and Services Limited, where he rose to the position of Assistant General Manager and Head of the Capital Market Department. He successfully coordinated complex transactions for corporate organizations, institutional investors, and high-net-worth individuals.
+                        </p>
+                        <p>
+                          His boardroom experience spans several sectors, including publishing, healthcare, and financial services. Notably, he served as a Director of Nigeria Baptist Book Store Limited for a decade. He currently serves as Chairman of the Board of Balm Medical Centre, where he provides strategic oversight and governance direction.
+                        </p>
+                        <p>
+                          A lifelong advocate of professional excellence and continuous learning, Mr. Alabi remains actively engaged with developments in Nigeria&apos;s capital markets and financial services sector. His enduring passion for stockbroking, combined with his extensive governance experience and strategic insight, continues to make him a valuable contributor to organisations seeking sustainable growth, strong oversight, and transformational leadership.
+                        </p>
+                        <p className="pb-2">
+                          Mr. David Adebayo Alabi is married to a distinguished medical consultant, and together they are blessed with children.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-auto pt-6">
+                  <button
+                    onClick={() => setAlabiBioExpanded(!alabiBioExpanded)}
+                    className="group/btn inline-flex items-center gap-2 text-[11px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{alabiBioExpanded ? 'See Less' : 'Read Full Profile'}</span>
+                    <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${alabiBioExpanded ? 'rotate-180' : 'group-hover/btn:translate-y-0.5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 6: Engr. Sunday Felix Afolabi */}
+            <div ref={boardAfolabi.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardAfolabi.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '600ms' }}>
+              <div className="relative w-full pt-[100%]">
+                <Image src="/images/Engr. Afolabi - Headshot.jpg" alt="Engr. Sunday Felix Afolabi" fill className="object-cover object-[center_top]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
+                <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
+              </div>
+              <div className="p-6 lg:p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
+                  <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Engr. Sunday<br/>Felix Afolabi</h3>
+                <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Independent Non-Executive Director</p>
+
+                <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
+                  <p>
+                    Engr. Sunday Felix Afolabi is a distinguished industrial executive, corporate governance leader, board chairman, and agribusiness entrepreneur with over thirty-five years of exceptional leadership experience spanning manufacturing, industrial gases, engineering management, multinational operations, corporate governance, agribusiness, and organisational transformation across Africa.
+                  </p>
+                  <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${afolabiBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+                    <div className="overflow-hidden">
+                      <div className="space-y-4 pt-4 border-t border-gray-100">
+                        <p>
+                          He currently serves as Chairman of the Board of Directors of Air Liquide Nigeria Plc, having been a member of the Board since 2008. His remarkable professional journey began in 1983 when he joined Air Liquide as a Trainee Engineer during his National Youth Service Corps programme. Through exceptional performance, he steadily advanced through increasingly senior roles, including Maintenance Engineer, Factory Manager, Area Manager, Regional Technical Manager for Nigeria and Ghana, and Regional Technical Director for West and Central Africa.
+                        </p>
+                        <p>
+                          His international executive leadership credentials were strengthened through his appointments as Managing Director of Air Liquide Botswana (2000–2004) and subsequently Managing Director of Air Liquide Côte d&apos;Ivoire (2004–2009). His contributions significantly reinforced Air Liquide&apos;s footprint and competitiveness across the continent.
+                        </p>
+                        <p>
+                          Beyond his corporate achievements, Engr. Afolabi is the Founder, Managing Director, and CEO of Afolabi Agro Divine Venture Limited. Academically, he holds a degree in Chemistry from the Université de Technologie–Chimie, Université de Paris XI, France, and a Master&apos;s Degree in Industrial Chemistry from the prestigious École Nationale Supérieure de Chimie de Lille, France. Fluent in English, French, and German, he brings a global perspective to leadership and business management.
+                        </p>
+                        <p className="pb-2">
+                          He is a member of the Nigerian Institute of Directors and a highly respected clergyman and serving Pastor in The Redeemed Christian Church of God (RCCG), exemplifying values-based leadership, integrity, and service.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-auto pt-6">
+                  <button
+                    onClick={() => setAfolabiBioExpanded(!afolabiBioExpanded)}
+                    className="group/btn inline-flex items-center gap-2 text-[11px] font-bold text-copter-red uppercase tracking-[0.15em] hover:text-copter-blue transition-colors duration-300"
+                  >
+                    <span>{afolabiBioExpanded ? 'See Less' : 'Read Full Profile'}</span>
+                    <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${afolabiBioExpanded ? 'rotate-180' : 'group-hover/btn:translate-y-0.5'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+{/* ════════════════════════════════════════════════════════
           5. OUR VALUES (Core Value Triangle)
       ════════════════════════════════════════════════════════ */}
       <section ref={values.ref} className="relative py-20 lg:py-24 bg-[#060e1a] overflow-hidden">
@@ -1199,6 +1661,81 @@ export default function AboutPage() {
         </div>
       </section>
 
+
+      {/* ════════════════════════════════════════════════════════
+          10. OUR ESG FRAMEWORK
+      ════════════════════════════════════════════════════════ */}
+      <section id="esg" ref={esg.ref} className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-copter-red/[0.03] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.03] rounded-full blur-3xl translate-y-1/2 translate-x-1/3 pointer-events-none" />
+
+        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
+          <div className={`text-center mb-16 max-w-3xl mx-auto ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
+            <div className="wing-divider mb-6 mx-auto w-fit">
+              <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-4">Sustainability</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold tracking-tight mb-6">Our ESG Framework</h2>
+            <p className="text-[15px] text-[#4a5568] leading-[1.9] font-medium">
+              We are committed to advancing a safer, more sustainable, and more inclusive aviation ecosystem across Africa.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+            
+            {/* Environmental, Social & Governance Goal */}
+            <div className={`md:col-span-12 bg-white p-8 lg:p-12 rounded-xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.05)] transition-all duration-500 ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '100ms' }}>
+              <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
+                <div className="md:w-1/3 flex flex-col gap-4">
+                  <div className="w-16 h-16 rounded-2xl bg-red-50 flex items-center justify-center border border-copter-red/20 text-copter-red">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-copter-blue tracking-tight leading-snug">Environmental, Social & Governance (ESG) Goal</h3>
+                </div>
+                <div className="md:w-2/3 space-y-4 text-[15px] text-[#4a5568] leading-[1.8] font-medium text-justify">
+                  <p>
+                    At CopterJet International, our ESG goal is to advance a safer, more sustainable, and more inclusive aviation ecosystem across Africa by integrating environmental stewardship, social impact, and responsible governance into every aspect of our operations.
+                  </p>
+                  <p>
+                    We are committed to reducing the environmental footprint of aviation through efficient supply chain solutions, responsible sourcing practices, asset life-cycle optimization, and the promotion of sustainable operational practices. We strive to create lasting social value by strengthening local aviation capabilities, developing talent, fostering strategic partnerships, and supporting initiatives that enhance connectivity, economic growth, and community development across the continent.
+                  </p>
+                  <p>
+                    Guided by the highest standards of ethics, transparency, compliance, and corporate accountability, we seek to build a resilient aerospace enterprise that delivers long-term value to our clients, employees, partners, investors, and the communities we serve while contributing to the sustainable growth of Africa's aviation industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Our ESG Commitment */}
+            <div className={`md:col-span-6 bg-white p-8 lg:p-10 rounded-xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.05)] transition-all duration-500 ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '200ms' }}>
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center border border-copter-blue/20 text-copter-blue mb-6">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-copter-blue tracking-tight leading-snug mb-4">Our ESG Commitment</h3>
+              <p className="text-[15px] text-[#4a5568] leading-[1.8] font-medium text-justify">
+                CopterJet International is committed to building a more sustainable, inclusive, and resilient aviation future for Africa. Through responsible business practices, ethical governance, environmental stewardship, and investment in people and communities, we create lasting value while advancing safer, more efficient, and more sustainable air transportation across the continent.
+              </p>
+            </div>
+
+            {/* ESG Goal 2030 */}
+            <div className={`md:col-span-6 bg-white p-8 lg:p-10 rounded-xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.05)] transition-all duration-500 ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '300ms' }}>
+              <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center border border-gray-200 text-copter-blue mb-6">
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-copter-blue tracking-tight leading-snug mb-4">ESG Goal 2030</h3>
+              <p className="text-[15px] text-[#4a5568] leading-[1.8] font-medium text-justify">
+                To become Africa's most trusted aerospace solutions platform by championing sustainable aviation practices, strengthening local industry capacity, empowering aviation professionals, and upholding world-class standards of governance, transparency, and operational excellence across every market we serve.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
