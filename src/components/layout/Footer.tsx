@@ -58,6 +58,7 @@ export default function Footer() {
               <li><Link href="/about#management" className="hover:text-copter-red hover:pl-2 transition-all block">Management Team</Link></li>
               <li><Link href="/about#board" className="hover:text-copter-red hover:pl-2 transition-all block">Board of Directors</Link></li>
               <li><Link href="/about#governance" className="hover:text-copter-red hover:pl-2 transition-all block">Corporate Governance</Link></li>
+              <li><Link href="/about#esg" className="hover:text-copter-red hover:pl-2 transition-all block">Our ESG Framework</Link></li>
             </ul>
           </div>
 

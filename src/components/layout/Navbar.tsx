@@ -41,7 +41,7 @@ const navStructure: NavItem[] = [
     href: '/services',
     megaMenu: [
       {
-        heading: 'Aerospace Supply Chain & Technical',
+        heading: 'Aerospace Supply Chain, Logistics & Technical',
         items: [
           { label: 'Aircraft Spares, Components & Engines Sales', href: '/services#spares-engines' },
           { label: 'Ground Equipment Procurement & Sales', href: '/services#ground-equipment' },
@@ -133,7 +133,7 @@ export default function Navbar() {
             </span>
             <div className="flex items-center gap-5 ml-auto">
               {[
-                { label: 'Company News & Events', href: '/news-events' },
+                { label: 'Company News', href: '/news-events' },
                 { label: 'Gallery', href: '/gallery' },
                 { label: 'Contact Us', href: '/contact' }
               ].map(item => (

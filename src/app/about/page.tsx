@@ -211,7 +211,7 @@ export default function AboutPage() {
     { name: "Engr. Sunday Felix Afolabi", role: "Independent Non-Executive Director", image: "/images/Engr. Afolabi - Headshot.jpg" },
   ];
   const statItems = [
-    { value: 15, suffix: '+', label: 'Years of Expertise' },
+    { value: 10, suffix: '+', label: 'Years of Expertise' },
     { value: 30, suffix: '+', label: 'Strategic Partners' },
     { value: 12, suffix: '+', label: 'African Nations Served' },
     { value: 200, suffix: '+', label: 'Successful Deliverables' },
@@ -471,12 +471,12 @@ export default function AboutPage() {
             <div className={`flex items-center justify-between pt-8 border-t border-white/10 ${whoWeAre.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '750ms' }}>
               <div className="flex gap-8 md:gap-12">
                 <div>
-                  <div className="text-2xl font-bold text-copter-blue">15<span className="text-copter-red">+</span></div>
+                  <div className="text-2xl font-bold text-copter-blue">10<span className="text-copter-red">+</span></div>
                   <div className="text-[9px] text-copter-blue font-bold tracking-[0.2em] uppercase mt-1">Years</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-copter-blue">200<span className="text-copter-red">+</span></div>
-                  <div className="text-[9px] text-copter-blue font-bold tracking-[0.2em] uppercase mt-1">Operations</div>
+                  <div className="text-[9px] text-copter-blue font-bold tracking-[0.2em] uppercase mt-1">Deliverables</div>
                 </div>
               </div>
 
@@ -606,7 +606,7 @@ export default function AboutPage() {
               <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-2">Our People</span>
             </div>
             <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold leading-[1.15] mb-8 tracking-tight">
-              The strength behind<br />our operations.
+              Our journey began here. Driven by purpose, shaped by experience, and inspired by the future — we continue to evolve.
             </h2>
             <p className="text-[15px] text-copter-grey leading-[1.9] font-medium">
               Our strength lies in our people — a multidisciplinary team of aviation professionals, technical specialists, operational experts, legal, and strategic advisors with deep industry knowledge and global experience. United by a shared commitment to excellence, innovation, integrity, and service delivery, our people drive the operational efficiency and client-focused solutions that define Copterjet&apos;s success.
@@ -628,7 +628,13 @@ export default function AboutPage() {
         </div>
       </section>
 
+      
+
       {/* ════════════════════════════════════════════════════════
+          6.5. FOUNDER & CEO
+      ════════════════════════════════════════════════════════ */}
+      <section id="ceo" ref={ceo.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
+        {/* ════════════════════════════════════════════════════════
           7. MANAGEMENT TEAM
       ════════════════════════════════════════════════════════ */}
       <section id="management" ref={management.ref} className="py-12 lg:py-16 bg-[#f8fafc]">
@@ -650,10 +656,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════════════════════
-          6.5. FOUNDER & CEO
-      ════════════════════════════════════════════════════════ */}
-      <section id="ceo" ref={ceo.ref} className="py-16 lg:py-24 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
@@ -703,7 +705,7 @@ export default function AboutPage() {
 
               <div className={`space-y-6 text-[15px] md:text-[16px] text-[#4a5568] leading-[1.85] font-medium text-justify ${ceo.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '500ms' }}>
                 <p>
-                  <strong className="text-copter-blue">Capt. Toluwa V. Olorunyomi</strong> is the Founder and Group Chief Executive Officer of Copterjet International Group, a diversified aviation and specialist services organisation focused on advancing Africa&apos;s aerospace, aviation, supply chain & logistics, and infrastructure ecosystem. He is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
+                  <strong className="text-copter-blue">Captain Toluwa V. Olorunyomi</strong> is the Founder and Group Chief Executive Officer of Copterjet International Group. He is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
                 </p>
                 <p>
                   Widely regarded as a visionary entrepreneur, Capt. Olorunyomi has distinguished himself through the development of innovative business models and strategic initiatives that promote transparency, efficiency, and sustainability across the aviation sector. Through his leadership at Copterjet International Group, he has been instrumental in driving solutions across aviation leasing, aircraft acquisitions and sales, airline and helicopter joint venture operations, public-private partnerships, aviation and aerospace infrastructure development, project financing, and specialist aviation advisory services.
@@ -712,7 +714,7 @@ export default function AboutPage() {
                   <div className="overflow-hidden">
                     <div className="space-y-6 pt-6">
                       <p>
-                        A professionally trained commercial pilot and Airline Transport Pilot, Capt. Olorunyomi obtained his commercial pilot licence and completed his aviation education at the prestigious 43 Air School, Port Alfred, and advanced flight training from globally recognised institutions in Louisiana, New Iberia, United States; the United Arab Emirates and the United Kingdom. His aviation career progressed through successive operational leadership positions, culminating in his appointment as a Captain and Line Training Captain. In these capacities, he was responsible not only for flight operations but also for pilot development, operational standards, safety compliance, and mission execution across diverse operational environments within West Africa and beyond.
+                        A professionally trained commercial pilot and Airline Transport Pilot, Capt. Olorunyomi obtained his commercial pilot licence and completed his aviation education at the prestigious 43 Air School, Port Alfred, and advanced flight training from globally recognised institutions in Louisiana, New Iberia, United States; the United Arab Emirates and the United Kingdom. His aviation career progressed through successive operational leadership positions, culminating in his appointment as a Captain and Line Training Captain in Bristow Group. In these capacities, he was responsible not only for flight operations but also for pilot development, operational standards, safety compliance, and mission execution across diverse operational environments within West Africa and beyond.
                       </p>
                       <p>
                         Beyond his flying career, Capt. Olorunyomi has devoted significant effort to researching, developing, and advancing transformative ideas aimed at strengthening the business of aviation in Africa. His passion for industry development has led to continuous engagement in aviation strategy, policy formulation, infrastructure development, investment frameworks, and sustainable growth initiatives designed to enhance the continent&apos;s aviation competitiveness.
@@ -1202,9 +1204,9 @@ export default function AboutPage() {
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           {/* Section Header with Navigation */}
           <div className={`flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 ${board.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
-            <div className="max-w-2xl">
-              <div className="wing-divider mb-6 max-w-[280px]">
-                <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap pr-2">Board of Directors</span>
+            <div className="max-w-10xl">
+              <div className="wing-divider mb-6 max-w-[380px]">
+                <span className="text-copter-red font-bold tracking-[0.2em] text-[14px] uppercase whitespace-nowrap pr-2">Board of Directors</span>
               </div>
               <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold leading-[1.15] mb-4 tracking-tight">
                 Strategic Oversight &<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d] italic pr-2">Governance Leadership.</span>
@@ -1380,7 +1382,7 @@ export default function AboutPage() {
 
                 <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
                   <p>
-                    Capt. Toluwa V. Olorunyomi is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
+                    Captain Toluwa V. Olorunyomi is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
                   </p>
                   <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${ceoBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                     <div className="overflow-hidden">
@@ -1577,7 +1579,7 @@ export default function AboutPage() {
 
         <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
           <div className={`text-center mb-20 ${values.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">Copterjet Core Value <span className="text-transparent bg-clip-text bg-gradient-to-r from-copter-red to-[#ff4d4d]">Triangle</span></h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight"> Our Core Values </h2>
             <p className="text-white/50 text-[16px] max-w-2xl mx-auto leading-relaxed font-medium">
               Our values form the foundation upon which we build lasting partnerships and deliver operational excellence.
             </p>
@@ -1665,74 +1667,146 @@ export default function AboutPage() {
       {/* ════════════════════════════════════════════════════════
           10. OUR ESG FRAMEWORK
       ════════════════════════════════════════════════════════ */}
-      <section id="esg" ref={esg.ref} className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-copter-red/[0.03] rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.03] rounded-full blur-3xl translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <section id="esg" ref={esg.ref} className="py-20 lg:py-28 bg-[#f0f5fa] relative overflow-hidden">
+        {/* Subtle background decorations */}
+        <div className="absolute top-0 right-0 w-[50rem] h-[50rem] opacity-[0.04] pointer-events-none">
+          <svg viewBox="0 0 500 500" fill="none" className="w-full h-full">
+            <path d="M250 50C350 50 450 150 450 250C450 350 350 450 250 450C150 450 50 350 50 250C50 150 150 50 250 50Z" stroke="#164878" strokeWidth="0.5" />
+            <path d="M250 100C320 100 400 180 400 250C400 320 320 400 250 400C180 400 100 320 100 250C100 180 180 100 250 100Z" stroke="#164878" strokeWidth="0.5" />
+          </svg>
+        </div>
+        <div className="absolute bottom-0 left-0 w-[30rem] h-[30rem] opacity-[0.03] pointer-events-none">
+          <svg viewBox="0 0 400 400" fill="none" className="w-full h-full">
+            <circle cx="200" cy="200" r="150" stroke="#C40E14" strokeWidth="0.5" />
+            <circle cx="200" cy="200" r="100" stroke="#C40E14" strokeWidth="0.5" />
+          </svg>
+        </div>
 
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
-          <div className={`text-center mb-16 max-w-3xl mx-auto ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
-            <div className="wing-divider mb-6 mx-auto w-fit">
-              <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-4">Sustainability</span>
+        <div className="max-w-[72rem] mx-auto px-6 lg:px-12 relative z-10">
+          {/* ── Header: Logo + Title + Intro ── */}
+          <div className={`text-center mb-14 ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`}>
+            {/* CopterJet Logo */}
+
+            <h2 className="text-3xl lg:text-[2.6rem] text-copter-blue font-extrabold tracking-tight mb-6 uppercase" style={{ fontFamily: "'Georgia', serif" }}>
+              Our ESG Commitment
+            </h2>
+
+            <div className="max-w-2xl mx-auto">
+              <p className="text-[15px] lg:text-[16px] text-[#4a5568] leading-[1.9] font-medium">
+                At CopterJet International, we are committed to building a{' '}
+                <strong className="text-copter-red font-bold">safer, more sustainable and more inclusive</strong>{' '}
+                aviation ecosystem across Africa.
+              </p>
+              <p className="text-[15px] lg:text-[16px] text-[#4a5568] leading-[1.9] font-medium mt-2">
+                Environmental stewardship. Social impact. Responsible governance.
+              </p>
+              <p className="text-copter-red font-bold italic text-[16px] lg:text-[17px] mt-3">
+                One commitment, lasting value.
+              </p>
             </div>
-            <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold tracking-tight mb-6">Our ESG Framework</h2>
-            <p className="text-[15px] text-[#4a5568] leading-[1.9] font-medium">
-              We are committed to advancing a safer, more sustainable, and more inclusive aviation ecosystem across Africa.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
-            
-            {/* Environmental, Social & Governance Goal */}
-            <div className={`md:col-span-12 bg-white p-8 lg:p-12 rounded-xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.05)] transition-all duration-500 ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '100ms' }}>
-              <div className="flex flex-col md:flex-row gap-8 lg:gap-12">
-                <div className="md:w-1/3 flex flex-col gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-red-50 flex items-center justify-center border border-copter-red/20 text-copter-red">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-copter-blue tracking-tight leading-snug">Environmental, Social & Governance (ESG) Goal</h3>
-                </div>
-                <div className="md:w-2/3 space-y-4 text-[15px] text-[#4a5568] leading-[1.8] font-medium text-justify">
-                  <p>
-                    At CopterJet International, our ESG goal is to advance a safer, more sustainable, and more inclusive aviation ecosystem across Africa by integrating environmental stewardship, social impact, and responsible governance into every aspect of our operations.
-                  </p>
-                  <p>
-                    We are committed to reducing the environmental footprint of aviation through efficient supply chain solutions, responsible sourcing practices, asset life-cycle optimization, and the promotion of sustainable operational practices. We strive to create lasting social value by strengthening local aviation capabilities, developing talent, fostering strategic partnerships, and supporting initiatives that enhance connectivity, economic growth, and community development across the continent.
-                  </p>
-                  <p>
-                    Guided by the highest standards of ethics, transparency, compliance, and corporate accountability, we seek to build a resilient aerospace enterprise that delivers long-term value to our clients, employees, partners, investors, and the communities we serve while contributing to the sustainable growth of Africa's aviation industry.
-                  </p>
-                </div>
-              </div>
-            </div>
+          {/* ── Three Pillar Cards ── */}
+          <div className={`grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-0 mb-10 ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '200ms' }}>
 
-            {/* Our ESG Commitment */}
-            <div className={`md:col-span-6 bg-white p-8 lg:p-10 rounded-xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.05)] transition-all duration-500 ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '200ms' }}>
-              <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center border border-copter-blue/20 text-copter-blue mb-6">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            {/* E — Environment */}
+            <div className="bg-white border border-gray-200 p-8 lg:p-10 flex flex-col items-center text-center md:rounded-l-2xl md:rounded-r-none rounded-t-2xl md:rounded-tr-none">
+              {/* Icon */}
+              <div className="w-16 h-16 rounded-full bg-green-50 border-2 border-green-400 flex items-center justify-center mb-5">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.5 6.5c0 0-3.5 2-3.5 6.5s3.5 6.5 3.5 6.5c0 0 3.5-2 3.5-6.5S17.5 6.5 17.5 6.5z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-copter-blue tracking-tight leading-snug mb-4">Our ESG Commitment</h3>
-              <p className="text-[15px] text-[#4a5568] leading-[1.8] font-medium text-justify">
-                CopterJet International is committed to building a more sustainable, inclusive, and resilient aviation future for Africa. Through responsible business practices, ethical governance, environmental stewardship, and investment in people and communities, we create lasting value while advancing safer, more efficient, and more sustainable air transportation across the continent.
+              {/* Letter + Label */}
+              <div className="mb-5">
+                <span className="text-4xl lg:text-5xl font-extrabold text-green-700 tracking-tight block leading-none">E</span>
+                <span className="text-[13px] font-bold text-green-700 tracking-[0.15em] uppercase mt-1 block">Environment</span>
+              </div>
+              {/* Description */}
+              <p className="text-[14px] text-[#4a5568] leading-[1.8] font-medium">
+                We reduce our environmental footprint through efficient operations, responsible sourcing, asset life-cycle optimization, and the promotion of sustainable aviation practices.
               </p>
+              {/* Decorative Icons */}
+              <div className="mt-6 flex items-center gap-4 text-green-500/40">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-2.69 9-6v-2c0 3.31-4.03 6-9 6s-9-2.69-9-6v2c0 3.31 4.03 6 9 6zm0-4c4.97 0 9-2.69 9-6V6c0 3.31-4.03 6-9 6S3 9.31 3 6v6c0 3.31 4.03 6 9 6zM12 2C7.03 2 3 4.69 3 8s4.03 6 9 6 9-2.69 9-6-4.03-6-9-6z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+              </div>
             </div>
 
-            {/* ESG Goal 2030 */}
-            <div className={`md:col-span-6 bg-white p-8 lg:p-10 rounded-xl border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.05)] transition-all duration-500 ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '300ms' }}>
-              <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center border border-gray-200 text-copter-blue mb-6">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            {/* S — Social */}
+            <div className="bg-white border border-gray-200 border-t-0 md:border-t md:border-l-0 p-8 lg:p-10 flex flex-col items-center text-center">
+              {/* Icon */}
+              <div className="w-16 h-16 rounded-full bg-blue-50 border-2 border-copter-blue flex items-center justify-center mb-5">
+                <svg className="w-8 h-8 text-copter-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-copter-blue tracking-tight leading-snug mb-4">ESG Goal 2030</h3>
-              <p className="text-[15px] text-[#4a5568] leading-[1.8] font-medium text-justify">
-                To become Africa's most trusted aerospace solutions platform by championing sustainable aviation practices, strengthening local industry capacity, empowering aviation professionals, and upholding world-class standards of governance, transparency, and operational excellence across every market we serve.
+              {/* Letter + Label */}
+              <div className="mb-5">
+                <span className="text-4xl lg:text-5xl font-extrabold text-copter-blue tracking-tight block leading-none">S</span>
+                <span className="text-[13px] font-bold text-copter-blue tracking-[0.15em] uppercase mt-1 block">Social</span>
+              </div>
+              {/* Description */}
+              <p className="text-[14px] text-[#4a5568] leading-[1.8] font-medium">
+                We create lasting social value by strengthening local aviation capabilities, developing talent, fostering partnerships, and supporting initiatives that enhance connectivity, economic growth and community development.
               </p>
+              {/* Decorative Icons */}
+              <div className="mt-6 flex items-center gap-4 text-copter-blue/30">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+              </div>
             </div>
 
+            {/* G — Governance */}
+            <div className="bg-white border border-gray-200 border-t-0 md:border-t md:border-l-0 p-8 lg:p-10 flex flex-col items-center text-center md:rounded-r-2xl md:rounded-l-none rounded-b-2xl md:rounded-bl-none">
+              {/* Icon */}
+              <div className="w-16 h-16 rounded-full bg-red-50 border-2 border-copter-red flex items-center justify-center mb-5">
+                <svg className="w-8 h-8 text-copter-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+              {/* Letter + Label */}
+              <div className="mb-5">
+                <span className="text-4xl lg:text-5xl font-extrabold text-copter-red tracking-tight block leading-none">G</span>
+                <span className="text-[13px] font-bold text-copter-red tracking-[0.15em] uppercase mt-1 block">Governance</span>
+              </div>
+              {/* Description */}
+              <p className="text-[14px] text-[#4a5568] leading-[1.8] font-medium">
+                We uphold the highest standards of ethics, transparency, compliance and accountability in all that we do—building trust and delivering long-term value to our stakeholders.
+              </p>
+              {/* Decorative Icons */}
+              <div className="mt-6 flex items-center gap-4 text-copter-red/30">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Bottom Banner: OUR ESG GOAL ── */}
+          <div className={`bg-[#2a6a7a] rounded-2xl overflow-hidden ${esg.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'}`} style={{ animationDelay: '400ms' }}>
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 px-8 lg:px-12 py-8">
+              {/* Icon + Label */}
+              <div className="flex items-center gap-4 flex-shrink-0">
+                <div className="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-white font-extrabold text-xl lg:text-2xl tracking-tight uppercase whitespace-nowrap">
+                  Our ESG Goal
+                </h3>
+              </div>
+              {/* Divider */}
+              <div className="hidden md:block w-px h-16 bg-white/20 flex-shrink-0" />
+              {/* Goal Text */}
+              <p className="text-white/90 text-[14px] lg:text-[15px] leading-[1.8] font-medium italic text-center md:text-left">
+                To be Africa's most trusted aerospace solutions platform by championing sustainable aviation practices, empowering people, and upholding world-class governance—advancing a resilient and responsible aviation future for generations to come.
+              </p>
+            </div>
           </div>
         </div>
       </section>
