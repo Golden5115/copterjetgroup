@@ -9,7 +9,7 @@ const SERVICES_DATA = [
   {
     id: 'aerospace-supply',
     number: '01',
-    title: 'Aerospace Supply Chain,\n Logistics & Technical Services',
+    title: 'Aerospace Supply Chain,\n Logistics & Technical',
     description: '',
     items: [
       {

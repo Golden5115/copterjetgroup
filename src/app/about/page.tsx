@@ -609,7 +609,7 @@ export default function AboutPage() {
               Our journey began here. Driven by purpose, shaped by experience, and inspired by the future — we continue to evolve.
             </h2>
             <p className="text-[15px] text-copter-grey leading-[1.9] font-medium">
-              Our strength lies in our people — a multidisciplinary team of aviation professionals, technical specialists, operational experts, legal, and strategic advisors with deep industry knowledge and global experience. United by a shared commitment to excellence, innovation, integrity, and service delivery, our people drive the operational efficiency and client-focused solutions that define Copterjet&apos;s success.
+              Our strength lies in our people — a multidisciplinary team of aviation professionals, technical specialists, operational experts, legal, and strategic advisors with deep industry knowledge and global experience. United by a shared commitment to excellence, innovation, integrity, and service delivery, our people drive the operational efficiency and client-focused solutions that continue to define Copterjet&apos;s success.
             </p>
           </div>
 
