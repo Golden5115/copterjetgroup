@@ -173,7 +173,7 @@ export default function Navbar() {
           <div className="max-w-[90rem] mx-auto px-4 xl:px-12 flex justify-between items-center h-[76px]">
             {/* FIXED LOGO SIZING */}
             <Link href="/" className="relative h-[55px] w-[210px] xl:h-[65px] xl:w-[290px] flex-shrink-0 block transition-all duration-300">
-              <Image src="/images/logo3.png" alt="CopterJet International" fill sizes="(max-width: 768px) 190px, (max-width: 1280px) 225px, 290px" className="object-contain object-left" priority />
+              <Image src="/images/Logo3.png" alt="CopterJet International" fill sizes="(max-width: 768px) 190px, (max-width: 1280px) 225px, 290px" className="object-contain object-left" priority />
             </Link>
             {/* Desktop Links */}
             <div className="hidden min-[900px]:flex items-center h-full">
