@@ -1,7 +1,14 @@
 import type { Metadata, Viewport } from "next";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "CopterJet International | Aviation Excellence",
@@ -20,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased flex flex-col min-h-screen">
+      <body className={`${montserrat.variable} antialiased flex flex-col min-h-screen`} style={{ fontFamily: "var(--font-montserrat), sans-serif" }}>
         <Navbar />
         {/* The main content area takes up the remaining space, pushing the footer to the bottom */}
         <main className="flex-grow">

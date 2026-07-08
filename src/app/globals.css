@@ -8,7 +8,7 @@
   --color-copter-light: #F8F9FA;
   
   /* CopterJet Typography */
-  --font-sans: "Museo Sans Cyrl", "Montserrat", sans-serif;
+  --font-sans: var(--font-montserrat), "Montserrat", sans-serif;
 }
 
 /* Base Styles to enforce corporate look globally */
