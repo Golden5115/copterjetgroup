@@ -6,7 +6,7 @@ const ARTICLES = [
     title: 'Copterjet Launches Brand, Calls for Collaboration to Turn Nigeria into Aviation Powerhouse',
     source: 'Nigerian Flight Deck',
     url: 'https://nigerianflightdeck.com/copterjet-launches-brand-calls-for-collaboration-to-turn-nigeria-into-aviation-powerhouse/',
-    image: '/images/news-1-v2.png',
+    image: '/images/MG_00851.png',
     date: 'Recent',
     tag: 'Brand Launch'
   },
@@ -14,7 +14,7 @@ const ARTICLES = [
     title: 'Aviation as an economic enabler is less harnessed in Nigeria - CEO Copterjet',
     source: 'Business Day',
     url: 'https://businessday.ng/interview/article/aviation-as-an-economic-enabler-is-less-harnessed-in-nigeria-ceo-copterjet/',
-    image: '/images/news-2-v2.png',
+    image: '/images/MG_0085.png',
     date: 'Insight',
     tag: 'Economy'
   },
@@ -55,10 +55,10 @@ const ARTICLES = [
 export default function NewsEventsPage() {
   return (
     <main className="min-h-screen bg-slate-50 selection:bg-copter-red selection:text-white pb-20">
-       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 lg:px-12 bg-[#0a1220] overflow-hidden">
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 lg:px-12 bg-[#0a1220] overflow-hidden">
         {/* Background glow */}
         <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-red/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        
+
         <div className="max-w-[90rem] mx-auto relative z-10 text-center">
           <div className="inline-flex items-center gap-3 mb-6 justify-center">
             <div className="w-12 h-[3px] bg-copter-red" />
@@ -77,16 +77,16 @@ export default function NewsEventsPage() {
       <section className="max-w-[90rem] mx-auto px-6 lg:px-12 -mt-10 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {ARTICLES.map((article, idx) => (
-            <Link 
-              key={idx} 
-              href={article.url} 
-              target="_blank" 
+            <Link
+              key={idx}
+              href={article.url}
+              target="_blank"
               rel="noopener noreferrer"
               className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(22,72,120,0.08)] transition-all duration-500 hover:-translate-y-2 border border-gray-100"
             >
               {/* Image Container */}
               <div className="relative h-64 w-full overflow-hidden bg-gray-100">
-                <Image 
+                <Image
                   src={article.image}
                   alt={article.title}
                   fill
@@ -104,13 +104,13 @@ export default function NewsEventsPage() {
                   <span>•</span>
                   <span>{article.date}</span>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-copter-blue leading-snug mb-6 group-hover:text-copter-red transition-colors duration-300 line-clamp-3">
                   {article.title}
                 </h3>
-                
+
                 <div className="mt-auto flex items-center text-sm font-bold text-copter-blue group-hover:text-copter-red transition-colors duration-300">
-                  READ ARTICLE 
+                  READ ARTICLE
                   <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
