@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 // HOOKS
 // ══════════════════════════════════════════════════════════════
 
-function useInView(threshold = 0.15) {
-  const ref = useRef<HTMLDivElement>(null);
+function useInView<T extends HTMLElement = HTMLElement>(threshold = 0.15) {
+  const ref = useRef<T>(null);
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
