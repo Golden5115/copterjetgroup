@@ -128,7 +128,7 @@ export default function Navbar() {
         {/* ── Top Bar ── */}
         <div className="bg-copter-blue h-9">
           <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 h-full flex items-center justify-between">
-            <span className="hidden lg:block text-[8.5px] xl:text-[10px] font-semibold tracking-[0.2em] uppercase text-white">
+            <span className="hidden min-[900px]:block text-[8.5px] xl:text-[10px] font-semibold tracking-[0.2em] uppercase text-white">
               COPTERJET INTERNATIONAL GROUP
             </span>
             <div className="flex items-center gap-5 ml-auto">
@@ -173,13 +173,13 @@ export default function Navbar() {
           <div className="max-w-[90rem] mx-auto px-4 xl:px-12 flex justify-between items-center h-[76px]">
             {/* FIXED LOGO SIZING */}
             <Link href="/" className="relative h-[55px] w-[210px] xl:h-[65px] xl:w-[290px] flex-shrink-0 block transition-all duration-300">
-              <Image src="/images/Logo3.png" alt="CopterJet International" fill sizes="(max-width: 768px) 190px, (max-width: 1280px) 225px, 290px" className="object-contain object-left" priority />
+              <Image src="/images/Logo4.png" alt="CopterJet International" fill sizes="(max-width: 768px) 190px, (max-width: 1280px) 225px, 290px" className="object-contain object-left" priority />
             </Link>
             {/* Desktop Links */}
             <div className="hidden min-[900px]:flex items-center h-full">
               {navStructure.map(item => (
                 <div key={item.label} className="relative group h-full flex items-center" onMouseLeave={() => setDesktopOpenDropdown(null)}>
-                  <div className="relative flex items-center gap-1 lg:gap-1.5 h-full px-1.5 lg:px-2.5 xl:px-4 text-[8px] lg:text-[9.5px] xl:text-[11px] font-bold text-copter-blue tracking-wide xl:tracking-wider hover:text-copter-red transition-colors duration-300 overflow-visible whitespace-nowrap cursor-pointer">
+                  <div className="relative flex items-center gap-0.5 lg:gap-1 h-full px-1 lg:px-2 xl:px-4 text-[9px] lg:text-[10px] xl:text-[11px] font-bold text-copter-blue tracking-wide xl:tracking-wider hover:text-copter-red transition-colors duration-300 overflow-visible whitespace-nowrap cursor-pointer">
                     <Link href={item.href} className="relative z-10 flex items-center h-full">
                       {item.label}
                     </Link>
@@ -247,11 +247,11 @@ export default function Navbar() {
                 </div>
               ))}
               {/* Action Buttons: FIXED sizes to squeeze down on smaller screens */}
-              <div className="ml-2 xl:ml-5 flex flex-col justify-center gap-0.5 lg:gap-1 xl:gap-1.5 h-[40px] lg:h-[45px] xl:h-[50px] border-l border-gray-100 pl-2 xl:pl-5">
-                <Link href="/rfp" className="bg-copter-blue text-white text-[7px] lg:text-[8px] xl:text-[9px] font-bold tracking-widest xl:tracking-[0.15em] uppercase px-2 lg:px-4 xl:px-6 py-1 xl:py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm whitespace-nowrap">
+              <div className="ml-1 xl:ml-4 flex flex-col justify-center gap-0.5 lg:gap-1 xl:gap-1.5 h-[40px] lg:h-[45px] xl:h-[50px] border-l border-gray-100 pl-1 xl:pl-4">
+                <Link href="/rfp" className="bg-copter-blue text-white text-[8px] lg:text-[8.5px] xl:text-[9.5px] font-bold tracking-widest xl:tracking-[0.15em] uppercase px-1.5 lg:px-3 xl:px-5 py-1 xl:py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm whitespace-nowrap">
                   SUBMIT RFP
                 </Link>
-                <Link href="/rfq" className="bg-copter-blue text-white text-[7px] lg:text-[8px] xl:text-[9px] font-bold tracking-widest xl:tracking-[0.15em] uppercase px-2 lg:px-4 xl:px-6 py-1 xl:py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm whitespace-nowrap">
+                <Link href="/rfq" className="bg-copter-blue text-white text-[8px] lg:text-[8.5px] xl:text-[9.5px] font-bold tracking-widest xl:tracking-[0.15em] uppercase px-1.5 lg:px-3 xl:px-5 py-1 xl:py-1.5 hover:bg-copter-red hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0 text-center rounded-sm shadow-sm whitespace-nowrap">
                   SUBMIT RFQ
                 </Link>
               </div>
