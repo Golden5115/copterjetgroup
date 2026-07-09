@@ -132,7 +132,7 @@ const categoryColors: Record<string, { bg: string; text: string; dot: string }> 
 // ══════════════════════════════════════════════════════════════
 
 function FeaturedCard({ insight, index }: { insight: Insight; index: number }) {
-  const { ref, isVisible } = useInView(0.1);
+  const { ref, isVisible } = useInView<HTMLAnchorElement>(0.1);
   const cat = categoryColors[insight.category] || categoryColors["Government"];
 
   return (
@@ -205,7 +205,7 @@ function FeaturedCard({ insight, index }: { insight: Insight; index: number }) {
 }
 
 function TimelineItem({ insight, index, side }: { insight: Insight; index: number; side: 'left' | 'right' }) {
-  const { ref, isVisible } = useInView(0.1);
+  const { ref, isVisible } = useInView<HTMLDivElement>(0.1);
   const cat = categoryColors[insight.category] || categoryColors["Government"];
 
   return (
@@ -295,10 +295,10 @@ function TimelineItem({ insight, index, side }: { insight: Insight; index: numbe
 // ══════════════════════════════════════════════════════════════
 
 export default function InsightsPage() {
-  const heroRef = useInView(0.1);
-  const statsRef = useInView(0.15);
-  const featuredRef = useInView(0.05);
-  const timelineRef = useInView(0.05);
+  const heroRef = useInView<HTMLDivElement>(0.1);
+  const statsRef = useInView<HTMLDivElement>(0.15);
+  const featuredRef = useInView<HTMLDivElement>(0.05);
+  const timelineRef = useInView<HTMLDivElement>(0.05);
 
   // Split insights: first 3 are featured, rest go in timeline
   const featured = insights.slice(0, 3);
