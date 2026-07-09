@@ -128,7 +128,7 @@ export default function Navbar() {
         {/* ── Top Bar ── */}
         <div className="bg-copter-blue h-9">
           <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 h-full flex items-center justify-between">
-            <span className="hidden min-[900px]:block text-[8.5px] xl:text-[10px] font-semibold tracking-[0.2em] uppercase text-white">
+            <span className="hidden min-[900px]:block text-[10px] xl:text-[10px] font-bold tracking-[0.2em] uppercase text-white">
               COPTERJET INTERNATIONAL GROUP
             </span>
             <div className="flex items-center gap-5 ml-auto">
