@@ -61,7 +61,7 @@ export default function IndustryInsights() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
         {/* Left: Featured Article (Takes up 7 columns on desktop) */}
-          <div className="lg:col-span-7 group cursor-pointer">
+          <Link href={featuredInsight.link} className="lg:col-span-7 group cursor-pointer block">
             
             {/* UPDATED IMAGE CONTAINER */}
             <div className="w-full h-[400px] mb-6 relative overflow-hidden rounded-sm bg-copter-blue">
@@ -89,28 +89,28 @@ export default function IndustryInsights() {
               {featuredInsight.description}
             </p>
             
-            <Link href={featuredInsight.link} className="text-sm font-bold text-copter-blue tracking-widest group-hover:text-copter-red flex items-center transition-colors">
+            <span className="text-sm font-bold text-copter-blue tracking-widest group-hover:text-copter-red flex items-center transition-colors">
               READ FULL ARTICLE
               <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Link>
-          </div>
+            </span>
+          </Link>
 
           {/* Right: Side Articles Stack (Takes up 5 columns on desktop) */}
           <div className="lg:col-span-5 flex flex-col gap-8 lg:pl-8 lg:border-l border-gray-200">
             {sideInsights.map((item, index) => (
-              <div key={index} className="group cursor-pointer border-b border-gray-100 pb-8 last:border-0 last:pb-0">
+              <Link href={item.link} key={index} className="group cursor-pointer border-b border-gray-100 pb-8 last:border-0 last:pb-0 block">
                 <div className="flex items-center gap-4 text-xs font-bold text-copter-grey mb-2 uppercase tracking-wider">
                   <span className="text-copter-red">{item.category}</span>
                 </div>
                 <h4 className="text-xl font-bold text-copter-blue mb-3 group-hover:text-copter-red transition-colors leading-snug">
                   {item.title}
                 </h4>
-                <Link href={item.link} className="text-xs font-bold text-copter-grey tracking-widest group-hover:text-copter-blue transition-colors">
+                <span className="text-xs font-bold text-copter-grey tracking-widest group-hover:text-copter-blue transition-colors">
                   {item.date}
-                </Link>
-              </div>
+                </span>
+              </Link>
             ))}
           </div>
 
