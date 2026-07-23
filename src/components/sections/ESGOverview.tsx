@@ -33,19 +33,19 @@ export default function ESGOverview() {
 
   return (
     <section className="py-24 bg-copter-blue relative overflow-hidden">
-      
+
       {/* Premium Aviation Grid Background */}
-      <div className="absolute inset-0 z-0 opacity-10" 
-           style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+      <div className="absolute inset-0 z-0 opacity-10"
+        style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
       </div>
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-copter-blue/80 to-copter-blue"></div>
 
       <div className="max-w-[90rem] mx-auto px-6 lg:px-12 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="wing-divider mb-6 mx-auto w-fit">
-            <span className="text-white font-extrabold tracking-[0.2em] text-sm md:text-base uppercase whitespace-nowrap px-4">Our ESG Framework</span>
+            <span className="text-white font-extrabold tracking-[0.2em] text-sm md:text-base uppercase whitespace-nowrap px-4">Our ESG AGENDA</span>
           </div>
           <h3 className="text-3xl md:text-4xl text-white font-bold tracking-tight mb-4">
             Sustainable Aviation for Africa.
@@ -58,8 +58,8 @@ export default function ESGOverview() {
         {/* ESG Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {frameworks.map((item, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-[#0a1e35]/80 backdrop-blur-md p-10 shadow-2xl rounded-xl border border-white/5 relative group hover:-translate-y-2 transition-all duration-500 hover:border-white/10 flex flex-col"
             >
               <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 border border-white/10 group-hover:border-copter-red/40 group-hover:bg-copter-red/10 text-copter-red">
@@ -70,7 +70,7 @@ export default function ESGOverview() {
               <p className="text-gray-300 text-[14px] leading-relaxed font-medium mb-6 flex-1">
                 {item.content}
               </p>
-              
+
               <div className="absolute bottom-0 left-0 w-full h-1 bg-copter-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-xl"></div>
             </div>
           ))}
