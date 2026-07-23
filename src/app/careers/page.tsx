@@ -144,7 +144,7 @@ export default function CareersPage() {
             Explore opportunities.<br />Build your future.<br /><span className="text-[#0a1220]">Rise higher with CopterJet.</span>
           </h2>
 
-          <a href="mailto:careers@copterjet.com" className="inline-flex items-center justify-center px-10 py-5 bg-[#0a1220] text-white font-bold text-lg tracking-[0.15em] uppercase rounded-full shadow-2xl hover:bg-white hover:text-copter-red transition-all duration-500 group overflow-hidden relative">
+          <a href="/careers/vacancies" className="inline-flex items-center justify-center px-10 py-5 bg-[#0a1220] text-white font-bold text-lg tracking-[0.15em] uppercase rounded-full shadow-2xl hover:bg-white hover:text-copter-red transition-all duration-500 group overflow-hidden relative">
             <span className="relative z-10 flex items-center">
               Vacancies & Opportunities
               <svg className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">

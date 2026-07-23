@@ -3,20 +3,26 @@ import Image from "next/image"; // ADD THIS LINE
 
 export default function IndustryInsights() {
   const featuredInsight = {
-    category: "Market Analysis",
+    category: "Expert Opinion",
     date: "October 12, 2023",
-    title: "Charting The Course: The Future of Aviation Leasing in the African Market.",
-    description: "An in-depth look at how structural financial gaps are being bridged by innovative leasing models across the continent.",
-    image: "/images/insight-featured.jpg", // ADD THIS LINE
+    title: "Charting the Course: The Future of Aviation Leasing in the African Market.",
+    description: "Aircraft leasing has become the dominant financing model in global aviation. Bridging the gap in Africa's market requires a fundamental transformation in how aircraft are financed and managed.",
+    image: "/images/insight-featured.jpg",
     link: "/insights/future-of-aviation-leasing"
   };
 
   const sideInsights = [
     {
       category: "Company News",
-      date: "September 28, 2023",
-      title: "CopterJet Announces Strategic Partnership for Ground Support.",
+      date: "January 4, 2026",
+      title: "Copterjet Announces Strategic Partnership to Strengthen Aviation Supply Chain.",
       link: "/insights/strategic-partnership"
+    },
+    {
+      category: "Company News",
+      date: "December 11, 2025",
+      title: "Copterjet Completes Recapitalization Ahead of NCAA Regulatory Deadline.",
+      link: "/insights/recapitalization"
     },
     {
       category: "Expert Opinion",
@@ -25,10 +31,10 @@ export default function IndustryInsights() {
       link: "/insights/corporate-governance"
     },
     {
-      category: "Logistics",
+      category: "Expert Opinion",
       date: "July 02, 2023",
-      title: "Optimizing Cargo Management for Next-Gen Aircraft.",
-      link: "/insights/cargo-management"
+      title: "Optimizing Supply Chain for Sustainable Flight Operations.",
+      link: "/insights/sustainable-supply-chain"
     }
   ];
 

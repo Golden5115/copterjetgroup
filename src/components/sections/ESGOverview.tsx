@@ -45,7 +45,7 @@ export default function ESGOverview() {
         {/* Section Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="wing-divider mb-6 mx-auto w-fit">
-            <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-4">Our ESG Framework</span>
+            <span className="text-white font-extrabold tracking-[0.2em] text-sm md:text-base uppercase whitespace-nowrap px-4">Our ESG Framework</span>
           </div>
           <h3 className="text-3xl md:text-4xl text-white font-bold tracking-tight mb-4">
             Sustainable Aviation for Africa.
