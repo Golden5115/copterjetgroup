@@ -52,7 +52,7 @@ const COLLAB_AREAS = [
     icon: 'M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5',
   },
   {
-    title: 'Aircraft Operations',
+    title: 'Aircraft Management',
     desc: 'End-to-end aircraft management, flight operations, and crew administration for maximum asset value.',
     icon: 'M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75',
   },
@@ -190,7 +190,7 @@ export default function PartnershipPage() {
         {/* Feature Image */}
         <div className={`max-w-[72rem] mx-auto mt-16 md:mt-24 w-full h-[400px] lg:h-[550px] rounded-[2rem] overflow-hidden relative shadow-2xl transition-all duration-1000 delay-300 ${introInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <Image
-            src="/images/businesses/leasing.jpg"
+            src="/images/businesses/leasing2.jpg"
             alt="Partnerships and Collaboration"
             fill
             className="object-cover object-center"

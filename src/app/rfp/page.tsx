@@ -93,10 +93,11 @@ export default function SubmitRFPPage() {
                 </div>
                 <div className="relative group">
                   <label className={`absolute left-4 transition-all duration-300 pointer-events-none text-sm ${focusedField === 'phone' ? '-top-2.5 bg-white px-2 text-copter-red font-bold text-[11px]' : 'top-4 text-gray-400 font-medium'}`}>
-                    Phone Number
+                    Phone Number *
                   </label>
                   <input 
-                    type="tel" 
+                    type="tel"
+                    required 
                     onFocus={() => setFocusedField('phone')}
                     onBlur={(e) => setFocusedField(e.target.value ? 'phone' : null)}
                     className={`w-full bg-transparent border-2 rounded-xl px-4 py-4 outline-none text-copter-blue font-medium transition-all ${focusedField === 'phone' ? 'border-copter-red' : 'border-gray-200 hover:border-copter-blue/30'}`}

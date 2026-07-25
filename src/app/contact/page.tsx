@@ -150,10 +150,11 @@ export default function ContactPage() {
                   {/* First Name */}
                   <div className="relative group">
                     <label className={`absolute left-4 transition-all duration-300 pointer-events-none text-sm ${focusedField === 'firstName' ? '-top-2.5 bg-white px-2 text-copter-red font-bold text-[11px]' : 'top-4 text-gray-400 font-medium'}`}>
-                      First Name
+                      First Name *
                     </label>
                     <input 
-                      type="text" 
+                      type="text"
+                      required
                       onFocus={() => setFocusedField('firstName')}
                       onBlur={(e) => setFocusedField(e.target.value ? 'firstName' : null)}
                       className={`w-full bg-transparent border-2 rounded-xl px-4 py-4 outline-none text-copter-blue font-medium input-field ${focusedField === 'firstName' ? 'border-copter-red' : 'border-gray-200 hover:border-copter-blue/30'}`}
@@ -163,10 +164,11 @@ export default function ContactPage() {
                   {/* Last Name */}
                   <div className="relative group">
                     <label className={`absolute left-4 transition-all duration-300 pointer-events-none text-sm ${focusedField === 'lastName' ? '-top-2.5 bg-white px-2 text-copter-red font-bold text-[11px]' : 'top-4 text-gray-400 font-medium'}`}>
-                      Last Name
+                      Last Name *
                     </label>
                     <input 
                       type="text" 
+                      required
                       onFocus={() => setFocusedField('lastName')}
                       onBlur={(e) => setFocusedField(e.target.value ? 'lastName' : null)}
                       className={`w-full bg-transparent border-2 rounded-xl px-4 py-4 outline-none text-copter-blue font-medium input-field ${focusedField === 'lastName' ? 'border-copter-red' : 'border-gray-200 hover:border-copter-blue/30'}`}
@@ -178,10 +180,11 @@ export default function ContactPage() {
                   {/* Email */}
                   <div className="relative group">
                     <label className={`absolute left-4 transition-all duration-300 pointer-events-none text-sm ${focusedField === 'email' ? '-top-2.5 bg-white px-2 text-copter-red font-bold text-[11px]' : 'top-4 text-gray-400 font-medium'}`}>
-                      Email Address
+                      Email Address *
                     </label>
                     <input 
                       type="email" 
+                      required
                       onFocus={() => setFocusedField('email')}
                       onBlur={(e) => setFocusedField(e.target.value ? 'email' : null)}
                       className={`w-full bg-transparent border-2 rounded-xl px-4 py-4 outline-none text-copter-blue font-medium input-field ${focusedField === 'email' ? 'border-copter-red' : 'border-gray-200 hover:border-copter-blue/30'}`}
@@ -191,10 +194,11 @@ export default function ContactPage() {
                   {/* Phone */}
                   <div className="relative group">
                     <label className={`absolute left-4 transition-all duration-300 pointer-events-none text-sm ${focusedField === 'phone' ? '-top-2.5 bg-white px-2 text-copter-red font-bold text-[11px]' : 'top-4 text-gray-400 font-medium'}`}>
-                      Phone Number
+                      Phone Number *
                     </label>
                     <input 
                       type="tel" 
+                      required
                       onFocus={() => setFocusedField('phone')}
                       onBlur={(e) => setFocusedField(e.target.value ? 'phone' : null)}
                       className={`w-full bg-transparent border-2 rounded-xl px-4 py-4 outline-none text-copter-blue font-medium input-field ${focusedField === 'phone' ? 'border-copter-red' : 'border-gray-200 hover:border-copter-blue/30'}`}
@@ -205,10 +209,11 @@ export default function ContactPage() {
                 {/* Subject */}
                 <div className="relative group">
                   <label className={`absolute left-4 transition-all duration-300 pointer-events-none text-sm ${focusedField === 'subject' ? '-top-2.5 bg-white px-2 text-copter-red font-bold text-[11px]' : 'top-4 text-gray-400 font-medium'}`}>
-                    Subject
+                    Subject *
                   </label>
                   <input 
                     type="text" 
+                    required
                     onFocus={() => setFocusedField('subject')}
                     onBlur={(e) => setFocusedField(e.target.value ? 'subject' : null)}
                     className={`w-full bg-transparent border-2 rounded-xl px-4 py-4 outline-none text-copter-blue font-medium input-field ${focusedField === 'subject' ? 'border-copter-red' : 'border-gray-200 hover:border-copter-blue/30'}`}
@@ -218,10 +223,11 @@ export default function ContactPage() {
                 {/* Message */}
                 <div className="relative group">
                   <label className={`absolute left-4 transition-all duration-300 pointer-events-none text-sm ${focusedField === 'message' ? '-top-2.5 bg-white px-2 text-copter-red font-bold text-[11px]' : 'top-4 text-gray-400 font-medium'}`}>
-                    Your Message
+                    Your Message *
                   </label>
                   <textarea 
                     rows={5}
+                    required
                     onFocus={() => setFocusedField('message')}
                     onBlur={(e) => setFocusedField(e.target.value ? 'message' : null)}
                     className={`w-full bg-transparent border-2 rounded-xl px-4 py-4 outline-none text-copter-blue font-medium resize-none input-field ${focusedField === 'message' ? 'border-copter-red' : 'border-gray-200 hover:border-copter-blue/30'}`}

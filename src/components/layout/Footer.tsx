@@ -29,7 +29,9 @@ export default function Footer() {
             </p>
             
             {/* Social Icons - Brand Colors */}
+            <p className="text-white">Follow Us On:</p>
             <div className="flex flex-wrap gap-4">
+               
               {socials.map((s) => (
                 <a 
                   key={s.label} 
@@ -89,8 +91,8 @@ export default function Footer() {
               <div className="space-y-3 mt-6">
                 <div>
                   <h5 className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-1">Enquiries</h5>
-                  <a href="mailto:info@copterjetgroup.com" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjetgroup.com</a>
-                  <a href="mailto:info@copterjet.com.ng" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjet.com.ng</a>
+                  <a href="mailto:info@copterjetgroup.com" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjetgroup.com (Global Desk)</a>
+                  <a href="mailto:info@copterjet.com.ng" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjet.com.ng (HQ Desk)</a>
                 </div>
                 <div>
                   <h5 className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-1 mt-4">Telephone</h5>
@@ -103,6 +105,9 @@ export default function Footer() {
             {/* Newsletter */}
             <div>
               <form className="flex flex-col gap-3">
+                 <p className="text-sm font-bold text-white uppercase tracking-widest mb-6">
+              To subscribe to our newsletter enter email address
+            </p>
                 <input 
                   type="email" 
                   placeholder="Enter Email Address" 

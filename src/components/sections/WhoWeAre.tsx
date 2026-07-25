@@ -95,8 +95,8 @@ export default function WhoWeAre() {
 
               {/* Floating stat card (Bottom Left) */}
               <div className="absolute -left-2 bottom-8 lg:-left-4 lg:bottom-14 bg-copter-blue text-white px-4 py-3 lg:px-6 lg:py-5 shadow-[0_12px_24px_rgba(22,72,120,0.3)] z-10">
-                <p className="text-2xl lg:text-4xl font-bold leading-none">10+</p>
-                <p className="text-[8px] lg:text-[10px] font-bold tracking-widest uppercase text-white/70 mt-1">Years of Excellence</p>
+                <p className="text-2xl lg:text-4xl font-bold leading-none">5+</p>
+                <p className="text-[8px] lg:text-[10px] font-bold tracking-widest uppercase text-white/70 mt-1">CONTINENTAL STRATEGIC PRESENCE</p>
               </div>
             </div>
 

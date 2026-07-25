@@ -606,10 +606,10 @@ export default function AboutPage() {
               <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-2">Our People</span>
             </div>
             <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold leading-[1.15] mb-8 tracking-tight">
-              Our journey began here. Driven by purpose, shaped by experience, and inspired by the future — we continue to evolve.
+              Our journey began here — as one people! 
             </h2>
             <p className="text-[15px] text-copter-grey leading-[1.9] font-medium">
-              Our strength lies in our people — a multidisciplinary team of aviation professionals, technical specialists, operational experts, legal, and strategic advisors with deep industry knowledge and global experience. United by a shared commitment to excellence, innovation, integrity, and service delivery, our people drive the operational efficiency and client-focused solutions that continue to define Copterjet&apos;s success.
+              From that defining moment, we have continued to evolve, driven by a growing community of passionate professionals whose unwavering commitment to operational excellence and client-focused solutions remains the foundation of Copterjet's enduring success.
             </p>
           </div>
 
@@ -708,7 +708,7 @@ export default function AboutPage() {
                   <strong className="text-copter-blue">Captain Toluwa V. Olorunyomi</strong> is the Founder and Group Chief Executive Officer of Copterjet International Group. He is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
                 </p>
                 <p>
-                  Widely regarded as a visionary entrepreneur, Capt. Olorunyomi has distinguished himself through the development of innovative business models and strategic initiatives that promote transparency, efficiency, and sustainability across the aviation sector. Through his leadership at Copterjet International Group, he has been instrumental in driving solutions across aviation leasing, aircraft acquisitions and sales, airline and helicopter joint venture operations, public-private partnerships, aviation and aerospace infrastructure development, project financing, and specialist aviation advisory services.
+                As a visionary entrepreneur, Capt. Olorunyomi has distinguished himself through the development of innovative business models and strategic initiatives that promote transparency, efficiency, and sustainability across the aviation sector. Through his leadership at Copterjet International Group, he has been instrumental in driving solutions across aviation leasing, aircraft acquisitions and sales, airline and helicopter joint venture operations, public-private partnerships, aviation and aerospace infrastructure development, project financing, and specialist aviation advisory services.
                 </p>
                 <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${ceoBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                   <div className="overflow-hidden">
@@ -1034,7 +1034,7 @@ export default function AboutPage() {
                 <div className={`relative w-full pt-[100%] max-w-[340px] mx-auto rounded-xl overflow-hidden shadow-2xl mb-8 ${govAffairs.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`}>
                   {/* Using PortraitPlaceholder since we don't have an image yet */}
                   <Image
-                    src="/images/babajide-Oluwafemi.jpg"
+                    src="/images/babajide-Oluwafemi.png"
                     alt="Babajide O. Jinadu"
                     fill
                     className="object-cover object-[center_top]"
