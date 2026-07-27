@@ -606,7 +606,7 @@ export default function AboutPage() {
               <span className="text-copter-red font-bold tracking-[0.2em] text-[9px] uppercase whitespace-nowrap px-2">Our People</span>
             </div>
             <h2 className="text-3xl lg:text-4xl text-copter-blue font-bold leading-[1.15] mb-8 tracking-tight">
-              Our journey began here — as one people! 
+              Our journey began here — as one people!
             </h2>
             <p className="text-[15px] text-copter-grey leading-[1.9] font-medium">
               From that defining moment, we have continued to evolve, driven by a growing community of passionate professionals whose unwavering commitment to operational excellence and client-focused solutions remains the foundation of Copterjet's enduring success.
@@ -628,7 +628,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      
+
 
       {/* ════════════════════════════════════════════════════════
           6.5. FOUNDER & CEO
@@ -637,24 +637,24 @@ export default function AboutPage() {
         {/* ════════════════════════════════════════════════════════
           7. MANAGEMENT TEAM
       ════════════════════════════════════════════════════════ */}
-      <section id="management" ref={management.ref} className="py-12 lg:py-16 bg-[#f8fafc]">
-        <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
-          <div className={`${management.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'} mb-16 max-w-3xl`}>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-[2px] bg-copter-red" />
-              <h3 className="text-2xl font-bold text-copter-blue tracking-tight">Management Team</h3>
+        <section id="management" ref={management.ref} className="py-12 lg:py-16 bg-[#f8fafc]">
+          <div className="max-w-[90rem] mx-auto px-6 lg:px-12">
+            <div className={`${management.isVisible ? 'smooth-up-visible' : 'smooth-up-hidden'} mb-16 max-w-3xl`}>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-10 h-[2px] bg-copter-red" />
+                <h3 className="text-2xl font-bold text-copter-blue tracking-tight">Management Team</h3>
+              </div>
+              <p className="text-[14px] text-copter-grey leading-[1.8] font-medium pl-14">
+                Copterjet&apos;s Management Team comprises experienced aviation and business professionals dedicated to operational excellence, strategic growth, and organizational leadership.
+              </p>
             </div>
-            <p className="text-[14px] text-copter-grey leading-[1.8] font-medium pl-14">
-              Copterjet&apos;s Management Team comprises experienced aviation and business professionals dedicated to operational excellence, strategic growth, and organizational leadership.
-            </p>
-          </div>
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-3xl">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-3xl">
             {managementTeam.map((member, idx) => (
               <TeamCard key={idx} member={member} index={idx} isVisible={management.isVisible} />
             ))}
           </div> */}
-        </div>
-      </section>
+          </div>
+        </section>
 
         <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-blue/[0.02] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
@@ -708,7 +708,7 @@ export default function AboutPage() {
                   <strong className="text-copter-blue">Captain Toluwa V. Olorunyomi</strong> is the Founder and Group Chief Executive Officer of Copterjet International Group. He is an accomplished aviation professional, entrepreneur, strategist, and transformational leader with extensive experience spanning airline operations, aviation business development, infrastructure initiatives, aircraft asset management, and corporate leadership.
                 </p>
                 <p>
-                As a visionary entrepreneur, Capt. Olorunyomi has distinguished himself through the development of innovative business models and strategic initiatives that promote transparency, efficiency, and sustainability across the aviation sector. Through his leadership at Copterjet International Group, he has been instrumental in driving solutions across aviation leasing, aircraft acquisitions and sales, airline and helicopter joint venture operations, public-private partnerships, aviation and aerospace infrastructure development, project financing, and specialist aviation advisory services.
+                  As a visionary entrepreneur, Capt. Olorunyomi has distinguished himself through the development of innovative business models and strategic initiatives that promote transparency, efficiency, and sustainability across the aviation sector. Through his leadership at Copterjet International Group, he has been instrumental in driving solutions across aviation leasing, aircraft acquisitions and sales, airline and helicopter joint venture operations, public-private partnerships, aviation and aerospace infrastructure development, project financing, and specialist aviation advisory services.
                 </p>
                 <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${ceoBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                   <div className="overflow-hidden">
@@ -1215,7 +1215,7 @@ export default function AboutPage() {
                 Our Board of Directors provides strategic oversight, governance, and leadership guidance that supports Copterjet&apos;s long-term vision and sustainable growth objectives.
               </p>
             </div>
-            
+
 
           </div>
         </div>
@@ -1223,22 +1223,22 @@ export default function AboutPage() {
         {/* Carousel Container */}
         <div className="w-full relative max-w-[100vw] group/carousel">
           {/* Floating Scroll Controls */}
-          <button 
-            onClick={scrollLeft} 
+          <button
+            onClick={scrollLeft}
             className="absolute left-2 lg:left-6 top-[200px] md:top-[240px] -translate-y-1/2 w-14 h-14 rounded-full bg-white/95 backdrop-blur shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 flex items-center justify-center text-copter-blue hover:bg-copter-red hover:text-white hover:border-copter-red transition-all duration-300 focus:outline-none z-30 opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100"
             aria-label="Scroll left"
           >
             <svg className="w-6 h-6 pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
           </button>
-          <button 
-            onClick={scrollRight} 
+          <button
+            onClick={scrollRight}
             className="absolute right-2 lg:right-6 top-[200px] md:top-[240px] -translate-y-1/2 w-14 h-14 rounded-full bg-white/95 backdrop-blur shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-100 flex items-center justify-center text-copter-blue hover:bg-copter-red hover:text-white hover:border-copter-red transition-all duration-300 focus:outline-none z-30 opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100"
             aria-label="Scroll right"
           >
             <svg className="w-6 h-6 pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
           </button>
 
-          <div 
+          <div
             ref={carouselRef}
             className="flex overflow-x-auto snap-x snap-mandatory pb-12 px-6 lg:px-12 gap-6 lg:gap-8 custom-scrollbar"
             style={{ msOverflowStyle: 'none' }}
@@ -1305,7 +1305,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            
+
             {/* Card 2: Capt. Austin Omame */}
             <div ref={boardOmame.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardOmame.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '200ms' }}>
               <div className="relative w-full pt-[100%]">
@@ -1377,7 +1377,7 @@ export default function AboutPage() {
                   <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
                   <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
                 </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Capt. Toluwa V.<br/>Olorunyomi</h3>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Capt. Toluwa V.<br />Olorunyomi</h3>
                 <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Group Chief Executive (GCE)</p>
 
                 <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
@@ -1421,7 +1421,7 @@ export default function AboutPage() {
                   <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
                   <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
                 </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Mrs. Olajumoke<br/>Patricia Bakare</h3>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Mrs. Olajumoke<br />Patricia Bakare</h3>
                 <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Independent Non-Executive Director</p>
 
                 <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
@@ -1468,7 +1468,7 @@ export default function AboutPage() {
             {/* Card 5: Mr. David Adebayo Alabi */}
             <div ref={boardAlabi.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardAlabi.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '500ms' }}>
               <div className="relative w-full pt-[100%]">
-                <Image src="/images/Mr. Alabi - Headshot.jpg" alt="Mr. David Adebayo Alabi" fill className="object-cover object-[center_top]" />
+                <Image src="/images/Mr. Alabi - Headshot2.jpg" alt="Mr. David Adebayo Alabi" fill className="object-cover object-[center_top]" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#164878]/60 via-transparent to-transparent mix-blend-multiply" />
                 <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
               </div>
@@ -1477,7 +1477,7 @@ export default function AboutPage() {
                   <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
                   <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
                 </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Mr. David Adebayo<br/>Alabi</h3>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Mr. David Adebayo<br />Alabi</h3>
                 <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Independent Non-Executive Director</p>
 
                 <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
@@ -1530,7 +1530,7 @@ export default function AboutPage() {
                   <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
                   <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
                 </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Engr. Sunday<br/>Felix Afolabi</h3>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Engr. Sunday<br />Felix Afolabi</h3>
                 <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Independent Non-Executive Director</p>
 
                 <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
@@ -1571,7 +1571,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-{/* ════════════════════════════════════════════════════════
+      {/* ════════════════════════════════════════════════════════
           5. OUR VALUES (Core Value Triangle)
       ════════════════════════════════════════════════════════ */}
       <section ref={values.ref} className="relative py-20 lg:py-24 bg-[#060e1a] overflow-hidden">
@@ -1729,9 +1729,9 @@ export default function AboutPage() {
               </p>
               {/* Decorative Icons */}
               <div className="mt-6 flex items-center gap-4 text-green-500/40">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-2.69 9-6v-2c0 3.31-4.03 6-9 6s-9-2.69-9-6v2c0 3.31 4.03 6 9 6zm0-4c4.97 0 9-2.69 9-6V6c0 3.31-4.03 6-9 6S3 9.31 3 6v6c0 3.31 4.03 6 9 6zM12 2C7.03 2 3 4.69 3 8s4.03 6 9 6 9-2.69 9-6-4.03-6-9-6z"/></svg>
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z" /></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-2.69 9-6v-2c0 3.31-4.03 6-9 6s-9-2.69-9-6v2c0 3.31 4.03 6 9 6zm0-4c4.97 0 9-2.69 9-6V6c0 3.31-4.03 6-9 6S3 9.31 3 6v6c0 3.31 4.03 6 9 6zM12 2C7.03 2 3 4.69 3 8s4.03 6 9 6 9-2.69 9-6-4.03-6-9-6z" /></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" /></svg>
               </div>
             </div>
 
@@ -1754,9 +1754,9 @@ export default function AboutPage() {
               </p>
               {/* Decorative Icons */}
               <div className="mt-6 flex items-center gap-4 text-copter-blue/30">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z"/></svg>
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" /></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14 6l-3.75 5 2.85 3.8-1.6 1.2C9.81 13.75 7 10 7 10l-6 8h22L14 6z" /></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
               </div>
             </div>
 
@@ -1779,9 +1779,9 @@ export default function AboutPage() {
               </p>
               {/* Decorative Icons */}
               <div className="mt-6 flex items-center gap-4 text-copter-red/30">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" /></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" /></svg>
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" /></svg>
               </div>
             </div>
           </div>
