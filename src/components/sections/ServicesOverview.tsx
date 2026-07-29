@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ServicesOverview() {
   const [isVisible, setIsVisible] = useState(false);
@@ -131,6 +132,21 @@ export default function ServicesOverview() {
                 </div>
               </Link>
             ))}
+
+            {/* 6th Slot - Image */}
+            <div 
+              className="animate-fade-up relative rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_rgba(22,72,120,0.12)] transition-all duration-500 h-full min-h-[300px] group"
+              style={{ animationDelay: `${(services.length + 1) * 150}ms` }}
+            >
+              <Image 
+                src="/images/services-custom.jpg" 
+                alt="Aviation Services" 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-[2.5s] ease-out" 
+              />
+              {/* Optional subtle overlay */}
+              <div className="absolute inset-0 bg-copter-blue/10 mix-blend-multiply group-hover:bg-transparent transition-colors duration-700" />
+            </div>
           </div>
 
           {/* Master Call to Action */}

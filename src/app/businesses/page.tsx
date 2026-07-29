@@ -73,7 +73,7 @@ const businesses = [
     title: 'Flight Operations',
     desc: 'CopterJet Flight Operations delivers premium jet and helicopter operational services with a commitment to safety, precision, discretion, and reliability. From charter services to aircraft management and joint venture operations, we provide integrated flight solutions tailored to commercial, corporate, humanitarian, and specialized aviation missions.',
     icon: 'M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5',
-    image: '/images/businesses/flight-ops.jpg'
+    image: '/images/businesses/flight_ops.jpg'
   }
 ];
 
