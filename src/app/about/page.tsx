@@ -214,7 +214,7 @@ export default function AboutPage() {
     { value: 10, suffix: '+', label: 'Years of Expertise' },
     { value: 30, suffix: '+', label: 'Strategic Partners' },
     { value: 12, suffix: '+', label: 'African Nations Served' },
-    { value: 200, suffix: '+', label: 'Successful Deliverables' },
+    { value: 2000, suffix: '+', label: 'Successful Deliverables' },
   ];
 
   const coreValues = [
@@ -475,7 +475,7 @@ export default function AboutPage() {
                   <div className="text-[9px] text-copter-blue font-bold tracking-[0.2em] uppercase mt-1">Years</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-copter-blue">200<span className="text-copter-red">+</span></div>
+                  <div className="text-2xl font-bold text-copter-blue">2000<span className="text-copter-red">+</span></div>
                   <div className="text-[9px] text-copter-blue font-bold tracking-[0.2em] uppercase mt-1">Deliverables</div>
                 </div>
               </div>

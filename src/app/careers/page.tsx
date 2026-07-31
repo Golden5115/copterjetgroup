@@ -60,7 +60,7 @@ export default function CareersPage() {
                 </h2>
                 <div className="w-24 h-1.5 bg-copter-red mb-10" />
                 <p className="text-[16px] md:text-lg text-[#4a5568] leading-[1.8] font-medium text-justify">
-                  At <strong className="text-copter-blue">CopterJet International Group</strong>, we believe our greatest asset is our people. We are committed to attracting, developing, and empowering exceptional talent who share our passion for innovation, safety, integrity, and service.
+                  At <strong className="text-copter-blue">CopterJet International Group</strong>, we believe our greatest asset is our people. We are committed to attracting, developing, and empowering exceptional talent who share our passion for innovation, safety, integrity, and quality service.
                 </p>
               </div>
             </div>

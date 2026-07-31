@@ -38,7 +38,7 @@ export default function GalleryPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-copter-blue mb-8 tracking-tight">Our Gallery</h1>
           <div className="w-24 h-1.5 bg-copter-red mx-auto mb-8 rounded-full"></div>
           <p className="text-copter-grey text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            A visual showcase of CopterJet International's operations, events, and industry-leading aviation services.
+            A visual showcase of CopterJet International's events and aviation stakeholder's engagements.
           </p>
         </div>
 
