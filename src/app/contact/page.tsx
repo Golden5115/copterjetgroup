@@ -266,8 +266,8 @@ export default function ContactPage() {
                     <h4 className="text-[13px] font-bold text-copter-blue uppercase tracking-widest mb-3">{detail.title}</h4>
                     {detail.desc.map((item, lIdx) => (
                       <p key={lIdx} className="text-[#4a5568] text-[15px] leading-relaxed font-medium">
-                        {item.action ? (
-                          <a href={item.action} className="hover:text-copter-red transition-colors block">{item.text}</a>
+                        {'action' in item && item.action ? (
+                          <a href={(item as any).action} className="hover:text-copter-red transition-colors block">{item.text}</a>
                         ) : (
                           item.text
                         )}
