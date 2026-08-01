@@ -73,7 +73,8 @@ const businesses = [
     title: 'Flight Operations',
     desc: 'CopterJet Flight Operations delivers premium jet and helicopter operational services with a commitment to safety, precision, discretion, and reliability. From charter services to aircraft management and joint venture operations, we provide integrated flight solutions tailored to commercial, corporate, humanitarian, and specialized aviation missions.',
     icon: 'M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5',
-    image: '/images/businesses/flight_ops.jpg'
+    image: '/images/businesses/flight_ops.jpg',
+    actionLink: { label: 'CHARTER PORTAL', url: 'https://www.copterjet.com.ng/' }
   }
 ];
 
@@ -141,14 +142,33 @@ function BusinessDivision({ data, index }: { data: typeof businesses[0]; index: 
           {/* ── Text Side ── */}
           <div className={`w-full lg:w-7/12 ${isEven ? '' : 'lg:text-right'}`}>
 
-            {/* Division label */}
+            {/* Header row: Label + Action Link */}
             <div
-              className={`flex items-center gap-3 mb-4 transition-all duration-700 cubic-ease ${isEven ? '' : 'lg:justify-end'} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              className={`flex flex-wrap items-center justify-between gap-4 mb-4 transition-all duration-700 cubic-ease ${isEven ? '' : 'lg:flex-row-reverse'} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 }`}
               style={{ transitionDelay: '300ms' }}
             >
-              <div className="w-8 h-[2px] bg-copter-red" />
-              <span className="text-copter-red font-bold tracking-[0.2em] text-[10px] uppercase">Division 0{index + 1}</span>
+              {/* Division label */}
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-[2px] bg-copter-red" />
+                <span className="text-copter-red font-bold tracking-[0.2em] text-[10px] uppercase">Division 0{index + 1}</span>
+              </div>
+
+              {/* Optional Action Button */}
+              {'actionLink' in data && (
+                <a 
+                  href={(data as any).actionLink.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative inline-flex items-center justify-center bg-gradient-to-r from-copter-red to-[#9e0b11] text-white text-[9.5px] font-bold tracking-[0.15em] px-5 py-2.5 rounded-full shadow-[0_4px_15px_rgba(196,14,20,0.3)] hover:shadow-[0_8px_25px_rgba(196,14,20,0.4)] hover:-translate-y-0.5 transition-all duration-300 uppercase overflow-hidden group/btn"
+                >
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
+                  <span className="relative z-10 flex items-center gap-2">
+                    {(data as any).actionLink.label}
+                    <svg className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                  </span>
+                </a>
+              )}
             </div>
 
             {/* Title */}

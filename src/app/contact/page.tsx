@@ -31,22 +31,26 @@ function useInView(options: { threshold?: number } = { threshold: 0.15 }) {
 const contactDetails = [
   {
     icon: 'M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z',
-    title: 'Corporate Head Office      (Administrative Wing) ',
-    
-    desc: 'Suite 202, 2nd Floor, Right Wing, Airport Business Hub, Murtala Muhammed Int\'l Airport Business District, Int\'l Airport Rd, Ikeja Lagos, Nigeria.',
-    action: null
+    title: <>Corporate Head Office <br /> (Administrative Wing)</>,
+    desc: [
+      { text: 'Suite 202, 2nd Floor, Right Wing, Airport Business Hub, Murtala Muhammed Int\'l Airport Business District, Int\'l Airport Rd, Ikeja Lagos, Nigeria.' }
+    ]
   },
   {
     icon: 'M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75',
     title: 'Enquiries',
-    desc: 'info@copterjetgroup.com\ninfo@copterjet.com.ng',
-    action: 'mailto:info@copterjetgroup.com'
+    desc: [
+      { text: 'info@copterjetgroup.com (Global Desk)', action: 'mailto:info@copterjetgroup.com' },
+      { text: 'info@copterjet.com.ng (HQ Desk)', action: 'mailto:info@copterjet.com.ng' }
+    ]
   },
   {
     icon: 'M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.864-1.068l-4.214-.842a2.25 2.25 0 00-2.244.905l-1.409 1.715A16.42 16.42 0 015.42 12.35l1.715-1.409a2.25 2.25 0 00.905-2.244l-.842-4.214a2.25 2.25 0 00-1.068-.864H4.5A2.25 2.25 0 002.25 6.75z',
     title: 'Telephone',
-    desc: '+234 913 934 47441\n+234 913 934 47442',
-    action: 'tel:+23491393447441'
+    desc: [
+      { text: '+234 913 934 47441', action: 'tel:+23491393447441' },
+      { text: '+234 913 934 47442', action: 'tel:+23491393447442' }
+    ]
   }
 ];
 
@@ -260,12 +264,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-[13px] font-bold text-copter-blue uppercase tracking-widest mb-3">{detail.title}</h4>
-                    {detail.desc.split('\n').map((line, lIdx) => (
+                    {detail.desc.map((item, lIdx) => (
                       <p key={lIdx} className="text-[#4a5568] text-[15px] leading-relaxed font-medium">
-                        {detail.action ? (
-                          <a href={detail.action} className="hover:text-copter-red transition-colors block">{line}</a>
+                        {item.action ? (
+                          <a href={item.action} className="hover:text-copter-red transition-colors block">{item.text}</a>
                         ) : (
-                          line
+                          item.text
                         )}
                       </p>
                     ))}
