@@ -128,18 +128,18 @@ export default function Navbar() {
       >
         {/* ── Top Bar ── */}
         <div className="bg-copter-blue h-9">
-          <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 h-full flex items-center justify-between relative">
-            <span className="hidden min-[900px]:block text-[10px] xl:text-[10px] font-bold tracking-[0.2em] uppercase text-white">
+          <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 h-full flex items-center justify-between gap-4">
+            <span className="hidden lg:block text-[10px] xl:text-[10px] font-bold tracking-[0.2em] uppercase text-white whitespace-nowrap">
               COPTERJET INTERNATIONAL GROUP
             </span>
 
             {/* Central Charter Portal Button */}
-            <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="hidden md:flex items-center justify-center min-w-0">
               <a
                 href="https://www.copterjet.com.ng/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-flex items-center justify-center bg-gradient-to-r from-copter-red to-[#9e0b11] text-white text-[9px] font-bold tracking-[0.15em] px-4 py-1 rounded-sm shadow-[0_2px_8px_rgba(196,14,20,0.3)] hover:shadow-[0_4px_12px_rgba(196,14,20,0.4)] hover:-translate-y-0.5 transition-all duration-300 uppercase overflow-hidden group/btn"
+                className="relative inline-flex items-center justify-center bg-gradient-to-r from-copter-red to-[#9e0b11] text-white text-[9px] font-bold tracking-[0.15em] px-3.5 py-1 rounded-sm shadow-[0_2px_8px_rgba(196,14,20,0.3)] hover:shadow-[0_4px_12px_rgba(196,14,20,0.4)] hover:-translate-y-0.5 transition-all duration-300 uppercase overflow-hidden group/btn whitespace-nowrap"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
                 <span className="relative z-10 flex items-center gap-1.5">
@@ -149,7 +149,7 @@ export default function Navbar() {
               </a>
             </div>
 
-            <div className="flex items-center gap-5 ml-auto">
+            <div className="flex items-center gap-3 sm:gap-4 lg:gap-5 ml-auto shrink-0">
               {[
                 { label: 'Company News', href: '/news-events' },
                 { label: 'Gallery', href: '/gallery' },
