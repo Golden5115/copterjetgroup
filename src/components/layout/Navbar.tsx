@@ -129,7 +129,7 @@ export default function Navbar() {
         {/* ── Top Bar ── */}
         <div className="bg-copter-blue h-9">
           <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-12 h-full flex items-center justify-between gap-4">
-            <span className="hidden lg:block text-[10px] xl:text-[10px] font-bold tracking-[0.2em] uppercase text-white whitespace-nowrap">
+            <span className="hidden min-[900px]:block text-[10px] xl:text-[10px] font-bold tracking-[0.2em] uppercase text-white whitespace-nowrap">
               COPTERJET INTERNATIONAL GROUP
             </span>
 
@@ -151,7 +151,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-3 sm:gap-4 lg:gap-5 ml-auto shrink-0">
               {[
-                { label: 'Company News', href: '/news-events' },
+                { label: 'News', href: '/news-events' },
                 { label: 'Gallery', href: '/gallery' },
                 { label: 'Contact Us', href: '/contact' }
               ].map(item => (
