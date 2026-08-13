@@ -133,13 +133,13 @@ export default function Navbar() {
               COPTERJET INTERNATIONAL GROUP
             </span>
 
-            {/* Central Charter Portal Button */}
-            <div className="hidden md:flex items-center justify-center min-w-0">
+            <div className="flex items-center gap-3 sm:gap-4 lg:gap-5 ml-auto shrink-0">
+              {/* Charter Portal Button */}
               <a
                 href="https://www.copterjet.com.ng/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-flex items-center justify-center bg-gradient-to-r from-copter-red to-[#9e0b11] text-white text-[9px] font-bold tracking-[0.15em] px-3.5 py-1 rounded-sm shadow-[0_2px_8px_rgba(196,14,20,0.3)] hover:shadow-[0_4px_12px_rgba(196,14,20,0.4)] hover:-translate-y-0.5 transition-all duration-300 uppercase overflow-hidden group/btn whitespace-nowrap"
+                className="hidden md:inline-flex relative items-center justify-center bg-gradient-to-r from-copter-red to-[#9e0b11] text-white text-[9px] font-bold tracking-[0.15em] px-3.5 py-1 rounded-sm shadow-[0_2px_8px_rgba(196,14,20,0.3)] hover:shadow-[0_4px_12px_rgba(196,14,20,0.4)] hover:-translate-y-0.5 transition-all duration-300 uppercase overflow-hidden group/btn whitespace-nowrap mr-1 sm:mr-2"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]"></span>
                 <span className="relative z-10 flex items-center gap-1.5">
@@ -147,9 +147,7 @@ export default function Navbar() {
                   <svg className="w-2.5 h-2.5 group-hover/btn:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </span>
               </a>
-            </div>
 
-            <div className="flex items-center gap-3 sm:gap-4 lg:gap-5 ml-auto shrink-0">
               {[
                 { label: 'News', href: '/news-events' },
                 { label: 'Gallery', href: '/gallery' },

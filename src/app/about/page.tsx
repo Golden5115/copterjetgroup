@@ -1262,14 +1262,11 @@ export default function AboutPage() {
               }
             `}</style>
 
-            {/* Card 1: The Chairman (Placeholder) */}
+            {/* Card 1: Chief (Mrs.) Eniola Fadayomi, MFR */}
             <div ref={boardChairman.ref} className={`snap-start shrink-0 w-[85vw] md:w-[400px] bg-white border border-gray-100 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(196,14,20,0.08)] overflow-hidden flex flex-col transition-all duration-500 ${boardChairman.isVisible ? 'smooth-scale-visible' : 'smooth-scale-hidden'}`} style={{ animationDelay: '100ms' }}>
-              <div className="relative w-full pt-[100%] bg-gray-50 flex items-center justify-center">
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-300">
-                  <svg className="w-24 h-24 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                  <span className="text-sm tracking-widest uppercase font-bold">Image Pending</span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/40 via-transparent to-transparent mix-blend-multiply" />
+              <div className="relative w-full pt-[100%]">
+                <Image src="/images/Chief Mrs. Eniola Headshot.png" alt="Chief (Mrs.) Eniola Fadayomi, MFR" fill className="object-cover object-[center_top]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1220]/80 via-transparent to-transparent mix-blend-multiply" />
                 <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-copter-red" />
               </div>
               <div className="p-6 lg:p-8 flex-1 flex flex-col">
@@ -1277,18 +1274,42 @@ export default function AboutPage() {
                   <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
                   <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
                 </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Chairman</h3>
-                <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Chairman, Board of Directors</p>
+                <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Chief (Mrs.) Eniola Fadayomi, MFR</h3>
+                <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Chairman &amp; President, GAC</p>
 
                 <div className="space-y-4 text-[14px] text-[#4a5568] leading-[1.75] font-medium text-justify">
                   <p>
-                    The Chairman provides overall leadership and strategic direction to the Board, ensuring effective corporate governance and driving Copterjet&apos;s vision for industry excellence.
+                    Chief (Mrs.) Eniola Fadayomi, MFR, is a distinguished Nigerian commercial lawyer, corporate governance authority, accomplished public servant, and eminent boardroom leader whose career spans more than five decades across law, public administration, financial services, corporate leadership, and institutional development.
                   </p>
                   <div className={`grid transition-[grid-template-rows] duration-700 ease-in-out ${chairmanBioExpanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
                     <div className="overflow-hidden">
                       <div className="space-y-4 pt-4 border-t border-gray-100">
                         <p>
-                          (Full biographical profile pending update)
+                          A highly respected figure in Nigeria&apos;s corporate and professional landscape, Chief Mrs. Fadayomi brings to Copterjet an exceptional combination of strategic leadership, legal acumen, governance expertise, institutional insight, and extensive stakeholder relationships across the public and private sectors.
+                        </p>
+                        <p>
+                          She is the Principal Partner of Eniola Fadayomi &amp; Co. and a former President and Chairman of the Council of the Institute of Directors Nigeria, where she played a significant role in advancing the principles of ethical leadership, accountability, effective board governance, and institutional excellence. She also serves as Vice President of the NEPAD Business Group Nigeria and has held directorships and advisory positions across several leading public and private institutions.
+                        </p>
+                        <p>
+                          Chief Mrs. Fadayomi&apos;s distinguished public service career includes her historic appointment as Attorney General and Commissioner for Justice of Lagos State, where she served as the State&apos;s chief law officer and contributed to the advancement of legal and institutional administration. She subsequently served as Commissioner for Women Affairs &amp; Poverty Alleviation and Commissioner for Establishment, Training &amp; Pensions, contributing to public-sector reform, institutional development, and human-capital advancement.
+                        </p>
+                        <p>
+                          Her corporate leadership credentials are equally distinguished. She served as Chairman of Africa Prudential Plc for 12 years, providing strategic oversight during a period of significant institutional transformation and growth. She previously served as Chairman of Afribank Nigeria Plc and as Legal Adviser to First Bank of Nigeria Plc, with extensive experience in corporate finance, commercial transactions, project finance, banking law, and complex investment structures.
+                        </p>
+                        <p>
+                          Her legal career includes significant involvement in major commercial and infrastructure transactions, including the legal structuring and financing of large-scale energy projects involving international financial institutions and development partners. This breadth of experience has given her a sophisticated understanding of capital formation, investment strategy, regulatory frameworks, risk governance, and complex stakeholder management.
+                        </p>
+                        <p>
+                          Beyond the boardroom, Chief Mrs. Fadayomi has demonstrated a sustained commitment to institutional development and education. She is a Founding Trustee of the Atlantic Hall Educational Trust Council and School, reflecting her longstanding commitment to building institutions and developing future generations of leaders.
+                        </p>
+                        <p>
+                          A graduate of the University of Lagos, where she obtained her LL.B (Hons), Chief Mrs. Fadayomi was called to the Nigerian Bar and has built an enduring reputation for excellence in commercial law and corporate leadership. In recognition of her distinguished contributions to national development, she was conferred with the prestigious national honour of Member of the Order of the Federal Republic (MFR) by the Federal Government of Nigeria.
+                        </p>
+                        <p>
+                          As Chairman of the Board of Directors and President of the Global Advisory Council (GAC) of Copterjet International, Chief Mrs. Fadayomi provides the Company with exceptional strategic stewardship, governance oversight, and institutional leadership. Her wealth of experience strengthens Copterjet&apos;s commitment to sound corporate governance, strategic growth, regulatory excellence, stakeholder confidence, and long-term value creation as the Company advances its ambition of becoming a leading African aviation and aerospace enterprise.
+                        </p>
+                        <p className="pb-2">
+                          Her leadership represents a powerful convergence of experience, integrity, governance, influence, and strategic vision—qualities that continue to shape Copterjet&apos;s journey toward institutional excellence and global relevance.
                         </p>
                       </div>
                     </div>
