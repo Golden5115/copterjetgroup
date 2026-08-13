@@ -1272,7 +1272,7 @@ export default function AboutPage() {
               <div className="p-6 lg:p-8 flex-1 flex flex-col">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-2 h-2 rounded-full bg-copter-red animate-pulse" />
-                  <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Member</span>
+                  <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-copter-blue/60">Board Chair</span>
                 </div>
                 <h3 className="text-xl lg:text-2xl font-bold text-copter-blue tracking-tight leading-[1.1] mb-2">Chief (Mrs.) Eniola Fadayomi, MFR</h3>
                 <p className="text-copter-red font-bold uppercase tracking-[0.15em] text-[10px] mb-6">Chairman &amp; President, GAC</p>
