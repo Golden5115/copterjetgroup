@@ -1,5 +1,30 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { generateBreadcrumbSchema } from '@/lib/seo';
+
+export const metadata: Metadata = {
+  title: 'News & Events | Aviation Announcements & Media Coverage',
+  description:
+    'Stay updated with CopterJet International Group announcements, press releases, NCAA regulatory milestones, strategic partnerships, and global media features.',
+  alternates: {
+    canonical: '/news-events',
+  },
+  openGraph: {
+    title: 'News & Events | CopterJet International Group',
+    description:
+      'Stay updated with CopterJet International Group announcements, press releases, NCAA regulatory milestones, and media features across African aviation.',
+    url: 'https://www.copterjetgroup.com/news-events',
+    images: [
+      {
+        url: '/images/MG_00851.png',
+        width: 1200,
+        height: 630,
+        alt: 'CopterJet News & Events',
+      },
+    ],
+  },
+};
 
 const ARTICLES = [
   {
@@ -8,7 +33,7 @@ const ARTICLES = [
     url: 'https://nigerianflightdeck.com/copterjet-launches-brand-calls-for-collaboration-to-turn-nigeria-into-aviation-powerhouse/',
     image: '/images/MG_00851.png',
     date: 'Recent',
-    tag: 'Brand Launch'
+    tag: 'Brand Launch',
   },
   {
     title: 'Aviation as an economic enabler is less harnessed in Nigeria - CEO Copterjet',
@@ -16,7 +41,7 @@ const ARTICLES = [
     url: 'https://businessday.ng/interview/article/aviation-as-an-economic-enabler-is-less-harnessed-in-nigeria-ceo-copterjet/',
     image: '/images/MG_0085.png',
     date: 'Insight',
-    tag: 'Economy'
+    tag: 'Economy',
   },
   {
     title: 'Nigeria Needs Huge Investment in Tourism to Benefit from SAATM',
@@ -24,7 +49,7 @@ const ARTICLES = [
     url: 'https://nigerianflightdeck.com/nigeria-needs-huge-investment-in-tourism-to-benefit-from-saatm/',
     image: '/images/news-3-v2.png',
     date: 'Analysis',
-    tag: 'Tourism'
+    tag: 'Tourism',
   },
   {
     title: 'Aircraft Leasing: Better days await Nigerian airlines as Copterjet debuts',
@@ -32,7 +57,7 @@ const ARTICLES = [
     url: 'https://tribuneonlineng.com/aircraft-leasing-better-days-await-nigerian-airlines-as-copterjet-debuts/',
     image: '/images/news-4-v2.png',
     date: 'Market Update',
-    tag: 'Leasing'
+    tag: 'Leasing',
   },
   {
     title: 'Copterjet is set to assist airlines to acquire, manage their assets — CEO',
@@ -40,7 +65,7 @@ const ARTICLES = [
     url: 'https://www.vanguardngr.com/2021/10/copterjet-is-set-to-assist-airlines-to-acquire-manage-their-assets-ceo/',
     image: '/images/news-5-v2.png',
     date: 'Oct 2021',
-    tag: 'Asset Management'
+    tag: 'Asset Management',
   },
   {
     title: 'Copterjet Intl Advocates Access to Sustainable Financing for Aviation to Thrive',
@@ -48,13 +73,22 @@ const ARTICLES = [
     url: 'https://nigerianflightdeck.com/copterjet-intl-advocates-access-to-sustainable-financing-for-aviation-to-thrive/',
     image: '/images/news-6-v2.png',
     date: 'Advocacy',
-    tag: 'Finance'
-  }
+    tag: 'Finance',
+  },
 ];
 
 export default function NewsEventsPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'News & Events', item: '/news-events' },
+  ]);
+
   return (
     <main className="min-h-screen bg-slate-50 selection:bg-copter-red selection:text-white pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 lg:px-12 bg-[#0a1220] overflow-hidden">
         {/* Background glow */}
         <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-copter-red/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
@@ -62,11 +96,13 @@ export default function NewsEventsPage() {
         <div className="max-w-[90rem] mx-auto relative z-10 text-center">
           <div className="inline-flex items-center gap-3 mb-6 justify-center">
             <div className="w-12 h-[3px] bg-copter-red" />
-            <span className="text-white font-bold tracking-[0.2em] uppercase text-[12px] md:text-sm shadow-sm">Stay Updated</span>
+            <span className="text-white font-bold tracking-[0.2em] uppercase text-[12px] md:text-sm shadow-sm">
+              Stay Updated
+            </span>
             <div className="w-12 h-[3px] bg-copter-red" />
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
-            News & <span className="text-copter-red">Events</span>
+            News &amp; <span className="text-copter-red">Events</span>
           </h1>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto font-medium">
             Stay up to date with our latest announcements, market insights, and thought leadership across the African aviation ecosystem.
@@ -111,7 +147,12 @@ export default function NewsEventsPage() {
 
                 <div className="mt-auto flex items-center text-sm font-bold text-copter-blue group-hover:text-copter-red transition-colors duration-300">
                   READ ARTICLE
-                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </div>

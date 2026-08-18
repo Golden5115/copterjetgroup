@@ -1,8 +1,13 @@
 import React from 'react';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Cookie Policy | CopterJet International',
-  description: 'Cookie Policy of CopterJet International Limited',
+export const metadata: Metadata = {
+  title: 'Cookie Policy',
+  description:
+    'Cookie Policy of CopterJet International Limited. Explaining how we use cookies and similar technologies on www.copterjetgroup.com.',
+  alternates: {
+    canonical: '/cookie-policy',
+  },
 };
 
 export default function CookiePolicyPage() {

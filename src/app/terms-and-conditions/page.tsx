@@ -1,8 +1,13 @@
 import React from 'react';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Terms & Conditions | CopterJet International',
-  description: 'Terms and Conditions for using CopterJet International Limited website and services.',
+export const metadata: Metadata = {
+  title: 'Terms & Conditions',
+  description:
+    'Terms and Conditions governing access to and use of the CopterJet International Limited website and aviation services.',
+  alternates: {
+    canonical: '/terms-and-conditions',
+  },
 };
 
 export default function TermsAndConditionsPage() {

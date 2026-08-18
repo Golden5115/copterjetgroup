@@ -1,14 +1,39 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import fs from 'fs';
 import path from 'path';
 import GalleryClient from './GalleryClient';
+import { generateBreadcrumbSchema } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Gallery | CopterJet International',
-  description: 'View photos from CopterJet International operations, events, and aviation infrastructure.',
+export const metadata: Metadata = {
+  title: 'Media Gallery | Photos & Highlights',
+  description:
+    'A visual showcase of CopterJet International Group operations, aviation stakeholder engagements, executive summits, and aerospace events.',
+  alternates: {
+    canonical: '/gallery',
+  },
+  openGraph: {
+    title: 'Media Gallery | CopterJet International Group',
+    description:
+      'A visual showcase of CopterJet International Group operations, aviation events, and industry engagements.',
+    url: 'https://www.copterjetgroup.com/gallery',
+    images: [
+      {
+        url: '/images/hero-bg-network2.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'CopterJet Photo Gallery',
+      },
+    ],
+  },
 };
 
 export default function GalleryPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Gallery', item: '/gallery' },
+  ]);
+
   // Read images from the public directory
   let images: string[] = [];
   try {
@@ -16,7 +41,7 @@ export default function GalleryPage() {
     if (fs.existsSync(galleryDir)) {
       const files = fs.readdirSync(galleryDir);
       // Filter for image files
-      images = files.filter(file => {
+      images = files.filter((file) => {
         const ext = path.extname(file).toLowerCase();
         return ['.jpg', '.jpeg', '.png', '.gif', '.webp'].includes(ext);
       });
@@ -27,6 +52,10 @@ export default function GalleryPage() {
 
   return (
     <div className="bg-copter-light min-h-screen py-20 px-6 lg:px-12 overflow-hidden relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-white to-transparent opacity-80 pointer-events-none"></div>
       <div className="absolute top-40 right-[-10%] w-[40rem] h-[40rem] rounded-full bg-copter-blue/5 blur-3xl pointer-events-none"></div>
@@ -34,11 +63,15 @@ export default function GalleryPage() {
 
       <div className="max-w-[90rem] mx-auto relative z-10">
         <div className="text-center mb-20">
-          <span className="text-copter-red font-bold tracking-[0.2em] text-xs uppercase mb-3 block">Media & Highlights</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-copter-blue mb-8 tracking-tight">Our Gallery</h1>
+          <span className="text-copter-red font-bold tracking-[0.2em] text-xs uppercase mb-3 block">
+            Media &amp; Highlights
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-copter-blue mb-8 tracking-tight">
+            Our Gallery
+          </h1>
           <div className="w-24 h-1.5 bg-copter-red mx-auto mb-8 rounded-full"></div>
           <p className="text-copter-grey text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            A visual showcase of CopterJet International's events and aviation stakeholder's engagements.
+            A visual showcase of CopterJet International&apos;s events and aviation stakeholder&apos;s engagements.
           </p>
         </div>
 

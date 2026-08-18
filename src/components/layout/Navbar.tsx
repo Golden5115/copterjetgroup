@@ -248,7 +248,7 @@ export default function Navbar() {
                             </div>
                             {group.actionButton && (
                               <div className="mt-6 pt-5 border-t border-gray-100 flex justify-start">
-                                <a 
+                                <a
                                   href={group.actionButton.href}
                                   target="_blank"
                                   rel="noopener noreferrer"
@@ -370,7 +370,7 @@ export default function Navbar() {
 
         {/* NEW: Chat Widget Button */}
         <a
-          href="https://wa.me/09139347442"
+          href="https://wa.me/2349139347442"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-3 cursor-pointer"

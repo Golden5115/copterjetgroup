@@ -1,8 +1,13 @@
 import React from 'react';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Privacy Policy | CopterJet International',
-  description: 'Privacy Policy of CopterJet International Limited',
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description:
+    'Privacy Policy of CopterJet International Limited. Explaining how we collect, use, store, and protect your personal information.',
+  alternates: {
+    canonical: '/privacy',
+  },
 };
 
 export default function PrivacyPolicyPage() {
