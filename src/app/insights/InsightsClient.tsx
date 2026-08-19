@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 // ══════════════════════════════════════════════════════════════
 // HOOKS
@@ -399,10 +400,20 @@ export default function InsightsPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {featured.map((item, idx) => (
               <FeaturedCard key={idx} insight={item} index={idx} />
             ))}
+            {/* 4th Card: Picture Card */}
+            <div className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#0c2340] to-[#163a60] border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_40px_rgba(196,14,20,0.15)] hover:border-copter-red/40 transition-all duration-500 min-h-[280px] h-full flex flex-col justify-end">
+              <Image
+                src="/images/DSC_1898@3269977.JPG"
+                alt="CopterJet Aviation Operations"
+                fill
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1e35]/80 via-transparent to-transparent pointer-events-none" />
+            </div>
           </div>
         </section>
 
