@@ -93,6 +93,7 @@ export default function Footer() {
                   <h5 className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-1">Enquiries</h5>
                   <a href="mailto:info@copterjetgroup.com" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjetgroup.com (Global Desk)</a>
                   <a href="mailto:info@copterjet.com.ng" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">info@copterjet.com.ng (HQ Desk)</a>
+                  <a href="mailto:aircharter@copterjet.com.ng" className="block text-gray-300 text-sm hover:text-copter-red transition-colors py-0.5">aircharter@copterjet.com.ng (Charter Desk)</a>
                 </div>
                 <div>
                   <h5 className="text-white/50 text-[10px] font-bold uppercase tracking-widest mb-1 mt-4">Telephone</h5>

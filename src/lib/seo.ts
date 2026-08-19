@@ -45,6 +45,7 @@ export const siteConfig = {
     },
     email: 'info@copterjetgroup.com',
     hqEmail: 'info@copterjet.com.ng',
+    charterEmail: 'aircharter@copterjet.com.ng',
     phones: ['+23491393447441', '+23491393447442'],
   },
 };
@@ -86,6 +87,14 @@ export function generateOrganizationSchema() {
         contactType: 'sales',
         email: siteConfig.contact.hqEmail,
         areaServed: ['NG', 'Africa'],
+        availableLanguage: ['English'],
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: siteConfig.contact.phones[0],
+        contactType: 'reservations',
+        email: siteConfig.contact.charterEmail,
+        areaServed: ['NG', 'Africa', 'Global'],
         availableLanguage: ['English'],
       },
     ],

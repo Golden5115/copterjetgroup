@@ -41,7 +41,8 @@ const contactDetails = [
     title: 'Enquiries',
     desc: [
       { text: 'info@copterjetgroup.com (Global Desk)', action: 'mailto:info@copterjetgroup.com' },
-      { text: 'info@copterjet.com.ng (HQ Desk)', action: 'mailto:info@copterjet.com.ng' }
+      { text: 'info@copterjet.com.ng (HQ Desk)', action: 'mailto:info@copterjet.com.ng' },
+      { text: 'aircharter@copterjet.com.ng (Charter Desk)', action: 'mailto:aircharter@copterjet.com.ng' }
     ]
   },
   {
